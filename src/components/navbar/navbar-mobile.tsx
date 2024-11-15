@@ -11,7 +11,7 @@ export function NavbarMobile({ isOpen, toggleMenu }: any) {
       <div className="flex justify-between items-center p-4 border-b border-border-secondary">
         <div>
           <Link href="/dashboard" className="flex w-full">
-            <Image src={"/logo.svg"} alt="Logo EscalaPay 2.0" width={220} height={40} />
+             <h2>X MAX GAIN</h2>
           </Link>
         </div>
         <button onClick={toggleMenu} className="text-gray-600">

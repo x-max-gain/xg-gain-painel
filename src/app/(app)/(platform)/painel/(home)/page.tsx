@@ -8,19 +8,19 @@ import RefusedAffiliates from './modules/refused';
 import RequestAffiliates from './modules/request';
 
 export default function Affiliates() {
-  const [model, setModel] = useState("actives");
+  const [model, setModel] = useState("Ativos");
 
   const models = [
     {
-      name: "actives",
+      name: "Ativos",
       component: <ActivesAffiliates />
     },
     {
-      name: "request",
+      name: "Requisições",
       component: <RequestAffiliates />
     },
     {
-      name: "refused",
+      name: "Recusados",
       component: <RefusedAffiliates />
     }
   ]
@@ -39,9 +39,9 @@ export default function Affiliates() {
       </div>
 
       <ul className='flex border border-border-primary p-4 rounded-md'>
-        <li className={"cursor-pointer mx-2 cursor-pointer "+ (model !== "actives" && "text-text-secondary")} onClick={() => setModel("actives")}>Ações</li>
-        <li className={"cursor-pointer mx-2 cursor-pointer "+ (model !== "request" && "text-text-secondary")} onClick={() => setModel("request")}>Crypto Moedas</li>
-        <li className={"cursor-pointer mx-2 cursor-pointer "+ (model !== "refused" && "text-text-secondary")} onClick={() => setModel("refused")}>FLLS</li>
+        <li className={"cursor-pointer mx-2 cursor-pointer "+ (model !== "Ativos" && "text-text-secondary")} onClick={() => setModel("Ativos")}>Ações</li>
+        <li className={"cursor-pointer mx-2 cursor-pointer "+ (model !== "Requisições" && "text-text-secondary")} onClick={() => setModel("Requisições")}>Crypto Moedas</li>
+        <li className={"cursor-pointer mx-2 cursor-pointer "+ (model !== "Recusados" && "text-text-secondary")} onClick={() => setModel("Recusados")}>FLLS</li>
       </ul>
 
       {models.filter(item => item.name === model)[0].component}

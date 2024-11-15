@@ -3,12 +3,11 @@ import { Table } from '@/components/table';
 
 export default function RefusedAffiliates() {
   const formHeader = [
+    {label: "N°", children: (row: any) => row.number}, 
     {label: "NOME", children: (row: any) => row.name}, 
-    {label: "PRODUTO", children: (row: any) => row.product}, 
-    {label: "COMISSÃO", children: (row: any) => row.comissao}, 
-    {label: "CPF/CNPJ", children: (row: any) => row.cpf}, 
-    {label: "EMAIL", children: (row: any) => row.email}, 
-    {label: "AÇÕES", children: (row: any) => <></>},
+    {label: "VALOR", children: (row: any) => row.value}, 
+    {label: "PROJECAO", children: (row: any) => row.projection}, 
+    {label: "ATUALIZADO", children: (row: any) => row.updated}, 
   ];
 
   return (
