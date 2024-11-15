@@ -26,14 +26,10 @@ export default function Affiliates() {
   ]
 
   return (
-    <div className="flex flex-col gap-4 mt-4 mt-0">
+    <div className="flex flex-col gap-4 mt-4">
       <div className="flex justify-between">
         <div className="flex gap-3 items-center">
           <h3 className="text-2xl font-semibold">Meus Afiliados</h3>
-          <span 
-          className="border border-border-primary text-icons-active bg-background-primary bg-opacity-50 px-4 py-1 flex items-center justify-center rounded-lg">
-            0
-        </span>
         </div>
         <button 
           className="flex justify-center inline-flex items-center max-[400px]:px-4 min-[400px]:px-10 py-0 text-sm font-medium text-white bg-green-400 rounded-lg">
@@ -43,9 +39,9 @@ export default function Affiliates() {
       </div>
 
       <ul className='flex border border-border-primary p-4 rounded-md'>
-        <li className={"cursor-pointer mx-2 cursor-pointer "+ (model !== "actives" && "text-text-secondary")} onClick={() => setModel("actives")}>Ativos</li>
-        <li className={"cursor-pointer mx-2 cursor-pointer "+ (model !== "request" && "text-text-secondary")} onClick={() => setModel("request")}>Solicitações</li>
-        <li className={"cursor-pointer mx-2 cursor-pointer "+ (model !== "refused" && "text-text-secondary")} onClick={() => setModel("refused")}>Recusados</li>
+        <li className={"cursor-pointer mx-2 cursor-pointer "+ (model !== "actives" && "text-text-secondary")} onClick={() => setModel("actives")}>Ações</li>
+        <li className={"cursor-pointer mx-2 cursor-pointer "+ (model !== "request" && "text-text-secondary")} onClick={() => setModel("request")}>Crypto Moedas</li>
+        <li className={"cursor-pointer mx-2 cursor-pointer "+ (model !== "refused" && "text-text-secondary")} onClick={() => setModel("refused")}>FLLS</li>
       </ul>
 
       {models.filter(item => item.name === model)[0].component}
