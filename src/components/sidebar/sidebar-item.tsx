@@ -28,9 +28,10 @@ function Item({ item }: { item: ISidebarItem }) {
 
   return (
     <Link href={item.url}>
-      <li className={`flex gap-3 items-center px-4 py-2 hover:text-text-secondary hover:font-medium text-icons-primary ${isActive(item.url)}`}>
+      <li className={`flex gap-3 items-center px-4 py-2 hover:text-text-secondary hover:font-medium text-icons-primary 
+        ${isActive(item.url)}`}>
 
-        <div className="bg-icons-background h-9 w-9 flex items-center justify-center rounded-lg">
+        <div className={`h-9 w-9 flex items-center justify-center rounded-lg ${item.name == "Sair" ? "bg-red-600":"bg-icons-background"}`}>
           {item.icon}
         </div>
 

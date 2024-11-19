@@ -6,9 +6,11 @@ type FormType = {
   header: Array<{ label: string, children: (value: any) => any}>,
   body: Array<any>,
   notfoundMessage?: string,
-  title?: string
+  title?: string,
 }
-export function Table({ header, body, notfoundMessage = "Nenhum registro encontrado", title }: FormType) {
+export function Table({ header, body, notfoundMessage = "Nenhum registro encontrado", title}: FormType) {
+  console.log(body);
+
   return (
     <div className="relative overflow-x-auto rounded-md mt-5">
       {title && (<p className="mb-4">{title}</p>)}

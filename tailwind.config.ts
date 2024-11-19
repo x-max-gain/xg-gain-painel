@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      margin: {
+        'mr-50': '-50px', // Adiciona a classe m-[-50px]
+      },
       colors: {
         background: {
           primary: "#09090B",

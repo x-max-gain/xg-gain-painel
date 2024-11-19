@@ -6,6 +6,7 @@ const dataContent = [
   {
     content: [
       {
+          id:0,
           images: {
             logo: "https://...",
           },
@@ -15,7 +16,7 @@ const dataContent = [
             currency: 'us'
           },
           projection: "190",
-          updatedAt: ""
+          updatedAt: "",
       }
     ],
     pageCurrent: 1,
@@ -26,6 +27,7 @@ const dataContent = [
   {
     content: [
       {
+          id:1,
           images: {
             logo: "https://...",
           },
@@ -35,7 +37,7 @@ const dataContent = [
             currency: 'us'
           },
           projection: "190",
-          updatedAt: ""
+          updatedAt: "",
       }
     ],
     pageCurrent: 1,
@@ -46,6 +48,7 @@ const dataContent = [
   {
     content: [
       {
+          id:2,
           images: {
             logo: "https://...",
           },
@@ -55,7 +58,7 @@ const dataContent = [
             currency: 'us'
           },
           projection: "190",
-          updatedAt: ""
+          updatedAt: "",
       }
     ],
     pageCurrent: 1,
@@ -71,7 +74,7 @@ const bodyData = dataContent.flatMap((data, index) =>
     name: item.name,
     value: `${item.value.price} ${item.value.currency.toUpperCase()}`,
     projection: item.projection,
-    updated: item.updatedAt || "Não atualizado",
+    updated: item.updatedAt || "Não atualizado"
   }))
 );
 
