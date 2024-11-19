@@ -8,8 +8,8 @@ import NextTopLoader from 'nextjs-toploader';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "EscalaPay v2.0",
-  description: "Plataforma de pagamentos",
+  title: "X MAX GAIN",
+  description: "Sua fonte completa para dados de mercado em um só lugar",
 };
 
 export default function RootLayout({
