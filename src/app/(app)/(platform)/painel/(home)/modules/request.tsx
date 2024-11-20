@@ -1,5 +1,6 @@
 "use client";
 import { Table } from '@/components/table';
+import Link from 'next/link';
 
 
 const dataContent = [
@@ -84,7 +85,9 @@ export default function RequestAffiliates() {
     {label: "NOME", children: (row: any) => row.name}, 
     {label: "VALOR", children: (row: any) => row.value}, 
     {label: "PROJECAO", children: (row: any) => row.projection}, 
-    {label: "ATUALIZADO", children: (row: any) => row.updated}, 
+    {label: "ATUALIZADO", children: (row: any) => row.updated},
+    {label: "", children: (row: any) => <Link href="/company/22">Ver Mais</Link>}, 
+
   ];
 
   return (

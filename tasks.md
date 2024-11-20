@@ -21,6 +21,11 @@ PREVISÕES
 GRÁFICOS
 INFORMAÇÔES
 
+separar em blocos cada tipo de informação
+
 1- fazer carrossel com videos 
 2- text-area para comentarios disponivel apenas para usuario logado
 3- 
+
+
+

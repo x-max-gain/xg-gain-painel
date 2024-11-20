@@ -1,5 +1,6 @@
 "use client";
 import { Table } from '@/components/table';
+import Link from 'next/link';
 
 export default function ActivesAffiliates() {
   const formHeader = [
@@ -11,6 +12,6 @@ export default function ActivesAffiliates() {
   ];
 
   return (
-    <Table header={formHeader} body={[]} notfoundMessage="Você não tem nenhum afiliado" />
+    <Table header={formHeader} body={[]}  notfoundMessage="Você não tem nenhum afiliado" />
   )
 }
