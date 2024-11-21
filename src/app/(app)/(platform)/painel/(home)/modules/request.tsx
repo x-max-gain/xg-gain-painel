@@ -86,7 +86,7 @@ export default function RequestAffiliates() {
     {label: "VALOR", children: (row: any) => row.value}, 
     {label: "PROJECAO", children: (row: any) => row.projection}, 
     {label: "ATUALIZADO", children: (row: any) => row.updated},
-    {label: "", children: (row: any) => <Link href="/company/22">Ver Mais</Link>}, 
+    {label: "", children: (row: any) => <Link href="/painel/company/22">Ver Mais</Link>}, 
 
   ];
 

@@ -35,6 +35,9 @@ const config: Config = {
           secondary: "#393939",
           hover: "#049354"
         },
+      },
+      translate: {
+        profile: '-10rem'
       }
     },
   },

@@ -4,9 +4,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'logicc-tecnologia-s3.s3.amazonaws.com',
-        port: '',
-        pathname: '/system/user_default.webp',
+        hostname: '**', // Permite qualquer hostname
+        port: '',       // Permite qualquer porta (ou nenhuma)
+        pathname: '**', // Permite qualquer caminho
       },
     ],
   },
