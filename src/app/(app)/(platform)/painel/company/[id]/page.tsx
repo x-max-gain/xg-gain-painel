@@ -68,19 +68,46 @@ export default function Company() {
           <div className="w-1/4 h-auto" style={{ width: "24.5%"}}>
             {/* ESTATÍSTICAS */}
             <div className="bg-background-primary rounded-md p-4">
-              <h2 className="px-4 py-2"><strong>Comentários</strong></h2>
-              <div className="px-4 w-full">
-                <ul className="h-96 overflow-y-auto">
-                  <li>
-                    <strong>Pedro alberto</strong>
+              <h2 className="px-4 py-2">
+                <strong>Comentários</strong>
+              </h2>
+              <div className="px-1 w-full">
+                <ul className="h-96 overflow-y-auto ">
+                    <li className="border border-stone-200 mt-2 p-[3px] rounded-md">
+                    <strong>Lauricio Magnata</strong>
+                    <p>Quero doar meus bitcoins</p>
+                  </li>
+                    <li className="border border-stone-200 mt-2 p-[3px] rounded-md">
+                    <strong>Lauricio Magnata</strong>
+                    <p>Alguem poderia aceitar meus bitcoins</p>
+                  </li>
+                  <li className="border border-stone-200 mt-2 p-[3px] rounded-md">
+                    <strong>Pedro Alberto</strong>
                     <p>Muito bom</p>
                   </li>
+                    <li className="border border-stone-200 mt-2 p-[3px] rounded-md">
+                    <strong>Lauricio Magnata</strong>
+                    <p>Quero doar meus bitcoins</p>
+                  </li>
+                    <li className="border border-stone-200 mt-2 p-[3px] rounded-md">
+                    <strong>Lauricio Magnata</strong>
+                    <p>Alguem poderia aceitar meus bitcoins</p>
+                  </li>
                 </ul>
-                <div>
-                  <input type="textarea" placeholder="Digite aqui" />
+                <div className="mt-4">
+                  <textarea
+                    placeholder="Deixe o seu comentario"
+                    className="w-full bg-transparent text-balck h-auto p-2 border border-gray-300  rounded-md focus:outline-none resize-none"
+                  />
+                  <button
+                  type="submit"
+                  className="w-full py-2 text-sm font-medium text-white bg-green-500 rounded-md hover:bg-green-600">
+                    Comentar
+                    </button>
                 </div>
               </div>
             </div>
+
             {/* PREVISÕES */}
             <div className="bg-background-primary rounded-md p-4 mt-4">
               <h2 className="px-4 py-2"><strong>Previsões</strong></h2>

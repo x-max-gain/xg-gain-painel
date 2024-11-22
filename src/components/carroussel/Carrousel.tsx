@@ -32,6 +32,7 @@ export default function Carrousel() {
         spaceBetween={230} // Espaçamento entre os slides
         pagination={{ clickable: true }} // Habilita a paginação clicável
         modules={[Pagination]}
+        className="mySwiper"
         mousewheel={{ forceToAxis: true }} // Permite rolar com o mouse
 
       >
