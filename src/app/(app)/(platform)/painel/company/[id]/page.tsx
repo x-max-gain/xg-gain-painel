@@ -2,6 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Sidebar } from "@/components/sidebar/sidebar";
 import { Navbar } from "@/components/navbar/navbar";
+import VideoCarousel from "@/components/carroussel/Carrousel";
+import Carrousel from "@/components/carroussel/Carrousel";
+
+
 
 export default function Company() {
   return (
@@ -43,46 +47,7 @@ export default function Company() {
             <div className="bg-background-primary rounded-md mt-4">
               <h2 className="px-4 py-2"><strong>Vídeos</strong></h2>
               <div className="flex px-4 overflow-x-hidden">
-                <iframe
-                  width="260"
-                  height="170"
-                  src="https://www.youtube.com/embed/cpRrxCwDBM8"
-                  title="YouTube video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-                <iframe
-                  width="260"
-                  height="170"
-                  src="https://www.youtube.com/embed/cpRrxCwDBM8"
-                  title="YouTube video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-                <iframe
-                  width="260"
-                  height="170"
-                  src="https://www.youtube.com/embed/cpRrxCwDBM8"
-                  title="YouTube video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-                <iframe
-                  width="260"
-                  height="170"
-                  src="https://www.youtube.com/embed/cpRrxCwDBM8"
-                  title="YouTube video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-                <iframe
-                  width="260"
-                  height="170"
-                  src="https://www.youtube.com/embed/cpRrxCwDBM8"
-                  title="YouTube video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+               <Carrousel/>
               </div>
             </div>
             {/* ESTATÍSTICAS */}
@@ -112,7 +77,7 @@ export default function Company() {
                   </li>
                 </ul>
                 <div>
-                  <input type="text" placeholder="Digite aqui" />
+                  <input type="textarea" placeholder="Digite aqui" />
                 </div>
               </div>
             </div>
