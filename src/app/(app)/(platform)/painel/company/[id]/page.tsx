@@ -46,7 +46,7 @@ export default function Company() {
             {/* VÍDEOS */}
             <div className="bg-background-primary rounded-md mt-4">
               <h2 className="px-4 py-2"><strong>Vídeos</strong></h2>
-              <div className="flex px-4 overflow-x-hidden">
+              <div className="flex px-4 " style={{ overflowX: "auto", maxWidth: "9999px" }}>
                <Carrousel/>
               </div>
             </div>
