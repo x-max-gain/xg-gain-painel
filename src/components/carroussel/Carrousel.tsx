@@ -10,7 +10,7 @@ export default function Carrousel() {
   const containerStyle: React.CSSProperties = {
     width: '100%',
     height: '100%',
-    padding:"10px"
+    padding:"10px",
   };
 
   const slideStyle: React.CSSProperties = {
@@ -29,12 +29,11 @@ export default function Carrousel() {
     <div style={containerStyle}>
       <Swiper
         slidesPerView={3} // Exibe 3 slides por vez
-        spaceBetween={230} // Espaçamento entre os slides
+        freeMode={true}
         pagination={{ clickable: true }} // Habilita a paginação clicável
         modules={[Pagination]}
         className="mySwiper"
         mousewheel={{ forceToAxis: true }} // Permite rolar com o mouse
-
       >
         <SwiperSlide>
           <iframe

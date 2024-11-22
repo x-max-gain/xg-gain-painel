@@ -36,7 +36,7 @@ export default function Company() {
                 reconhecida por milhões de brasileiros.
               </p>
             </div>
-            {/* VÍDEOS */}
+            {/* INFORMATIONS */}
             <div className="bg-background-primary rounded-md mt-4">
               <h2 className="px-4 py-2"><strong>Informações</strong></h2>
               <div className="flex px-4 overflow-x-hidden">
@@ -44,7 +44,7 @@ export default function Company() {
               </div>
             </div>
             {/* VÍDEOS */}
-            <div className="bg-background-primary rounded-md mt-4">
+            <div className="bg-background-primary rounded-md mt-4" style={{ userSelect: 'none' }}>
               <h2 className="px-4 py-2"><strong>Vídeos</strong></h2>
               <div className="flex px-4 " style={{ overflowX: "auto", maxWidth: "9999px" }}>
                <Carrousel/>
