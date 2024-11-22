@@ -1,15 +1,15 @@
 export default function Bot() {
   return (
     <div className="w-full min-h-screen bg-background-primary">
-      <nav className="border-b shadow-sm p-4 flex justify-between items-center">
+      <nav className="border-b border-green-500 shadow-sm p-4 flex justify-between items-center">
         <div className="flex gap-4">
           <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
             Execultando
           </button>
-          <button className="bg-red-500 px-4 py-2 rounded hover:bg-green-500">
+          <button className="bg-red-500 px-4 py-2 rounded hover:bg-red-700">
             Parados
           </button>
-          <button className="bg-stone-600 text-white px-4 py-2 rounded hover:bg-green-600">
+          <button className="bg-stone-600 text-white px-4 py-2 rounded hover:bg-stone-700">
             Arquivados
           </button>
        </div>
@@ -21,7 +21,7 @@ export default function Bot() {
         </div>
       </nav>
 
-      <nav className="border-b shadow-sm p-4 flex justify-between items-center">
+      <nav className="border-b border-green-500 shadow-sm p-4 flex justify-between items-center">
         <div className="flex gap-4">
           <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
             Modo Simulado

@@ -15,7 +15,7 @@ export const routes: IRoutes[] = [
   {
     icon: <DollarSign size={24} />,
     name: "Financeiro",
-    url: "painel/finance"
+    url: "/painel/finance"
   },
   {
     icon: <LogOut size={24} />,
