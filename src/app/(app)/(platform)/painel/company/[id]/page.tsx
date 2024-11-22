@@ -72,24 +72,24 @@ export default function Company() {
                 <strong>Comentários</strong>
               </h2>
               <div className="px-1 w-full">
-                <ul className="h-96 overflow-y-auto ">
-                    <li className="border border-stone-200 mt-2 p-[3px] rounded-md">
+                <ul className="h-96 overflow-y-auto px-[3px] ">
+                    <li className="mt-2 p-[5px] bg-background-secondary rounded-md">
                     <strong>Lauricio Magnata</strong>
                     <p>Quero doar meus bitcoins</p>
                   </li>
-                    <li className="border border-stone-200 mt-2 p-[3px] rounded-md">
+                    <li className="mt-2 p-[5px] bg-background-secondary rounded-md">
                     <strong>Lauricio Magnata</strong>
                     <p>Alguem poderia aceitar meus bitcoins</p>
                   </li>
-                  <li className="border border-stone-200 mt-2 p-[3px] rounded-md">
+                  <li className="mt-2 p-[5px] bg-background-secondary rounded-md">
                     <strong>Pedro Alberto</strong>
                     <p>Muito bom</p>
                   </li>
-                    <li className="border border-stone-200 mt-2 p-[3px] rounded-md">
+                    <li className="mt-2 p-[5px] bg-background-secondary rounded-md">
                     <strong>Lauricio Magnata</strong>
                     <p>Quero doar meus bitcoins</p>
                   </li>
-                    <li className="border border-stone-200 mt-2 p-[3px] rounded-md">
+                    <li className="mt-2 p-[5px] bg-background-secondary rounded-md">
                     <strong>Lauricio Magnata</strong>
                     <p>Alguem poderia aceitar meus bitcoins</p>
                   </li>
