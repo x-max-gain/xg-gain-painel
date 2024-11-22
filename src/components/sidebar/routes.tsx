@@ -10,12 +10,12 @@ export const routes: IRoutes[] = [
   {
     icon: <Bot size={24} />,
     name: "Bot",
-    url: "/bot"
+    url: "/painel/bot"
   },
   {
     icon: <DollarSign size={24} />,
     name: "Financeiro",
-    url: "/finance"
+    url: "painel/finance"
   },
   {
     icon: <LogOut size={24} />,
