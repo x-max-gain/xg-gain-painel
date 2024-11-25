@@ -33,6 +33,7 @@ export default function Carrousel() {
         pagination={{ clickable: true }} // Habilita a paginação clicável
         modules={[Pagination]}
         className="mySwiper"
+        freeMode={true}
         mousewheel={{ forceToAxis: true }} // Permite rolar com o mouse
       >
         <SwiperSlide>
