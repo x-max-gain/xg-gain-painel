@@ -102,7 +102,7 @@ export default function Company() {
                   <button
                   type="submit"
                   className="w-full py-2 text-sm font-medium text-white bg-green-500 rounded-md hover:bg-green-600">
-                    Comentar
+                    Enviar
                     </button>
                 </div>
               </div>

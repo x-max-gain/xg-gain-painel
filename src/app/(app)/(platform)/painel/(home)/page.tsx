@@ -33,13 +33,9 @@ export default function Affiliates() {
         <>
           <div className="flex justify-between">
             <div className="flex gap-3 items-center">
-              <h3 className="text-2xl font-semibold">Meus Afiliados</h3>
+              <h3 className="text-2xl font-semibold">Melhores Ativos</h3>
             </div>
-            <button 
-              className="flex justify-center inline-flex items-center max-[400px]:px-4 min-[400px]:px-10 py-0 text-sm font-medium text-white bg-green-400 rounded-lg">
-                <SlidersHorizontal className="mr-2" height={14} />
-              <p className='max-[400px]:hidden'>Filtrar</p>
-            </button>
+          
           </div>
 
           <ul className='flex border border-border-primary p-4 rounded-md'>
