@@ -42,18 +42,7 @@ export function Navbar() {
         </div>
 
         <div className="flex w-full items-center justify-end gap-10">
-          <div className="mt-5 flex w-[180px] max-w-[200px] items-center md:w-full">
-            <div className="flex w-full flex-col">
-              <div className="-mt-6 ml-auto flex items-center justify-between text-sm font-semibold">
-                <span className="mr-1 text-base">🚀</span>
-                <span>R$ 927k / R$ 1M</span>
-              </div>
-              <div className="mt-1 w-full rounded-full bg-icons-background">
-                <div className="h-2.5 rounded-full bg-background-green" style={{ width: "87.27%" }}></div>
-              </div>
-            </div>
-          </div>
-
+        
           <div className="flex items-center gap-4">
             <button>
               <div className="flex items-center gap-6">

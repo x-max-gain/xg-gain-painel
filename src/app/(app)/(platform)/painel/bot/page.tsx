@@ -1,61 +1,317 @@
+import { Pause, Plus } from "lucide-react";
+import { after } from "node:test";
+
 export default function Bot() {
   return (
     <div className="w-full min-h-screen bg-background-primary">
-      <nav className="border-b border-green-500 shadow-sm p-4 flex justify-between items-center">
+      
+      <nav className="border-b border-green-500 shadow-sm p-4 flex justify-center items-center">
+      <div className="flex gap-1">
+          <button
+            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            style={{
+              clipPath: "polygon(0% 0%, 100% 0%, 90% 1590%, 10% 100%)",
+              transition: "background-color 0.3s",
+            }}
+          >
+            Modo Simulado
+          </button>
+
+          <button
+            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            style={{
+              clipPath: "polygon(0% 0%, 100% 0%, 90% 100%, 10% 1590%)",
+              transition: "background-color 0.3s",
+            }}
+         
+          >
+            Modo Real
+          </button>
+        </div>
+
+      </nav>
+
+      <nav className="border-b border-green-500 shadow-sm p-4 flex justify-center items-center">
         <div className="flex gap-4">
-          <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+          <button className="px-4 py-2">
             Execultando
           </button>
-          <button className="bg-red-500 px-4 py-2 rounded hover:bg-red-700">
+          <button className="px-4 py-2">
             Parados
           </button>
-          <button className="bg-stone-600 text-white px-4 py-2 rounded hover:bg-stone-700">
+          <button className="px-4 py-2">
             Arquivados
           </button>
        </div>
 
-        <div> 
-          <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
-            NOVO BOT
-          </button>
-        </div>
+       
+
       </nav>
 
-      <nav className="border-b border-green-500 shadow-sm p-4 flex justify-between items-center">
-        <div className="flex gap-4">
-          <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
-            Modo Simulado
-          </button>
-          <button className="px-4 py-2 rounded hover:bg-green-500">
-            Modo Real
-          </button>
-        </div>
-      </nav>
+      <div style={{ position: "relative", height: "100px" }}>
+        <button
+          className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+          style={{ position: "absolute", top: "10px", right: "0" }}
+        >
+          <Plus/>
+        </button>
+      </div>
+    
 
-      {/* Conteúdo principal */}
-      <main className="p-8">
-        {/* Filtro e gráfico */}
-        <div className="mt-1 bg-background-secondary p-6 shadow rounded flex items-center justify-between">
-          <div>
-            <h2 className="text-lg font-bold">#3945605</h2>
-            <p className="text-gray-600">Lauricio-Bitcoin</p>
+      <main className="px-8 flex gap-3 items-center flex-wrap justify-center ">
+        <div className="w-full max-w-[300px] bg-background-secondary shadow rounded p-6">
+          <div className="flex justify-between items-center">
+            <h2 className="text-green-500 font-bold">#3945605</h2>
+            <p className="text-gray-500">Pessimista</p>
           </div>
-          <div>
-            <p className="text-green-600 text-xl">R$320,00</p>
-            <p className="text-gray-500">Saldo diário: R$999,00</p>
+          <h3 className="text-lg font-semibold text-white-600">Alcan-fibonacci</h3>
+          <p className="text-gray-400">Fibonacci</p>
+
+          <div className="h-32 bg-background-primary mt-4 rounded flex items-center justify-center">
+            <p className="text-gray-500">[Gráfico Aqui]</p>
           </div>
+
+          <div className="flex justify-between mt-4">
+            <div>
+              <p className="text-gray-500">2</p>
+              <p className="text-gray-700 font-semibold">WINZ24</p>
+              <p className="text-green-600">R$134,00</p>
+            </div>
+            <div className="text-right">
+              <p className="text-gray-400">240,00</p>
+              <p className="text-gray-500">Venda</p>
+            </div>
+          </div>
+
+          <div className="flex justify-between mt-4">
+            <p className="text-green-600 text-lg font-semibold">R$260,50</p>
+            <p className="text-red-600 text-lg font-semibold">R$-49,00</p>
+          </div>
+
+            <div className="mt-4 flex items-center justify-between">
+              <button className="text-gray-500 flex items-center">
+                MAIS INFO
+              </button>
+              <button className="flex items-center">
+                <span className="text-gray-500 mr-2">Executando</span>
+                <span className="p-1 border border-green-500 hover:bg-green-500">
+                  <Pause width={20} height={20}/>
+                </span>
+              </button>
+           </div>
         </div>
-        <div className="mt-1 bg-background-secondary p-6 shadow rounded flex items-center justify-between">
-          <div>
-            <h2 className="text-lg font-bold">#3945605</h2>
-            <p className="text-gray-600">Alcan-Fibonacci</p>
+
+        <div className="w-full max-w-[300px] bg-background-secondary shadow rounded p-6">
+          <div className="flex justify-between items-center">
+            <h2 className="text-green-500 font-bold">#3945605</h2>
+            <p className="text-gray-500">Pessimista</p>
           </div>
-          <div>
-            <p className="text-green-600 text-xl">R$310,00</p>
-            <p className="text-gray-500">Saldo diário: R$199,00</p>
+          <h3 className="text-lg font-semibold text-white-600">Alcan-fibonacci</h3>
+          <p className="text-gray-400">Fibonacci</p>
+
+          <div className="h-32 bg-background-primary mt-4 rounded flex items-center justify-center">
+            <p className="text-gray-500">[Gráfico Aqui]</p>
           </div>
+
+          <div className="flex justify-between mt-4">
+            <div>
+              <p className="text-gray-500">2</p>
+              <p className="text-gray-700 font-semibold">WINZ24</p>
+              <p className="text-green-600">R$134,00</p>
+            </div>
+            <div className="text-right">
+              <p className="text-gray-400">240,00</p>
+              <p className="text-gray-500">Venda</p>
+            </div>
+          </div>
+
+          <div className="flex justify-between mt-4">
+            <p className="text-green-600 text-lg font-semibold">R$260,50</p>
+            <p className="text-red-600 text-lg font-semibold">R$-49,00</p>
+          </div>
+
+            <div className="mt-4 flex items-center justify-between">
+              <button className="text-gray-500 flex items-center">
+                MAIS INFO
+              </button>
+              <button className="flex items-center">
+                <span className="text-gray-500 mr-2">Executando</span>
+                <span className="p-1 border border-green-500 hover:bg-green-500">
+                  <Pause width={20} height={20}/>
+                </span>
+              </button>
+           </div>
+        </div>
+
+        <div className="w-full max-w-[300px] bg-background-secondary shadow rounded p-6">
+          <div className="flex justify-between items-center">
+            <h2 className="text-green-500 font-bold">#3945605</h2>
+            <p className="text-gray-500">Pessimista</p>
+          </div>
+          <h3 className="text-lg font-semibold text-white-600">Alcan-fibonacci</h3>
+          <p className="text-gray-400">Fibonacci</p>
+
+          <div className="h-32 bg-background-primary mt-4 rounded flex items-center justify-center">
+            <p className="text-gray-500">[Gráfico Aqui]</p>
+          </div>
+
+          <div className="flex justify-between mt-4">
+            <div>
+              <p className="text-gray-500">2</p>
+              <p className="text-gray-700 font-semibold">WINZ24</p>
+              <p className="text-green-600">R$134,00</p>
+            </div>
+            <div className="text-right">
+              <p className="text-gray-400">240,00</p>
+              <p className="text-gray-500">Venda</p>
+            </div>
+          </div>
+
+          <div className="flex justify-between mt-4">
+            <p className="text-green-600 text-lg font-semibold">R$260,50</p>
+            <p className="text-red-600 text-lg font-semibold">R$-49,00</p>
+          </div>
+
+            <div className="mt-4 flex items-center justify-between">
+              <button className="text-gray-500 flex items-center">
+                MAIS INFO
+              </button>
+              <button className="flex items-center">
+                <span className="text-gray-500 mr-2">Executando</span>
+                <span className="p-1 border border-green-500 hover:bg-green-500">
+                  <Pause width={20} height={20}/>
+                </span>
+              </button>
+           </div>
+        </div>
+
+        <div className="w-full max-w-[300px] bg-background-secondary shadow rounded p-6">
+          <div className="flex justify-between items-center">
+            <h2 className="text-green-500 font-bold">#3945605</h2>
+            <p className="text-gray-500">Pessimista</p>
+          </div>
+          <h3 className="text-lg font-semibold text-white-600">Alcan-fibonacci</h3>
+          <p className="text-gray-400">Fibonacci</p>
+
+          <div className="h-32 bg-background-primary mt-4 rounded flex items-center justify-center">
+            <p className="text-gray-500">[Gráfico Aqui]</p>
+          </div>
+
+          <div className="flex justify-between mt-4">
+            <div>
+              <p className="text-gray-500">2</p>
+              <p className="text-gray-700 font-semibold">WINZ24</p>
+              <p className="text-green-600">R$134,00</p>
+            </div>
+            <div className="text-right">
+              <p className="text-gray-400">240,00</p>
+              <p className="text-gray-500">Venda</p>
+            </div>
+          </div>
+
+          <div className="flex justify-between mt-4">
+            <p className="text-green-600 text-lg font-semibold">R$260,50</p>
+            <p className="text-red-600 text-lg font-semibold">R$-49,00</p>
+          </div>
+
+            <div className="mt-4 flex items-center justify-between">
+              <button className="text-gray-500 flex items-center">
+                MAIS INFO
+              </button>
+              <button className="flex items-center">
+                <span className="text-gray-500 mr-2">Executando</span>
+                <span className="p-1 border border-green-500 hover:bg-green-500">
+                  <Pause width={20} height={20}/>
+                </span>
+              </button>
+           </div>
+        </div>
+
+        <div className="w-full max-w-[300px] bg-background-secondary shadow rounded p-6">
+          <div className="flex justify-between items-center">
+            <h2 className="text-green-500 font-bold">#3945605</h2>
+            <p className="text-gray-500">Pessimista</p>
+          </div>
+          <h3 className="text-lg font-semibold text-white-600">Alcan-fibonacci</h3>
+          <p className="text-gray-400">Fibonacci</p>
+
+          <div className="h-32 bg-background-primary mt-4 rounded flex items-center justify-center">
+            <p className="text-gray-500">[Gráfico Aqui]</p>
+          </div>
+
+          <div className="flex justify-between mt-4">
+            <div>
+              <p className="text-gray-500">2</p>
+              <p className="text-gray-700 font-semibold">WINZ24</p>
+              <p className="text-green-600">R$134,00</p>
+            </div>
+            <div className="text-right">
+              <p className="text-gray-400">240,00</p>
+              <p className="text-gray-500">Venda</p>
+            </div>
+          </div>
+
+          <div className="flex justify-between mt-4">
+            <p className="text-green-600 text-lg font-semibold">R$260,50</p>
+            <p className="text-red-600 text-lg font-semibold">R$-49,00</p>
+          </div>
+
+            <div className="mt-4 flex items-center justify-between">
+              <button className="text-gray-500 flex items-center">
+                MAIS INFO
+              </button>
+              <button className="flex items-center">
+                <span className="text-gray-500 mr-2">Executando</span>
+                <span className="p-1 border border-green-500 hover:bg-green-500">
+                  <Pause width={20} height={20}/>
+                </span>
+              </button>
+           </div>
+        </div>
+
+        <div className="w-full max-w-[300px] bg-background-secondary shadow rounded p-6">
+          <div className="flex justify-between items-center">
+            <h2 className="text-green-500 font-bold">#3945605</h2>
+            <p className="text-gray-500">Pessimista</p>
+          </div>
+          <h3 className="text-lg font-semibold text-white-600">Alcan-fibonacci</h3>
+          <p className="text-gray-400">Fibonacci</p>
+
+          <div className="h-32 bg-background-primary mt-4 rounded flex items-center justify-center">
+            <p className="text-gray-500">[Gráfico Aqui]</p>
+          </div>
+
+          <div className="flex justify-between mt-4">
+            <div>
+              <p className="text-gray-500">2</p>
+              <p className="text-gray-700 font-semibold">WINZ24</p>
+              <p className="text-green-600">R$134,00</p>
+            </div>
+            <div className="text-right">
+              <p className="text-gray-400">240,00</p>
+              <p className="text-gray-500">Venda</p>
+            </div>
+          </div>
+
+          <div className="flex justify-between mt-4">
+            <p className="text-green-600 text-lg font-semibold">R$260,50</p>
+            <p className="text-red-600 text-lg font-semibold">R$-49,00</p>
+          </div>
+
+            <div className="mt-4 flex items-center justify-between">
+              <button className="text-gray-500 flex items-center">
+                MAIS INFO
+              </button>
+              <button className="flex items-center">
+                <span className="text-gray-500 mr-2">Executando</span>
+                <span className="p-1 border border-green-500 hover:bg-green-500">
+                  <Pause width={20} height={20}/>
+                </span>
+              </button>
+           </div>
         </div>
       </main>
+
     </div>
   );
 }
