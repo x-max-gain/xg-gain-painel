@@ -18,11 +18,7 @@
 
 body {
   color: #fff;
-  background-image: url('/background.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+  background-color: #101010;
 }
 
 @layer utilities {
@@ -41,7 +37,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #08DD7E;
+  background-color: #08dd7e;
   border-radius: 10px;
   border: 3px solid #131315;
 }

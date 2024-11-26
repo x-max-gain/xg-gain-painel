@@ -4,7 +4,7 @@ import { Pause, Plus, SidebarClose } from "lucide-react";
 import { useState } from "react";
 
 export default function Bot() {
-  const [modalIsOpen, setModalIsOpen] = useState(true);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalStage, setModalStage] = useState(1);
 
   return (
