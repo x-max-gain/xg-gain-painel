@@ -1,7 +1,12 @@
-import { Pause, Plus } from "lucide-react";
-import { after } from "node:test";
+'use client'
+
+import { Pause, Plus, SidebarClose } from "lucide-react";
+import { useState } from "react";
 
 export default function Bot() {
+  const [modalIsOpen, setModalIsOpen] = useState(true);
+  const [modalStage, setModalStage] = useState(1);
+
   return (
     <div className="w-full min-h-screen bg-background-primary">
       
@@ -28,7 +33,6 @@ export default function Bot() {
             Modo Real
           </button>
         </div>
-
       </nav>
 
       <nav className="border-b border-green-500 shadow-sm p-4 flex justify-center items-center">
@@ -43,15 +47,15 @@ export default function Bot() {
             Arquivados
           </button>
        </div>
-
-       
-
       </nav>
+
+     
 
       <div style={{ position: "relative", height: "100px" }}>
         <button
           className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
           style={{ position: "absolute", top: "10px", right: "0" }}
+          onClick={() => setModalIsOpen(!modalIsOpen)}
         >
           <Plus/>
         </button>
@@ -59,6 +63,81 @@ export default function Bot() {
     
 
       <main className="px-8 flex gap-3 items-center flex-wrap justify-center ">
+      
+      <div className={`${modalIsOpen ? "block" : "hidden"} w-full fixed inset-0 bg-background-primary bg-opacity-50 flex justify-center items-center z-50`}>
+          <div className="bg-background-secondary text-white rounded-lg p-6 w-96">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-semibold">Criar Novo Bot</h2>
+            </div>
+            <form >
+              <div className="mb-4">
+                <label htmlFor="botName" className="block text-sm font-medium">
+                  Nome do Bot
+                </label>
+                <input
+                  type="text"
+                  id="botName"
+                  name="botName"
+                  value={"lauricio teste"}
+                  className="mt-1 block w-full p-2 bg-transparent border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="strategy" className="block text-sm font-medium">
+                  Estratégia
+                </label>
+                <select
+                  id="strategy"
+                  name="strategy"
+                    className="mt-1 block w-full p-2 bg-background-secondary border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                  required
+                >
+                  <option value="fibonacci">Fibonacci</option>
+                  <option value="martingale">Martingale</option>
+                </select>
+              </div>
+              <div className="mb-4">
+                <label htmlFor="riskProfile" className="block text-sm font-medium">
+                  Perfil de Risco
+                </label>
+                <select
+                  id="riskProfile"
+                  name="riskProfile"
+                  value={"sim"}
+                                     
+                   className="mt-1 block w-full p-2 bg-background-secondary  border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                  required
+                >
+                  <option value="conservador">Conservador</option>
+                  <option value="moderado">Moderado</option>
+                  <option value="agressivo">Agressivo</option>
+                </select>
+              </div>
+              <div className="mb-4">
+                <label htmlFor="initialValue" className="block text-sm font-medium">
+                  Valor Inicial (R$)
+                </label>
+                <input
+                  type="number"
+                  id="initialValue"
+                  name="initialValue"
+                  value={"5432"}
+                  className="mt-1 block w-full p-2 bg-background-secondary border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                  min="1"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md transition"
+              >
+                Criar Bot
+              </button>
+            </form>
+          </div>
+        </div>
+
         <div className="w-full max-w-[300px] bg-background-secondary shadow rounded p-6">
           <div className="flex justify-between items-center">
             <h2 className="text-green-500 font-bold">#3945605</h2>

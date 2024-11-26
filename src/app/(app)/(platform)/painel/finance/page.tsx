@@ -1,3 +1,5 @@
+import { Link } from "lucide-react";
+
 export default function Finnance() {
   return (
     <div className="w-full min-h-screen bg-primary">
@@ -11,13 +13,13 @@ export default function Finnance() {
       <section className="p-6 bg-background-primary shadow-md">
         <h2 className="text-lg font-bold text-white-700 mb-4">Filtros</h2>
         <div className="flex gap-4">
-          <select className="border bg-transparent border-green-500 rounded px-2 py-2">
+          <select className="border bg-background-primary text-white border-green-500 rounded px-2 py-2 appearance-none">
             <option>Selecionar período</option>
             <option>Última semana</option>
             <option>Último mês</option>
             <option>Último ano</option>
           </select>
-          <select className="border bg-transparent border-green-500 rounded px-2 py-2">
+          <select className="border bg-background-primary text-white border-green-500 rounded px-2 py-2 appearance-none">
             <option>Tipo de Bot</option>
             <option>Fibonacci</option>
             <option>Laurício-Bitcoin</option>
@@ -37,7 +39,7 @@ export default function Finnance() {
             <p className="text-green-600 text-2xl font-bold">R$ 1.530,00</p>
           </div>
           <div className="p-4 bg-background-secondary rounded shadow">
-            <p className="text-sm text-white">Saldo Diário Médio</p>
+            <p className="text-sm text-white">Lucro Diário Médio</p>
             <p className="text-green-600 text-2xl font-bold">R$ 200,00</p>
           </div>
           <div className="p-4 bg-background-secondary rounded shadow">
@@ -56,28 +58,25 @@ export default function Finnance() {
         <h2 className="text-lg font-bold text-white-700 mb-4">Detalhes por Bot</h2>
         <table className="w-full border-collapse border border-green-500 text-sm">
           <thead>
-            <tr className="bg-green-500">
-              <th className="border border-green-500 p-2">#ID</th>
+            <tr className="bg-background-deep">
               <th className="border border-green-500 p-2">Nome</th>
               <th className="border border-green-500 p-2">Lucro</th>
-              <th className="border border-green-500 p-2">Saldo Diário</th>
+              <th className="border border-green-500 p-2">Lucro Diário</th>
               <th className="border border-green-500 p-2">Status</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="border border-green-500 p-2">#3945605</td>
+            <tr className="text-center">
               <td className="border border-green-500 p-2">Laurício-Bitcoin</td>
               <td className="border border-green-500 p-2 text-green-600">R$ 320,00</td>
               <td className="border border-green-500 p-2 text-green-600">R$ 999,00</td>
-              <td className="border border-green-500 p-2 text-green-500">Ativo</td>
+              <td className="border border-green-500 p-2 text-green-500">ATIVO</td>
             </tr>
-            <tr>
-              <td className="border border-green-500 p-2">#3945606</td>
+            <tr className="text-center">
               <td className="border border-green-500 p-2">Alcan-Fibonacci</td>
               <td className="border border-green-500 p-2 text-green-600">R$ 310,00</td>
               <td className="border border-green-500 p-2 text-green-600">R$ 199,00</td>
-              <td className="border border-green-500 p-2 text-red-500">Parado</td>
+              <td className="border border-green-500 p-2 text-red-500">PARADO</td>
             </tr>
           </tbody>
         </table>

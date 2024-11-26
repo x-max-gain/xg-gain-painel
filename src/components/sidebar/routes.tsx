@@ -1,5 +1,5 @@
 import { IRoutes } from "@/interfaces/routes-interface";
-import { Banknote, Box, DollarSign, Handshake, Home, Bot, MousePointerClick, Paperclip, PencilRuler, Settings, ShoppingBasket, ShoppingCart, User, Users, LogOut } from "lucide-react";
+import { Banknote, Box, DollarSign, Handshake, Home, Bot, MousePointerClick, Paperclip, PencilRuler, Settings, ShoppingBasket, ShoppingCart, User, Users, LogOut, User2 } from "lucide-react";
 
 export const routes: IRoutes[] = [
   {
@@ -16,6 +16,11 @@ export const routes: IRoutes[] = [
     icon: <DollarSign size={24} />,
     name: "Financeiro",
     url: "/painel/finance"
+  },
+  {
+    icon: <User2 size={24} />,
+    name: "Conta",
+    url: "/painel/account/22"
   },
   {
     icon: <LogOut size={24} />,
