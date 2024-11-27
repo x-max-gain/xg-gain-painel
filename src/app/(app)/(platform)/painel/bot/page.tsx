@@ -35,13 +35,13 @@ export default function Bot() {
 
       <nav className="shadow-sm p-4 flex justify-center items-center">
         <div className="flex gap-4">
-          <button className="px-4 py-2">
+          <button className="px-1 sm:px-4 py-2">
             Execultando
           </button>
-          <button className="px-4 py-2">
+          <button className="px-1 sm:px-4 py-2">
             Parados
           </button>
-          <button className="px-4 py-2">
+          <button className="px-1 sm:px-4 py-2">
             Arquivados
           </button>
        </div>

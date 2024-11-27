@@ -6,29 +6,32 @@ export default function InfoBot() {
       <nav className="flex align-center justify-between ">
         <div className="w-full flex gap-1 align-center justify-center ">
           <button
-            className="bg-green-500 flex gap-3 text-white px-4 py-2 rounded hover:bg-green-600"
+            className="bg-green-500 flex gap-3 text-xs md:text-base text-white px-4 py-2 rounded hover:bg-green-600"
             style={{
               clipPath: "polygon(0% 0%, 100% 0%, 90% 1590%, 10% 100%)",
               transition: "background-color 0.3s",
             }}
           >
-           <ListCollapse/> <span>SUMÁRIO</span>
+           <ListCollapse  className="w-5 smaller:w-1" /> <span className="hidden md:block">SUMÁRIO</span>
           </button>
 
           <button
-            className="flex gap-3 text-white px-4 py-2 rounded hover:bg-green-600"
+            className="flex gap-3 text-xs md:text-base text-white px-4 py-2 rounded hover:bg-green-600"
           >
-           <AudioLines /> <span>GRÁFICO</span>
+            <AudioLines
+              className="w-5 smaller:w-2.5"
+            />
+            <span className="hidden md:block">GRÁFICO</span>
           </button>
           
           <button
-            className="flex gap-3 text-white px-4 py-2 rounded hover:bg-green-600"
+            className="flex gap-3 text-xs md:text-base text-white px-4 py-2 rounded hover:bg-green-600"
             style={{
               clipPath: "polygon(0% 0%, 100% 0%, 90% 100%, 10% 1590%)",
               transition: "background-color 0.3s",
             }}
           >
-            <Parentheses/><span>PARÂMETROS</span>
+            <Parentheses   className="w-5 smaller:w-2.5" /><span className="hidden md:block">PARÂMETROS</span>
           </button>
         </div>
       </nav>

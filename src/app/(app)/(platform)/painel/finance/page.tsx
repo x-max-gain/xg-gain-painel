@@ -12,19 +12,19 @@ export default function Finnance() {
       {/* Filtros */}
       <section className="p-6 bg-background-primary shadow-md">
         <h2 className="text-lg font-bold text-white-700 mb-4">Filtros</h2>
-        <div className="flex gap-4">
-          <select className="border bg-background-primary text-white border-green-500 rounded px-2 py-2 appearance-none">
+        <div className="flex gap-1 md:gap-4 justify-center md:justify-start">
+          <select className="border text-xs md:text-base bg-background-primary text-white border-green-500 rounded px-2 py-2 appearance-none">
             <option>Selecionar período</option>
             <option>Última semana</option>
             <option>Último mês</option>
             <option>Último ano</option>
           </select>
-          <select className="border bg-background-primary text-white border-green-500 rounded px-2 py-2 appearance-none">
+          <select className="border text-xs md:text-base bg-background-primary text-white border-green-500 rounded px-2 py-2 appearance-none">
             <option>Tipo de Bot</option>
             <option>Fibonacci</option>
             <option>Laurício-Bitcoin</option>
           </select>
-          <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+          <button className="bg-green-500 text-xs md:text-base text-white px-4 py-2 rounded hover:bg-green-600">
             Aplicar
           </button>
         </div>
@@ -59,72 +59,72 @@ export default function Finnance() {
         <table className="w-full border-collapse border border-green-500 text-sm">
           <thead>
             <tr className="bg-background-deep">
-              <th className="border border-green-500 p-2">Nome</th>
-              <th className="border border-green-500 p-2">Lucro</th>
-              <th className="border border-green-500 p-2">Lucro Diário</th>
-              <th className="border border-green-500 p-2">Status</th>
+              <th className="border border-green-500 p-2 text-xs md:text-base">Nome</th>
+              <th className="border border-green-500 p-2 text-xs md:text-base">Lucro</th>
+              <th className="border border-green-500 p-2 text-xs md:text-base">Lucro Diário</th>
+              <th className="border border-green-500 p-2 text-xs md:text-base">Status</th>
             </tr>
           </thead>
           <tbody>
             <tr className="text-center">
-              <td className="border border-green-500 p-2">Laurício-Bitcoin</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 320,00</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 999,00</td>
-              <td className="border border-green-500 p-2 text-green-500">ATIVO</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base">Laurício-Bitcoin</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 320,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 999,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-500">ATIVO</td>
             </tr>
             <tr className="text-center">
-              <td className="border border-green-500 p-2">Alcan-Fibonacci</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 310,00</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 199,00</td>
-              <td className="border border-green-500 p-2 text-red-500">PARADO</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base">Alcan-Fibonacci</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 310,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 199,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-red-500">PARADO</td>
             </tr>
             <tr className="text-center">
-              <td className="border border-green-500 p-2">Laurício-Bitcoin</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 320,00</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 999,00</td>
-              <td className="border border-green-500 p-2 text-green-500">ATIVO</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base">Laurício-Bitcoin</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 320,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 999,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-500">ATIVO</td>
             </tr>
             <tr className="text-center">
-              <td className="border border-green-500 p-2">Alcan-Fibonacci</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 310,00</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 199,00</td>
-              <td className="border border-green-500 p-2 text-red-500">PARADO</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base">Alcan-Fibonacci</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 310,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 199,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-red-500">PARADO</td>
             </tr>
             <tr className="text-center">
-              <td className="border border-green-500 p-2">Laurício-Bitcoin</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 320,00</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 999,00</td>
-              <td className="border border-green-500 p-2 text-green-500">ATIVO</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base">Laurício-Bitcoin</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 320,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 999,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-500">ATIVO</td>
             </tr>
             <tr className="text-center">
-              <td className="border border-green-500 p-2">Alcan-Fibonacci</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 310,00</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 199,00</td>
-              <td className="border border-green-500 p-2 text-red-500">PARADO</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base">Alcan-Fibonacci</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 310,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 199,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-red-500">PARADO</td>
             </tr>
             <tr className="text-center">
-              <td className="border border-green-500 p-2">Laurício-Bitcoin</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 320,00</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 999,00</td>
-              <td className="border border-green-500 p-2 text-green-500">ATIVO</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base">Laurício-Bitcoin</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 320,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 999,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-500">ATIVO</td>
             </tr>
             <tr className="text-center">
-              <td className="border border-green-500 p-2">Alcan-Fibonacci</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 310,00</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 199,00</td>
-              <td className="border border-green-500 p-2 text-red-500">PARADO</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base">Alcan-Fibonacci</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 310,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 199,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-red-500">PARADO</td>
             </tr>
             <tr className="text-center">
-              <td className="border border-green-500 p-2">Laurício-Bitcoin</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 320,00</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 999,00</td>
-              <td className="border border-green-500 p-2 text-green-500">ATIVO</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base">Laurício-Bitcoin</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 320,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 999,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-500">ATIVO</td>
             </tr>
             <tr className="text-center">
-              <td className="border border-green-500 p-2">Alcan-Fibonacci</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 310,00</td>
-              <td className="border border-green-500 p-2 text-green-600">R$ 199,00</td>
-              <td className="border border-green-500 p-2 text-red-500">PARADO</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base">Alcan-Fibonacci</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 310,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-green-600">R$ 199,00</td>
+              <td className="border border-green-500 p-2 text-xs md:text-base text-red-500">PARADO</td>
             </tr>
           </tbody>
         </table>

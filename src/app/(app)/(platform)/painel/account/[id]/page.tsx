@@ -11,23 +11,23 @@ export default function Account() {
   return (
     <div className="bg-background-primary">
       <div className="flex justify-center">
-        <div className="p-4 flex w-full justify-between">
-          <div className="h-auto" style={{ width: "74.5%"}}>
-            {/* PROFILE */}
+        <div className="p-4 flex flex-col flex-wrap w-full justify-between sm:flex-row sm:w-full">
+          <div className="h-auto w-full max-w-[100%] sm:max-w-[74.5%]">
+
             <div className="bg-background-deep rounded-md p-4">
-              <div className="flex">
+              <div className="flex flex-col gap-2 sm:gap-4 sm:flex-row ">
                 <Image
                   src="https://logicc-tecnologia-s3.s3.amazonaws.com/system/user_default.webp"
                   alt="User"
-                  className="object-cover mr-4"
+                  className="object-cover mr-4 w-[100px] h-[100px] sm:w-[200px] sm:h-[200px]"
                   width={200}
                   height={200}
                 />
                 <div className="flex flex-col">
-                  <h1 className="text-2xl">Lauricio De Sousa Oliveira</h1>
-                  <p>CPF: 043.921.432.01</p>
-                  <p>EMAIL: developerwebmasterpro@gmail.com</p>
-                  <p>TELEFONE: (63) 99999-9090</p>
+                  <h1 className="text-5md sm:text-2xl ">Lauricio De Sousa Oliveira</h1>
+                  <p className="text-xs sm:text-base">CPF: 043.921.432.01</p>
+                  <p className="text-xs sm:text-base">EMAIL: developerwebmasterpro@gmail.com</p>
+                  <p className="text-xs sm:text-base">TELEFONE: (63) 99999-9090</p>
                 </div>
               </div>
             
@@ -47,7 +47,7 @@ export default function Account() {
             </div>
         
           </div>
-          <div className="w-1/4 h-auto" style={{ width: "24.5%"}}>
+          <div className="w-full h-auto max-w-1/4 sm:max-w-[24.5%]">
             <div className="bg-background-deep rounded-md p-4 mt-4">
               <h2 className="px-4 py-2"><strong>Lista de depósitos</strong></h2>
               <div className="px-4 w-full">
