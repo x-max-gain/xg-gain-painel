@@ -1,5 +1,5 @@
 import { IRoutes } from "@/interfaces/routes-interface";
-import { Banknote, Box, DollarSign, Handshake, Home, Bot, MousePointerClick, Paperclip, PencilRuler, Settings, ShoppingBasket, ShoppingCart, User, Users, LogOut, User2 } from "lucide-react";
+import { Banknote, Box, DollarSign, Handshake, Home, Bot, LogOut, User2, HeadphonesIcon, HelpCircle } from "lucide-react";
 
 export const routes: IRoutes[] = [
   {
@@ -21,6 +21,11 @@ export const routes: IRoutes[] = [
     icon: <User2 size={24} />,
     name: "Conta",
     url: "/painel/account/22"
+  },
+  {
+    icon: <HelpCircle size={24} />,
+    name: "Ajuda",
+    url: "/painel/help"
   },
   {
     icon: <LogOut size={24} />,

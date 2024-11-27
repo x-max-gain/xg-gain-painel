@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Sidebar } from "../sidebar/sidebar";
 import { NavbarMobile } from "./navbar-mobile";
-import Link from "next/link";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -31,7 +30,7 @@ export function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 flex items-center px-4 py-4 bg-background-primary lg:backdrop-blur-xl md:px-5 lg:px-10 2xl:py-5 3xl:px-8 4xl:px-10">
+      <header className="sticky top-0 z-50 flex items-center px-4 py-4 bg-black lg:backdrop-blur-xl md:px-5 lg:px-10 2xl:py-5 3xl:px-8 4xl:px-10">
         <div className="flex w-full max-w-2xl items-center">
       
         {  <button

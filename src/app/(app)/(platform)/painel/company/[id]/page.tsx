@@ -9,12 +9,12 @@ import Carrousel from "@/components/carroussel/Carrousel";
 
 export default function Company() {
   return (
-    <div className="bg-background-secondary">
+    <div className="bg-background-primary">
       <div className="flex justify-center">
         <div className="p-4 flex w-full justify-between">
           <div className="h-auto" style={{ width: "74.5%"}}>
             {/* PROFILE */}
-            <div className="bg-background-primary rounded-md p-4">
+            <div className="bg-background-secondary rounded-md p-4">
               <div className="flex">
                 <Image
                   src="https://brandcenter.americanas.io/wp-content/uploads/2022/02/logo_2-01-e1658341093253.png"
@@ -37,28 +37,28 @@ export default function Company() {
               </p>
             </div>
             {/* INFORMATIONS */}
-            <div className="bg-background-primary rounded-md mt-4">
+            <div className="bg-background-secondary rounded-md mt-4">
               <h2 className="px-4 py-2"><strong>Informações</strong></h2>
               <div className="flex px-4 overflow-x-hidden">
                 
               </div>
             </div>
             {/* VÍDEOS */}
-            <div className="bg-background-primary rounded-md mt-4" style={{ userSelect: 'none' }}>
+            <div className="bg-background-secondary rounded-md mt-4" style={{ userSelect: 'none' }}>
               <h2 className="px-4 py-2"><strong>Vídeos</strong></h2>
               <div className="flex px-4 " style={{ overflowX: "auto", maxWidth: "9999px" }}>
                <Carrousel/>
               </div>
             </div>
             {/* ESTATÍSTICAS */}
-            <div className="bg-background-primary rounded-md mt-4 flex flex-col p-4 gap-2">
+            <div className="bg-background-secondary rounded-md mt-4 flex flex-col p-4 gap-2">
               <h2 className="px-4 py-2"><strong>Estatísticas</strong></h2>
               <div className="flex px-4 overflow-x-hidden">
                 
               </div>
             </div>
             {/* GRÁFICOS */}
-            <div className="bg-background-primary rounded-md mt-4 flex flex-col p-4 gap-2">
+            <div className="bg-background-secondary rounded-md mt-4 flex flex-col p-4 gap-2">
               <h2 className="px-4 py-2"><strong>Gráficos</strong></h2>
               <div className="flex px-4 overflow-x-hidden">
                 
@@ -67,29 +67,29 @@ export default function Company() {
           </div>
           <div className="w-1/4 h-auto" style={{ width: "24.5%"}}>
             {/* ESTATÍSTICAS */}
-            <div className="bg-background-primary rounded-md p-4">
+            <div className="bg-background-secondary rounded-md p-4">
               <h2 className="px-4 py-2">
                 <strong>Comentários</strong>
               </h2>
               <div className="px-1 w-full">
                 <ul className="h-96 overflow-y-auto px-[3px] ">
-                    <li className="mt-2 p-[5px] bg-background-secondary rounded-md">
+                    <li className="mt-2 p-[5px] bg-background-primary rounded-md">
                     <strong>Lauricio Magnata</strong>
                     <p>Quero doar meus bitcoins</p>
                   </li>
-                    <li className="mt-2 p-[5px] bg-background-secondary rounded-md">
+                    <li className="mt-2 p-[5px] bg-background-primary rounded-md">
                     <strong>Lauricio Magnata</strong>
                     <p>Alguem poderia aceitar meus bitcoins</p>
                   </li>
-                  <li className="mt-2 p-[5px] bg-background-secondary rounded-md">
+                  <li className="mt-2 p-[5px] bg-background-primary rounded-md">
                     <strong>Pedro Alberto</strong>
                     <p>Muito bom</p>
                   </li>
-                    <li className="mt-2 p-[5px] bg-background-secondary rounded-md">
+                    <li className="mt-2 p-[5px] bg-background-primary rounded-md">
                     <strong>Lauricio Magnata</strong>
                     <p>Quero doar meus bitcoins</p>
                   </li>
-                    <li className="mt-2 p-[5px] bg-background-secondary rounded-md">
+                    <li className="mt-2 p-[5px] bg-background-primary rounded-md">
                     <strong>Lauricio Magnata</strong>
                     <p>Alguem poderia aceitar meus bitcoins</p>
                   </li>
@@ -109,7 +109,7 @@ export default function Company() {
             </div>
 
             {/* PREVISÕES */}
-            <div className="bg-background-primary rounded-md p-4 mt-4">
+            <div className="bg-background-secondary rounded-md p-4 mt-4">
               <h2 className="px-4 py-2"><strong>Previsões</strong></h2>
               <div className="px-4 w-full">
                 

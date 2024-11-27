@@ -28,7 +28,7 @@ export default function Affiliates() {
   ];
 
   return (
-    <div className="flex flex-col gap-4 mt-4">
+    <div className="flex flex-col gap-4 mt-4 bg-background-primary p-4">
       {userLogged ? (
         <>
           <div className="flex justify-between">
