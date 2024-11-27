@@ -8,11 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      margin: {
+        'mr-50': '-50px', // Adiciona a classe m-[-50px]
+      },
       colors: {
         background: {
           primary: "#09090B",
           secondary: "#131315",
-          green: "#08DD7E"
+          green: "#08DD7E",
+          deep: "#181818"
         },
         text: {
           primary: "#FFFFFF",
@@ -32,6 +36,9 @@ const config: Config = {
           secondary: "#393939",
           hover: "#049354"
         },
+      },
+      translate: {
+        profile: '-10rem'
       }
     },
   },
