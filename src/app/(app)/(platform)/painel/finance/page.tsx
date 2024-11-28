@@ -2,7 +2,7 @@ import { Link } from "lucide-react";
 
 export default function Finnance() {
   return (
-    <div className="w-full min-h-screen bg-primary">
+    <div className="w-full min-h-screen">
       {/* Cabeçalho */}
       <header className="bg-background-primary text-white p-6 shadow-md">
         <h1 className="text-2xl font-bold">Relatório Financeiro</h1>
