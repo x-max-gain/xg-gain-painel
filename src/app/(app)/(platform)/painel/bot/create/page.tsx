@@ -7,6 +7,17 @@ export default function CreateBoot(){
  
   return(
       <div>
+         <nav className="shadow-sm p-4 flex justify-center items-center">
+        <div className="flex gap-4">
+          <button onClick={() => setBotSteps(1)} className={`${botSteps == 1 ? "bg-green-500" : ""} rounded px-1 sm:px-4 py-2`}>
+            Informações
+          </button>
+          <button onClick={() => setBotSteps(2)} className={`${botSteps == 2 ? "bg-green-500" : ""} rounded px-1 sm:px-4 py-2`}>
+            Configurações
+          </button>
+       </div>
+      </nav>
+
        <div className={`${botSteps == 1 ? "flex flex-col items-center justify-center bg-background-primary rounded-lg shadow-md p-6 max-w-md mx-auto mt-10" : "hidden"}`}>
         <h2 className="text-xl font-semibold mb-4">Configuração</h2>
         <div className="w-full mb-4">
@@ -47,7 +58,7 @@ export default function CreateBoot(){
             <span className=" p-2 bg-green-500 rounded">SE</span>
             <span className=" p-2 bg-background-secondary rounded"><Plus width={20}/></span>
             <span className=" p-2 bg-green-500 rounded">
-              <select name="sel" className="w-full bg-transparent" >
+            <select className="border text-xs md:text-base bg-green-500 text-white border-green-500 rounded px-2 focus:outline-none">
                 <option value="igual">IGUAL</option>
                 <option value="igual">MAIOR</option>
                 <option value="igual">MENOR</option>
@@ -59,7 +70,8 @@ export default function CreateBoot(){
             <span className=" p-2 bg-green-500 rounded">SE</span>
             <span className=" p-2 bg-background-secondary rounded"><Plus width={20}/></span>
             <span className=" p-2 bg-green-500 rounded">
-              <select name="sel" className="w-full bg-transparent" >
+             
+              <select className="border text-xs md:text-base bg-green-500 text-white border-green-500 rounded px-2 focus:outline-none">
                 <option value="igual">IGUAL</option>
                 <option value="igual">MAIOR</option>
                 <option value="igual">MENOR</option>
@@ -75,21 +87,7 @@ export default function CreateBoot(){
           <button className="w-44 bg-background-secondary rounded p-3"><Plus width={20} className="mx-auto"/></button>
         </div>
 
-        <div className="flex gap-3 p-4 w-72 mx-auto">
-          <button
-            className={`${botSteps == 1  ? "hidden" : "block"} bg-green-500 text-white font-medium p-3 rounded w-44 mx-auto hover:bg-green-600 transition`}
-            onClick={() => setBotSteps(botSteps - 1)}
-          >
-            Voltar
-          </button> 
-
-          <button
-            className="bg-green-500 text-white font-medium p-3 rounded w-44 mx-auto hover:bg-green-600 transition"
-            onClick={() => setBotSteps(botSteps + 1)}
-          >
-            {botSteps == 2  ? "Salvar" : "Avançar"}
-          </button>
-        </div>
+     
       </div>
   )
 }
