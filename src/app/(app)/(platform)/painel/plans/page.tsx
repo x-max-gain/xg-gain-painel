@@ -54,14 +54,14 @@ export default function Plans() {
                 className={`mt-4 w-full py-2 rounded ${
                   plano.destaque
                     ? "bg-green-500 text-white"
-                    : "bg-gray-200 text-gray-700"
+                    : "bg-stone-500 text-white  hover:bg-green-500"
                 }`}
               >
                 {plano.descricao}
               </button>
               <ul className="mt-6 space-y-2">
                 {plano.beneficios.map((beneficio, i) => (
-                  <li key={i} className="text-sm text-gray-700">
+                  <li key={i} className="text-sm text-white">
                     {beneficio}
                   </li>
                 ))}
