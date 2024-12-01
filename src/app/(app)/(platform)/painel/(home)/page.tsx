@@ -2,7 +2,7 @@
 
 export default function HomeDashboard() {
   return (
-    <div className="flex flex-col gap-4 mt-4 bg-background-primary  p-4 min-h-screen">
+    <div className="flex flex-col gap-4 mt-4 bg-background-primary  pr-4 pl-4 pb-4 min-h-screen">
        <nav className="border-b border-slate-800	 shadow-sm pb-3 flex justify-center items-center">
       <div className="flex gap-1">
           <button
