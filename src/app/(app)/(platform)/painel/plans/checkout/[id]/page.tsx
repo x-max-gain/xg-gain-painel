@@ -132,22 +132,22 @@ export default function PaymentForm() {
             <div className="p-3">
            
                <div className="flex gap-4 w-full ">
-                  <div className="flex flex-col w-full">
+                  <div className="flex flex-col w-full max-w-64">
                   <label className="block mb-2">CPF ou CNPJ</label>
                   <input
                       type="text"
-                      className="w-full mb-4 p-2 bg-background-primary rounded"
+                      className="w-full  mb-4 p-2 bg-background-primary rounded"
                       value={pixData.cpfCnpj}
                       onChange={(e) => setPixData({ cpfCnpj: e.target.value })}
                       placeholder="000.000.000-00"
                     />
                   </div>
                 <div className="flex flex-col w-full ">
-                <label className="block mb-2">Sobrenome</label>
+                <label className="block mb-2">Nome completo</label>
                     <input
                       type="text"
                       className="w-full mb-4 p-2 bg-background-primary rounded"
-                      placeholder="Sobrenome"
+                      placeholder="Nome completo"
                     />
                 </div>
               </div>

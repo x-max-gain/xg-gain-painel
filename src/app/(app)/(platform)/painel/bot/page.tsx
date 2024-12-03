@@ -1,9 +1,12 @@
 'use client'
 
 import { Pause, Plus, SidebarClose } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Bot() {
+  const [bots, setBots] = useState(false)
 
   return (
     <div className="w-full min-h-screen bg-background-primary">
@@ -60,8 +63,11 @@ export default function Bot() {
     
 
       <main className="pr-8 pl-8 pb-8 flex gap-3 items-center flex-wrap justify-center ">
-        <div className="w-full max-w-[340px] w-full bg-background-secondary shadow rounded">
-            <Link href="#">
+       {
+        bots && (
+          <>
+           <div className="w-full max-w-[340px] w-full bg-background-secondary shadow rounded">
+            <Link href="/painel/bot/22">
              <div className="p-4">
               <div className="flex justify-between items-center">
                   <h2 className="text-green-500 font-bold">#3945605</h2>
@@ -107,7 +113,7 @@ export default function Bot() {
         </div>
 
         <div className="w-full max-w-[340px] w-full bg-background-secondary shadow rounded">
-            <Link href="#">
+            <Link href="/painel/bot/22">
              <div className="p-4">
               <div className="flex justify-between items-center">
                   <h2 className="text-green-500 font-bold">#3945605</h2>
@@ -153,7 +159,7 @@ export default function Bot() {
         </div>
 
         <div className="w-full max-w-[340px] w-full bg-background-secondary shadow rounded">
-            <Link href="#">
+            <Link href="/painel/bot/22">
              <div className="p-4">
               <div className="flex justify-between items-center">
                   <h2 className="text-green-500 font-bold">#3945605</h2>
@@ -199,7 +205,7 @@ export default function Bot() {
         </div>
 
         <div className="w-full max-w-[340px] w-full bg-background-secondary shadow rounded">
-            <Link href="#">
+            <Link href="/painel/bot/22">
              <div className="p-4">
               <div className="flex justify-between items-center">
                   <h2 className="text-green-500 font-bold">#3945605</h2>
@@ -245,7 +251,7 @@ export default function Bot() {
         </div>
 
         <div className="w-full max-w-[340px] w-full bg-background-secondary shadow rounded">
-            <Link href="#">
+            <Link href="/painel/bot/22">
              <div className="p-4">
               <div className="flex justify-between items-center">
                   <h2 className="text-green-500 font-bold">#3945605</h2>
@@ -291,7 +297,7 @@ export default function Bot() {
         </div>
 
         <div className="w-full max-w-[340px] w-full bg-background-secondary shadow rounded">
-            <Link href="#">
+            <Link href="/painel/bot/22">
              <div className="p-4">
               <div className="flex justify-between items-center">
                   <h2 className="text-green-500 font-bold">#3945605</h2>
@@ -336,6 +342,19 @@ export default function Bot() {
            </div>
         </div>
 
+          </>
+        )
+       }
+
+
+       {!bots && (
+        <div className="flex alig-center flex-col gap-4" >
+          <Image src="/brath.png"  alt="teste" width={400} height={400}/>
+        <h3 className="text-5md sm:text-2xl text-center">Nenhum bot encontroado</h3>
+        <Link href="/painel/bot/create" className={"my-2 mx-auto  w-full max-w-44 text-center py-2 rounded bg-green-500 text-white  hover:bg-green-500"}> Adicionar Bot</Link>
+       
+        </div>
+        ) }
       </main>
 
     </div>

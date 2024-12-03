@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Plans() {
   const planos = [
     {
@@ -50,6 +52,9 @@ export default function Plans() {
             >
               <h2 className="text-xl font-bold mb-2 text-center">{plano.nome}</h2>
               <p className="text-2xl font-semibold text-center text-green-600">{plano.preco}</p>
+            
+
+              <Link href={`/painel/plans/checkout/${index}`}>
               <button
                 className={`mt-4 w-full py-2 rounded ${
                   plano.destaque
@@ -59,6 +64,8 @@ export default function Plans() {
               >
                 {plano.descricao}
               </button>
+              </Link>
+
               <ul className="mt-6 space-y-2">
                 {plano.beneficios.map((beneficio, i) => (
                   <li key={i} className="text-sm text-white">
