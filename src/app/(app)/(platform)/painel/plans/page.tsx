@@ -50,7 +50,7 @@ export default function Plans() {
                 plano.destaque ? " border-green-500" : "border-gray-200"
               }`}
             >
-              <h2 className="text-xl font-bold mb-2 text-center">{plano.nome}</h2>
+              <h2 className="text-xl font-bold mb-2 text-center text-gray-500">{plano.nome}</h2>
               <p className="text-2xl font-semibold text-center text-green-600">{plano.preco}</p>
             
 
