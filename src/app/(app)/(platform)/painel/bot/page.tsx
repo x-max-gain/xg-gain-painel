@@ -6,12 +6,12 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Bot() {
-  const [bots, setBots] = useState(false)
+  const [bots, setBots] = useState(true)
 
   return (
     <div className="w-full min-h-screen bg-background-primary">
       
-      <nav className="border-b border-slate-800	 shadow-sm pb-3 flex justify-center items-center">
+      <nav className="border-b border-gray-400	 shadow-sm pb-3 flex justify-center items-center">
       <div className="flex gap-1">
           <button
             className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
@@ -36,8 +36,8 @@ export default function Bot() {
         </div>
       </nav>
 
-      <nav className="shadow-sm p-4 flex justify-center items-center">
-        <div className="flex gap-4">
+      <nav className="shadow p-4 flex justify-center items-center">
+        <div className="flex gap-4 text-gray-500">
           <button className="px-1 sm:px-4 py-2">
             Execultando
           </button>
@@ -66,17 +66,17 @@ export default function Bot() {
        {
         bots && (
           <>
-           <div className="w-full max-w-[340px] w-full bg-background-secondary shadow rounded">
+           <div className="w-full max-w-[340px] w-full bg-background-secondary border border-gray-200 shadow rounded">
             <Link href="/painel/bot/22">
              <div className="p-4">
               <div className="flex justify-between items-center">
                   <h2 className="text-green-500 font-bold">#3945605</h2>
                   <p className="text-gray-500">Pessimista</p>
                 </div>
-                <h3 className="text-lg font-semibold text-white-600">Alcan-fibonacci</h3>
+                <h3 className="text-lg font-semibold text-gray-600">Alcan-fibonacci</h3>
                 <p className="text-gray-400">Fibonacci</p>
 
-                <div className="h-32 bg-background-primary mt-4 rounded flex items-center justify-center">
+                <div className="h-32 bg-gray-200 mt-4 rounded flex items-center justify-center">
                   <p className="text-gray-500">[Gráfico Aqui]</p>
                 </div>
 
@@ -99,30 +99,30 @@ export default function Bot() {
              </div>
             </Link>
 
-            <div className="mt-4 w-full bg-zinc-800	 p-2 flex items-center justify-between">
-              <button className="text-stone-300 flex items-center underline">
+            <div className="mt-4 w-full bg-gray-200	 p-2 flex items-center justify-between">
+              <button className="text-gray-500 font-bold flex items-center underline">
                 VER MAIS
               </button>
               <button className="flex items-center">
-                <span className="text-gray-500 mr-2">Executando</span>
+                <span className="text-green-500 mr-2 font-bold">Executando</span>
                 <span className="p-1 border border-green-500 hover:bg-green-500">
-                  <Pause width={20} height={20}/>
+                  <Pause  width={20} height={20}/>
                 </span>
               </button>
            </div>
         </div>
 
-        <div className="w-full max-w-[340px] w-full bg-background-secondary shadow rounded">
+        <div className="w-full max-w-[340px] w-full bg-background-secondary border border-gray-200 shadow rounded">
             <Link href="/painel/bot/22">
              <div className="p-4">
               <div className="flex justify-between items-center">
                   <h2 className="text-green-500 font-bold">#3945605</h2>
                   <p className="text-gray-500">Pessimista</p>
                 </div>
-                <h3 className="text-lg font-semibold text-white-600">Alcan-fibonacci</h3>
+                <h3 className="text-lg font-semibold text-gray-600">Alcan-fibonacci</h3>
                 <p className="text-gray-400">Fibonacci</p>
 
-                <div className="h-32 bg-background-primary mt-4 rounded flex items-center justify-center">
+                <div className="h-32 bg-gray-200 mt-4 rounded flex items-center justify-center">
                   <p className="text-gray-500">[Gráfico Aqui]</p>
                 </div>
 
@@ -145,30 +145,30 @@ export default function Bot() {
              </div>
             </Link>
 
-            <div className="mt-4 w-full bg-zinc-800	 p-2 flex items-center justify-between">
-              <button className="text-stone-300 flex items-center underline">
+            <div className="mt-4 w-full bg-gray-200	 p-2 flex items-center justify-between">
+              <button className="text-gray-500 font-bold flex items-center underline">
                 VER MAIS
               </button>
               <button className="flex items-center">
-                <span className="text-gray-500 mr-2">Executando</span>
+                <span className="text-green-500 mr-2 font-bold">Executando</span>
                 <span className="p-1 border border-green-500 hover:bg-green-500">
-                  <Pause width={20} height={20}/>
+                  <Pause  width={20} height={20}/>
                 </span>
               </button>
            </div>
         </div>
 
-        <div className="w-full max-w-[340px] w-full bg-background-secondary shadow rounded">
+        <div className="w-full max-w-[340px] w-full bg-background-secondary border border-gray-200 shadow rounded">
             <Link href="/painel/bot/22">
              <div className="p-4">
               <div className="flex justify-between items-center">
                   <h2 className="text-green-500 font-bold">#3945605</h2>
                   <p className="text-gray-500">Pessimista</p>
                 </div>
-                <h3 className="text-lg font-semibold text-white-600">Alcan-fibonacci</h3>
+                <h3 className="text-lg font-semibold text-gray-600">Alcan-fibonacci</h3>
                 <p className="text-gray-400">Fibonacci</p>
 
-                <div className="h-32 bg-background-primary mt-4 rounded flex items-center justify-center">
+                <div className="h-32 bg-gray-200 mt-4 rounded flex items-center justify-center">
                   <p className="text-gray-500">[Gráfico Aqui]</p>
                 </div>
 
@@ -191,30 +191,30 @@ export default function Bot() {
              </div>
             </Link>
 
-            <div className="mt-4 w-full bg-zinc-800	 p-2 flex items-center justify-between">
-              <button className="text-stone-300 flex items-center underline">
+            <div className="mt-4 w-full bg-gray-200	 p-2 flex items-center justify-between">
+              <button className="text-gray-500 font-bold flex items-center underline">
                 VER MAIS
               </button>
               <button className="flex items-center">
-                <span className="text-gray-500 mr-2">Executando</span>
+                <span className="text-green-500 mr-2 font-bold">Executando</span>
                 <span className="p-1 border border-green-500 hover:bg-green-500">
-                  <Pause width={20} height={20}/>
+                  <Pause  width={20} height={20}/>
                 </span>
               </button>
            </div>
         </div>
 
-        <div className="w-full max-w-[340px] w-full bg-background-secondary shadow rounded">
+        <div className="w-full max-w-[340px] w-full bg-background-secondary border border-gray-200 shadow rounded">
             <Link href="/painel/bot/22">
              <div className="p-4">
               <div className="flex justify-between items-center">
                   <h2 className="text-green-500 font-bold">#3945605</h2>
                   <p className="text-gray-500">Pessimista</p>
                 </div>
-                <h3 className="text-lg font-semibold text-white-600">Alcan-fibonacci</h3>
+                <h3 className="text-lg font-semibold text-gray-600">Alcan-fibonacci</h3>
                 <p className="text-gray-400">Fibonacci</p>
 
-                <div className="h-32 bg-background-primary mt-4 rounded flex items-center justify-center">
+                <div className="h-32 bg-gray-200 mt-4 rounded flex items-center justify-center">
                   <p className="text-gray-500">[Gráfico Aqui]</p>
                 </div>
 
@@ -237,30 +237,30 @@ export default function Bot() {
              </div>
             </Link>
 
-            <div className="mt-4 w-full bg-zinc-800	 p-2 flex items-center justify-between">
-              <button className="text-stone-300 flex items-center underline">
+            <div className="mt-4 w-full bg-gray-200	 p-2 flex items-center justify-between">
+              <button className="text-gray-500 font-bold flex items-center underline">
                 VER MAIS
               </button>
               <button className="flex items-center">
-                <span className="text-gray-500 mr-2">Executando</span>
+                <span className="text-green-500 mr-2 font-bold">Executando</span>
                 <span className="p-1 border border-green-500 hover:bg-green-500">
-                  <Pause width={20} height={20}/>
+                  <Pause  width={20} height={20}/>
                 </span>
               </button>
            </div>
         </div>
 
-        <div className="w-full max-w-[340px] w-full bg-background-secondary shadow rounded">
+        <div className="w-full max-w-[340px] w-full bg-background-secondary border border-gray-200 shadow rounded">
             <Link href="/painel/bot/22">
              <div className="p-4">
               <div className="flex justify-between items-center">
                   <h2 className="text-green-500 font-bold">#3945605</h2>
                   <p className="text-gray-500">Pessimista</p>
                 </div>
-                <h3 className="text-lg font-semibold text-white-600">Alcan-fibonacci</h3>
+                <h3 className="text-lg font-semibold text-gray-600">Alcan-fibonacci</h3>
                 <p className="text-gray-400">Fibonacci</p>
 
-                <div className="h-32 bg-background-primary mt-4 rounded flex items-center justify-center">
+                <div className="h-32 bg-gray-200 mt-4 rounded flex items-center justify-center">
                   <p className="text-gray-500">[Gráfico Aqui]</p>
                 </div>
 
@@ -283,30 +283,30 @@ export default function Bot() {
              </div>
             </Link>
 
-            <div className="mt-4 w-full bg-zinc-800	 p-2 flex items-center justify-between">
-              <button className="text-stone-300 flex items-center underline">
+            <div className="mt-4 w-full bg-gray-200	 p-2 flex items-center justify-between">
+              <button className="text-gray-500 font-bold flex items-center underline">
                 VER MAIS
               </button>
               <button className="flex items-center">
-                <span className="text-gray-500 mr-2">Executando</span>
+                <span className="text-green-500 mr-2 font-bold">Executando</span>
                 <span className="p-1 border border-green-500 hover:bg-green-500">
-                  <Pause width={20} height={20}/>
+                  <Pause  width={20} height={20}/>
                 </span>
               </button>
            </div>
         </div>
 
-        <div className="w-full max-w-[340px] w-full bg-background-secondary shadow rounded">
+        <div className="w-full max-w-[340px] w-full bg-background-secondary border border-gray-200 shadow rounded">
             <Link href="/painel/bot/22">
              <div className="p-4">
               <div className="flex justify-between items-center">
                   <h2 className="text-green-500 font-bold">#3945605</h2>
                   <p className="text-gray-500">Pessimista</p>
                 </div>
-                <h3 className="text-lg font-semibold text-white-600">Alcan-fibonacci</h3>
+                <h3 className="text-lg font-semibold text-gray-600">Alcan-fibonacci</h3>
                 <p className="text-gray-400">Fibonacci</p>
 
-                <div className="h-32 bg-background-primary mt-4 rounded flex items-center justify-center">
+                <div className="h-32 bg-gray-200 mt-4 rounded flex items-center justify-center">
                   <p className="text-gray-500">[Gráfico Aqui]</p>
                 </div>
 
@@ -329,18 +329,20 @@ export default function Bot() {
              </div>
             </Link>
 
-            <div className="mt-4 w-full bg-zinc-800	 p-2 flex items-center justify-between">
-              <button className="text-stone-300 flex items-center underline">
+            <div className="mt-4 w-full bg-gray-200	 p-2 flex items-center justify-between">
+              <button className="text-gray-500 font-bold flex items-center underline">
                 VER MAIS
               </button>
               <button className="flex items-center">
-                <span className="text-gray-500 mr-2">Executando</span>
+                <span className="text-green-500 mr-2 font-bold">Executando</span>
                 <span className="p-1 border border-green-500 hover:bg-green-500">
-                  <Pause width={20} height={20}/>
+                  <Pause  width={20} height={20}/>
                 </span>
               </button>
            </div>
         </div>
+
+        
 
           </>
         )

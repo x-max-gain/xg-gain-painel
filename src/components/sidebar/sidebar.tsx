@@ -5,10 +5,10 @@ import { SidebarItem } from "./sidebar-item";
 
 export function Sidebar() {
   return (
-    <aside className="bg-black bottom-0 start-0 z-50 h-full w-[270px] 2xl:w-72 fixed hidden xl:block overflow-x-auto">
-      <div className="sticky top-0 z-40 flex px-8 pt-4 bg-black">
+    <aside className="bg-background-primary bottom-0 start-0 z-50 h-full w-[270px] 2xl:w-72 fixed hidden xl:block overflow-x-auto shadow">
+      <div className="sticky top-0 z-40 flex px-8 pt-4 bg-background-primary">
          <Link href="/painel" className="flex w-full ">
-             <h2>X MAX GAIN</h2>
+             <h2 className="text-gray-700">X MAX GAIN</h2>
           </Link>
       </div>
 
