@@ -10,32 +10,6 @@ export default function Bot() {
 
   return (
     <div className="w-full min-h-screen bg-background-primary">
-      
-      <nav className="border-b border-gray-400	 shadow-sm pb-3 flex justify-center items-center">
-      <div className="flex gap-1">
-          <button
-            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
-            style={{
-              clipPath: "polygon(0% 0%, 100% 0%, 90% 1590%, 10% 100%)",
-              transition: "background-color 0.3s",
-            }}
-          >
-            Modo Simulado
-          </button>
-
-          <button
-            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
-            style={{
-              clipPath: "polygon(0% 0%, 100% 0%, 90% 100%, 10% 1590%)",
-              transition: "background-color 0.3s",
-            }}
-         
-          >
-            Modo Real
-          </button>
-        </div>
-      </nav>
-
       <nav className="shadow p-4 flex justify-center items-center">
         <div className="flex gap-4 text-gray-500">
           <button className="px-1 sm:px-4 py-2">
@@ -49,8 +23,6 @@ export default function Bot() {
           </button>
        </div>
       </nav>
-
-     
 
       <div style={{ position: "relative", height: "100px" }}>
         <Link href="/painel/bot/create"

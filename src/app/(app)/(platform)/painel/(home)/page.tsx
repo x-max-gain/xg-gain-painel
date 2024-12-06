@@ -2,32 +2,7 @@
 
 export default function HomeDashboard() {
   return (
-    <div className="flex flex-col gap-4 mt-4 bg-background-primary  pr-4 pl-4 pb-4 min-h-screen">
-       <nav className="border-b border-gray-400	 shadow-sm pb-3 flex justify-center items-center">
-      <div className="flex gap-1">
-          <button
-            className="bg-green-500 text-dark px-4 py-2 rounded hover:bg-green-600"
-            style={{
-              clipPath: "polygon(0% 0%, 100% 0%, 90% 1590%, 10% 100%)",
-              transition: "background-color 0.3s",
-            }}
-          >
-            Modo Simulado
-          </button>
-
-          <button
-            className="bg-green-500 text-primary px-4 py-2 rounded hover:bg-green-600"
-            style={{
-              clipPath: "polygon(0% 0%, 100% 0%, 90% 100%, 10% 1590%)",
-              transition: "background-color 0.3s",
-            }}
-         
-          >
-            Modo Real
-          </button>
-        </div>
-      </nav>
-
+    <div className="flex flex-col gap-4 mt-4 bg-background-primary pt-4 pr-4 pl-4 pb-4 min-h-screen">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-background-deep p-4 rounded shadow">
           <h2 className="text-md font-bold text-gray-700">Histórico do dia</h2>

@@ -43,16 +43,11 @@ export function Navbar() {
 
         <div className="flex w-full items-center justify-end gap-10">
           <div className="flex items-center gap-4">
-            <button>
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
-                  <Link href="/painel/account/22" >
-                  
                   <Image src="https://logicc-tecnologia-s3.s3.amazonaws.com/system/user_default.webp" alt="User" width={40} height={40} className="rounded-full border border-gray-200 shadow" />
-                  </Link>
                 </div>
               </div>
-            </button>
           </div>
         </div>
       </header>
