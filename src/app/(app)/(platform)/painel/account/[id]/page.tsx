@@ -1,12 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
+import Plans from "../../plans/page";
+import AccountProfile from "./modules/profile";
 
 export default function Account() {
   const [activeTab, setActiveTab] = useState("Perfil");
 
-  // Função para renderizar o conteúdo com base na aba ativa
   const renderContent = () => {
 
     const planos = [
@@ -42,211 +42,16 @@ export default function Account() {
 
     switch (activeTab) {
       case "Perfil":
-        return (
-          <div className="grid grid-cols-4 gap-4">
-            {/* Informações Pessoais */}
-            <div className="bg-background-deep border border-gray-200  rounded-md p-4 shadow">
-              <h2 className="text-lg font-bold mb-4 text-gray-500">Informações Pessoais</h2>
-              <div className="grid grid-cols-1 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Nome</label>
-                  <input
-                    type="text"
-                    value="Laurício de Sousa de Oliveira"
-                    className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500  focus:border-gray-400 focus:outline-none bg-transparent"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">CPF</label>
-                  <input
-                    type="text"
-                    value="046.897.063-01"
-                     className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500 bg-transparent focus:border-gray-400 focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Sexo</label>
-                  <select
-                     className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500 bg-transparent focus:border-gray-400 focus:outline-none"
-                    defaultValue="Masculino"
-                  >
-                    <option>Masculino</option>
-                    <option>Feminino</option>
-                    <option>Outro</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Nascimento</label>
-                  <input
-                    type="date"
-                    value="2000-08-27"
-                     className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500 bg-transparent focus:border-gray-400 focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Empresa</label>
-                  <input
-                    type="text"
-                    value="Logicc Tecnologia"
-                     className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500 bg-transparent focus:border-gray-400 focus:outline-none"
-                  />
-                </div>
-              </div>
-            </div>
-  
-            {/* Endereço */}
-            <div className="bg-background-deep border border-gray-200 rounded-md p-4 shadow">
-              <h2 className="text-lg font-bold mb-4 text-gray-500">Endereço</h2>
-              <div className="grid grid-cols-1 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">CEP</label>
-                  <input
-                    type="text"
-                    value="65 320 000"
-                     className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500 bg-transparent focus:border-gray-400 focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Rua/Avenida</label>
-                  <input
-                    type="text"
-                    value="Rua Getúlio Vargas"
-                     className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500 bg-transparent focus:border-gray-400 focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Número</label>
-                  <input
-                    type="text"
-                    value="12"
-                     className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500 bg-transparent focus:border-gray-400 focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Bairro</label>
-                  <input
-                    type="text"
-                    value="Centro"
-                     className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500 bg-transparent focus:border-gray-400 focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Cidade</label>
-                  <input
-                    type="text"
-                    value="Vitorino Freire"
-                     className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500 bg-transparent focus:border-gray-400 focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Estado</label>
-                  <input
-                    type="text"
-                    value="Maranhão"
-                     className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500 bg-transparent focus:border-gray-400 focus:outline-none"
-                  />
-                </div>
-              </div>
-            </div>
-  
-            {/* Contato */}
-            <div className="bg-background-deep border border-gray-200 rounded-md p-4 shadow">
-              <h2 className="text-lg font-bold mb-4 text-gray-500">Contato</h2>
-              <div className="grid grid-cols-1 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">E-mail</label>
-                  <input
-                    type="email"
-                    value="developerwebmasterpro@gmail.com"
-                     className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500 bg-transparent focus:border-gray-400 focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Telefone</label>
-                  <input
-                    type="text"
-                    value="(63) 99248-3896"
-                     className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500 bg-transparent focus:border-gray-400 focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Telefone Secundário</label>
-                  <input
-                    type="text"
-                    placeholder="(__) _____-____"
-                     className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500 bg-transparent focus:border-gray-400 focus:outline-none"
-                  />
-                </div>
-              </div>
-            </div>
-  
-            {/* Conta */}
-            <div className="bg-background-deep border border-gray-200 rounded-md p-4 shadow">
-              <h2 className="text-lg font-bold mb-4 text-gray-500">Conta</h2>
-              <div className="grid grid-cols-1 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Login</label>
-                  <input
-                    type="email"
-                    value="developerwebmasterpro@gmail.com"
-                     className="mt-1 block w-full border-b text-sm border-gray-300 text-gray-500 bg-transparent focus:border-gray-400 focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <button className="bg-green-500 text-white px-4 py-2 rounded w-full">
-                    Alterar Senha
-                  </button>
-                </div>
-                <div>
-                  <button className="bg-green-500 text-white px-4 py-2 rounded w-full">
-                    Fazer Teste
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
+        return <AccountProfile />;
 
       case "Plano":
         return (
-            <div
-              className={"w-full max-w-[300px] mx-auto rounded-lg p-6 border shadow border-green-500"}
-            >
-              <h2 className="text-xl font-bold mb-2 text-center text-gray-500">Aprendiz</h2>
-              <p className="text-2xl font-semibold text-center text-green-600">Grátis</p>
-            
-
-              <Link href={`/painel/plans/checkout/`}>
-              <button
-                className={`mt-4 w-full py-2 rounded text bg-green-500`}
-              >
-               Alterar Plano
-              </button>
-              </Link>
-
-              <ul className="mt-6 space-y-2">
-                  <li  className="text-sm text-gray-500">
-                  Simulado
-                  </li>
-                  <li  className="text-sm text-gray-500">
-                  Nenhum risco
-                  </li>
-                  <li  className="text-sm text-gray-500">
-                  01 robô
-                  </li>
-                  <li  className="text-sm text-gray-500">
-                  Delay de 15 min.
-                  </li>
-                  <li  className="text-sm text-gray-500">
-                  Whiteboxes
-                  </li>
-              </ul>
-            </div>
+          <Plans />
         );
 
       case "Corretoras":
         return (
-          <div className="bg-background-deep rounded-md p-4 shadow">
+          <div className="bg-background-deep rounded-md p-4 shadow m-6">
             <h2 className="text-lg font-bold mb-4 text-gray-500">Corretoras Vinculadas</h2>
             <p className="text-gray-500">Nenhuma corretora vinculada no momento.</p>
             <button className="bg-green-500 text-white px-4 py-2 rounded mt-4">
@@ -255,7 +60,7 @@ export default function Account() {
           </div>
         );
 
-      case "Preferências":
+      case "Configurações":
         return (
             <div className="bg-background-deep rounded-md p-6 shadow-md max-w-xl mx-auto">
               <h2 className="text-xl font-semibold text-gray-800 mb-6">Preferências</h2>
@@ -363,11 +168,11 @@ export default function Account() {
   };
 
   return (
-    <div className="bg-background-primary min-h-screen p-4">
+    <div className="bg-background-primary min-h-screen">
       {/* Navegação */}
-      <nav className="shadow-sm p-4 border-b border-stone-500 flex justify-center items-center mb-6">
+      <nav className="shadow-sm p-4 border-b border-stone-500 flex justify-center items-center">
         <div className="flex gap-4">
-          {["Perfil", "Plano", "Corretoras", "Preferências", "Financeiro", "Últimos Acessos"].map((tab) => (
+          {["Perfil", "Plano", "Corretoras", "Configurações", "Financeiro", "Últimos Acessos"].map((tab) => (
             <button
               key={tab}
               className={`px-2 sm:px-4 py-2 ${
