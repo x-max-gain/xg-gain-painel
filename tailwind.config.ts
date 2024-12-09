@@ -13,14 +13,16 @@ const config: Config = {
       },
       colors: {
         background: {
-          primary: "#09090B",
-          secondary: "#131315",
+          primary: "#fff",
+          secondary: "#f5f5f5",
           green: "#08DD7E",
-          deep: "#181818"
+          deep: "#f5f5f5"
         },
         text: {
-          primary: "#FFFFFF",
-          secondary: "#A1A1AA",
+          primary: "#000", 
+          secondary: "#A1A1AA", 
+          alternatve:"#000",
+          ligth:"#fff"
         },
         icons: {
           primary: "#929292",

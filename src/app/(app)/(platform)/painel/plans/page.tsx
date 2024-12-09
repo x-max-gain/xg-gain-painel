@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Plans() {
   const planos = [
     {
@@ -38,30 +40,35 @@ export default function Plans() {
         </h1>
         <div className="flex justify-center space-x-4 mb-8">
           <button className="px-4 py-2 bg-green-500 text-white rounded">Anual</button>
-          <button className="px-4 py-2 text-white rounded">Mensal</button>
+          <button className="px-4 py-2 text-gray-500 rounded">Mensal</button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 ">
           {planos.map((plano, index) => (
             <div
               key={index}
-              className={`rounded-lg p-6 border shadow-sm ${
-                plano.destaque ? " border-green-500" : "border-none bg-background-secondary"
+              className={`rounded-lg p-6 border shadow ${
+                plano.destaque ? " border-green-500" : "border-gray-200"
               }`}
             >
-              <h2 className="text-xl font-bold mb-2 text-center">{plano.nome}</h2>
+              <h2 className="text-xl font-bold mb-2 text-center text-gray-500">{plano.nome}</h2>
               <p className="text-2xl font-semibold text-center text-green-600">{plano.preco}</p>
+            
+
+              <Link href={`/painel/plans/checkout/${index}`}>
               <button
                 className={`mt-4 w-full py-2 rounded ${
                   plano.destaque
                     ? "bg-green-500 text-white"
-                    : "bg-stone-500 text-white  hover:bg-green-500"
+                    : "bg-gray-200 text-gray-500  hover:bg-green-500 hover:text-white"
                 }`}
               >
                 {plano.descricao}
               </button>
+              </Link>
+
               <ul className="mt-6 space-y-2">
                 {plano.beneficios.map((beneficio, i) => (
-                  <li key={i} className="text-sm text-white">
+                  <li key={i} className="text-sm text-gray-500">
                     {beneficio}
                   </li>
                 ))}

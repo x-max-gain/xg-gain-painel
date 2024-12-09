@@ -31,11 +31,5 @@ export const routes: IRoutes[] = [
     icon: <HelpCircle size={24} />,
     name: "Ajuda",
     url: "/painel/help"
-  },
-  {
-    icon: <LogOut size={24} />,
-    name: "Sair",
-    url: "/logout"
-  },
- 
+  } 
 ]

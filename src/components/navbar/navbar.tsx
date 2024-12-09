@@ -31,7 +31,7 @@ export function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 flex items-center px-4 py-4 bg-black lg:backdrop-blur-xl md:px-5 lg:px-10 2xl:py-5 3xl:px-8 4xl:px-10">
+      <header className="sticky top-0 z-50 flex items-center px-4 py-4 bg-background-primary lg:backdrop-blur-xl md:px-5 lg:px-10 2xl:py-5 3xl:px-8 4xl:px-10 shadow">
         <div className="flex w-full max-w-2xl items-center">
       
         {  <button
@@ -43,16 +43,11 @@ export function Navbar() {
 
         <div className="flex w-full items-center justify-end gap-10">
           <div className="flex items-center gap-4">
-            <button>
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
-                  <Link href="/painel/account/22" >
-                  
-                  <Image src="https://logicc-tecnologia-s3.s3.amazonaws.com/system/user_default.webp" alt="User" width={40} height={40} className="rounded-full" />
-                  </Link>
+                  <Image src="https://logicc-tecnologia-s3.s3.amazonaws.com/system/user_default.webp" alt="User" width={40} height={40} className="rounded-full border border-gray-200 shadow" />
                 </div>
               </div>
-            </button>
           </div>
         </div>
       </header>

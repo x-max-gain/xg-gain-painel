@@ -14,26 +14,26 @@ export default function PaymentForm() {
   const [pixData, setPixData] = useState({ cpfCnpj: "" });
 
   return (
-    <div className="flex flex-col space-x-8  p-4 rounded-lg text-white">
+    <div className="flex flex-col space-x-8  p-4 rounded-lg text-gray-500">
         <div className="flex space-x-8 ">
          <div className="w-2/3 bg-background-secondary rounded pl-2 pr-2 pb-2">
             <nav className="border-b border-slate-800	 shadow-sm pb-3 flex justify-center items-center">
             <div className="flex gap-1 w-full p-1">
                 <button
                   onClick={() => setPaymentMethod("creditCard")}
-                  className={`py-2 px-4 rounded w-full ${paymentMethod === "creditCard" ? "bg-green-500" : "bg-background-primary"}`}
+                  className={`py-2 px-4 rounded w-full ${paymentMethod === "creditCard" ? "bg-green-500 text-white" : "bg-background-primary"}`}
                 >
                   Cartão de Crédito
                 </button>
                 <button
                   onClick={() => setPaymentMethod("pix")}
-                  className={`py-2 px-4 rounded w-full ${paymentMethod === "pix" ? "bg-green-500" : "bg-background-primary"}`}
+                  className={`py-2 px-4 rounded w-full ${paymentMethod === "pix" ? "bg-green-500 text-white" : "bg-background-primary"}`}
                 >
                   PIX
                 </button>
                 <button
                   onClick={() => setPaymentMethod("boleto")}
-                  className={`py-2 px-4 rounded w-full ${paymentMethod === "boleto" ? "bg-green-500" : "bg-background-primary"}`}
+                  className={`py-2 px-4 rounded w-full ${paymentMethod === "boleto" ? "bg-green-500 text-white" : "bg-background-primary"}`}
                 >
                   Boleto
                 </button>
@@ -132,26 +132,26 @@ export default function PaymentForm() {
             <div className="p-3">
            
                <div className="flex gap-4 w-full ">
-                  <div className="flex flex-col w-full">
+                  <div className="flex flex-col w-full max-w-64">
                   <label className="block mb-2">CPF ou CNPJ</label>
                   <input
                       type="text"
-                      className="w-full mb-4 p-2 bg-background-primary rounded"
+                      className="w-full  mb-4 p-2 bg-background-primary rounded"
                       value={pixData.cpfCnpj}
                       onChange={(e) => setPixData({ cpfCnpj: e.target.value })}
                       placeholder="000.000.000-00"
                     />
                   </div>
                 <div className="flex flex-col w-full ">
-                <label className="block mb-2">Sobrenome</label>
+                <label className="block mb-2">Nome completo</label>
                     <input
                       type="text"
                       className="w-full mb-4 p-2 bg-background-primary rounded"
-                      placeholder="Sobrenome"
+                      placeholder="Nome completo"
                     />
                 </div>
               </div>
-              <button className="py-2 px-4 bg-green-500 rounded w-[300px]">Gerar QR Code</button>
+              <button className="py-2 px-4 bg-green-500 text-white rounded w-[300px]">Gerar QR Code</button>
             </div>
           )}
 
@@ -198,7 +198,7 @@ export default function PaymentForm() {
                     />
                   </div>
                 </div>
-                 <button className="py-2 px-4 bg-green-500 rounded w-full max-w-[300px]">Gerar Boleto</button>
+                 <button className="py-2 px-4 bg-green-500 text-white rounded w-full max-w-[300px]">Gerar Boleto</button>
               </div>
           )}
         </div>
@@ -217,7 +217,7 @@ export default function PaymentForm() {
               <p>Cartão: **** **** **** {cardDetails.number.slice(-4)}</p>
             )}
           </div>
-          <button className="py-2 px-4 bg-green-500 rounded w-full mt-4">Confirmar</button>
+          <button className="py-2 px-4 bg-green-500 rounded w-full mt-4 text-white">Confirmar</button>
         </div>
       </div>
      
