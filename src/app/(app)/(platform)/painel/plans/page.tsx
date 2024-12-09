@@ -23,9 +23,9 @@ export default function Plans() {
         </h1>
         <div className="flex justify-center space-x-4 mb-8">
           <button className="px-4 py-2 bg-green-500 text-white rounded">
-            Anual
+            Mensal
           </button>
-          <button className="px-4 py-2 text-gray-500 rounded">Mensal</button>
+          <button className="px-4 py-2 text-gray-500 rounded">Anual</button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 ">
           {plans.map((plan, index) => (
