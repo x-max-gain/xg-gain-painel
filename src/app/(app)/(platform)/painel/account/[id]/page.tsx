@@ -170,7 +170,7 @@ export default function Account() {
   return (
     <div className="bg-background-primary min-h-screen">
       {/* Navegação */}
-      <nav className="shadow-sm p-4 border-b border-stone-500 flex justify-center items-center">
+      <nav className="shadow-sm p-4 border-b border-gray-200 flex justify-center items-center">
         <div className="flex gap-4">
           {["Perfil", "Plano", "Corretoras", "Configurações", "Financeiro", "Últimos Acessos"].map((tab) => (
             <button

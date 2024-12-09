@@ -1,93 +1,195 @@
-"use client"
-import { Plus } from "lucide-react";
-import { useState } from "react";
+"use client";
 
-export default function CreateBoot(){
- const [botSteps, setBotSteps] = useState(1);
- 
-  return(
-      <div>
-         <nav className="shadow-sm p-4 flex justify-center items-center">
+import { useState } from "react";
+import Plans from "../../plans/page";
+import CreateBotInformations from "./modules/informations";
+
+export default function Account() {
+  const [activeTab, setActiveTab] = useState("Perfil");
+
+  const renderContent = () => {
+
+    const planos = [
+      {
+        nome: "Aprendiz",
+        preco: "Grátis",
+        descricao: "Plano Atual",
+        beneficios: ["Simulado", "Nenhum risco", "01 robô", "Delay de 15 min.", "Whiteboxes"],
+        destaque: false,
+      },
+      {
+        nome: "Iniciante",
+        preco: "R$109,00/mês",
+        descricao: "Upgrade",
+        beneficios: ["Simulado e real", "Risco baixo", "03 robôs", "R$10.000/trade"],
+        destaque: false,
+      },
+      {
+        nome: "Entusiasta",
+        preco: "R$349,00/mês",
+        descricao: "Upgrade",
+        beneficios: ["Simulado e real", "Risco intermediário", "09 robôs", "R$100.000/trade"],
+        destaque: true,
+      },
+      {
+        nome: "Estrategista",
+        preco: "R$1.249,00/mês",
+        descricao: "Upgrade",
+        beneficios: ["Simulado e real", "Risco alto", "30 robôs", "R$300.000/trade"],
+        destaque: false,
+      },
+    ];
+
+    switch (activeTab) {
+      case "Informações":
+        return <CreateBotInformations />;
+
+      case "Plano":
+        return (
+          <Plans />
+        );
+
+      case "Corretoras":
+        return (
+          <div className="bg-background-deep rounded-md p-4 shadow m-6">
+            <h2 className="text-lg font-bold mb-4 text-gray-500">Corretoras Vinculadas</h2>
+            <p className="text-gray-500">Nenhuma corretora vinculada no momento.</p>
+            <button className="bg-green-500 text-white px-4 py-2 rounded mt-4">
+              Vincular Corretora
+            </button>
+          </div>
+        );
+
+      case "Configurações":
+        return (
+            <div className="bg-background-deep rounded-md p-6 shadow-md max-w-xl mx-auto">
+              <h2 className="text-xl font-semibold text-gray-800 mb-6">Preferências</h2>
+              <div className="space-y-4">
+                {/* Lista de Preferências */}
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-3 h-5 w-5 text-blue-600 focus:ring focus:ring-blue-400 rounded"
+                    defaultChecked
+                  />
+                  <span className="text-gray-700 text-sm">Exibir parâmetros abertos.</span>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-3 h-5 w-5 text-blue-600 focus:ring focus:ring-blue-400 rounded"
+                    defaultChecked
+                  />
+                  <span className="text-gray-700 text-sm">
+                    Exibir mensagem de confirmação ao Salvar parâmetros de um robô.
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-3 h-5 w-5 text-blue-600 focus:ring focus:ring-blue-400 rounded"
+                    defaultChecked
+                  />
+                  <span className="text-gray-700 text-sm">
+                    Exibir mensagem de confirmação ao Parar um robô.
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-3 h-5 w-5 text-blue-600 focus:ring focus:ring-blue-400 rounded"
+                    defaultChecked
+                  />
+                  <span className="text-gray-700 text-sm">
+                    Exibir mensagem de confirmação ao Zerar a carteira de um robô.
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-3 h-5 w-5 text-blue-600 focus:ring focus:ring-blue-400 rounded"
+                    defaultChecked
+                  />
+                  <span className="text-gray-700 text-sm">
+                    Exigir senha para Parar robôs em conta real.
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-3 h-5 w-5 text-blue-600 focus:ring focus:ring-blue-400 rounded"
+                    defaultChecked
+                  />
+                  <span className="text-gray-700 text-sm">
+                    Exigir senha para Zerar a carteira de robôs em conta real.
+                  </span>
+                </div>
+              </div>
+          
+              {/* Campo de Seleção */}
+              <div className="mt-6">
+                <label
+                  htmlFor="simulatorMode"
+                  className="block text-sm font-medium text-gray-600"
+                >
+                  Ao criar um robô, predefinir o simulador como:
+                </label>
+                <select
+                  id="simulatorMode"
+                  className="mt-2 block w-full rounded border-b border-gray-500 shadow-sm focus:border-gray-500 focus:outline-none bg-background-deep text-gray-500"
+                >
+                  <option>Pessimista</option>
+                  <option>Otimista</option>
+                  <option>Neutro</option>
+                </select>
+              </div>
+            </div>
+        );
+
+      case "Financeiro":
+        return (
+          <div className="bg-background-deep rounded-md p-4 shadow">
+            <h2 className="text-lg font-bold mb-4 text-gray-500">Relatório Financeiro</h2>
+            <p className="text-gray-500">Aqui você poderá acessar seus relatórios financeiros.</p>
+          </div>
+        );
+
+      case "Últimos Acessos":
+        return (
+          <div className="bg-background-deep rounded-md p-4 shadow">
+            <h2 className="text-lg font-bold mb-4 text-gray-500">Histórico de Últimos Acessos</h2>
+            <p className="text-gray-500">Último acesso em: <strong>04/12/2024 às 14:30</strong></p>
+          </div>
+        );
+
+      default:
+        return <p className="text-gray-500">Selecione uma aba para começar.</p>;
+    }
+  };
+
+  return (
+    <div className="bg-background-primary min-h-screen">
+      {/* Navegação */}
+      <nav className="shadow-sm p-4 border-b border-gray-200 flex justify-center items-center">
         <div className="flex gap-4">
-          <button onClick={() => setBotSteps(1)} className={`${botSteps == 1 ? "bg-green-500" : ""} rounded px-1 sm:px-4 py-2`}>
-            Informações
-          </button>
-          <button onClick={() => setBotSteps(2)} className={`${botSteps == 2 ? "bg-green-500" : ""} rounded px-1 sm:px-4 py-2`}>
-            Configurações
-          </button>
-       </div>
+          {["Informações", "Plano", "Corretoras", "Configurações", "Financeiro", "Últimos Acessos"].map((tab) => (
+            <button
+              key={tab}
+              className={`px-2 sm:px-4 py-2 ${
+                activeTab === tab
+                  ? "bg-green-500 font-bold rounded text-white"
+                  : "text-gray-500"
+              }`}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
       </nav>
 
-       <div className={`${botSteps == 1 ? "flex flex-col items-center justify-center bg-background-primary rounded-lg shadow-md p-6 max-w-md mx-auto mt-10" : "hidden"}`}>
-        <h2 className="text-xl font-semibold mb-4">Configuração</h2>
-        <div className="w-full mb-4">
-          <label htmlFor="roboName" className="block text-white font-medium mb-1">Nome do Robô</label>
-          <input
-            type="text"
-            id="roboName"
-            className="w-full p-2 border border-gray-300 rounded bg-background-secondary focus:outline-none focus:ring-2 focus:ring-green-500"
-          />
-        </div>
-       
-        <div className="w-full mb-4">
-          <label htmlFor="capital" className="block text-gray-700 font-medium mb-1">Capital:</label>
-          <p className="text-gray-800"></p>
-          <input
-            type="text"
-            id="roboName"
-            className="w-full p-2 border border-gray-300 rounded bg-background-secondary focus:outline-none focus:ring-2 focus:ring-green-500"
-            value="R$ 5.000,00"
-          />
-        </div>
-        <div className="w-full mb-4">
-          <label htmlFor="simulador" className="block text-gray-700 font-medium mb-1">Simulador:</label>
-          <select
-            id="simulador"
-            className="w-full p-2 border border-gray-300 rounded bg-background-secondary focus:outline-none focus:ring-2 focus:ring-green-500"
-          >
-            <option value="pessimista">Pessimista (Recomendado)</option>
-            <option value="otimista">Otimista</option>
-          </select>
-        </div>
-       
-      </div>
-
-        <div className={`${botSteps == 2 ? "flex" : "hidden"} h-auto min-h-44 border p-3 border-green-500 rounded w-full bg-background-primary flex flex-col gap-3`}>
-
-        <div className="flex align-start w-auto gap-3">
-            <span className=" p-2 bg-green-500 rounded">SE</span>
-            <span className=" p-2 bg-background-secondary rounded"><Plus width={20}/></span>
-            <span className=" p-2 bg-green-500 rounded">
-            <select className="border text-xs md:text-base bg-green-500 text-white border-green-500 rounded px-2 focus:outline-none">
-                <option value="igual">IGUAL</option>
-                <option value="igual">MAIOR</option>
-                <option value="igual">MENOR</option>
-              </select>
-            </span>
-            <span className="p-2 bg-background-secondary rounded"><Plus width={20}/></span>
-        </div>
-        <div className="flex align-start w-auto gap-3">
-            <span className=" p-2 bg-green-500 rounded">SE</span>
-            <span className=" p-2 bg-background-secondary rounded"><Plus width={20}/></span>
-            <span className=" p-2 bg-green-500 rounded">
-             
-              <select className="border text-xs md:text-base bg-green-500 text-white border-green-500 rounded px-2 focus:outline-none">
-                <option value="igual">IGUAL</option>
-                <option value="igual">MAIOR</option>
-                <option value="igual">MENOR</option>
-              </select>
-            </span>
-            <span className="p-2 bg-background-secondary rounded"><Plus width={20}/></span>
-        </div>
-        
-        <div className="flex align-start w-auto gap-3 0">
-            <span className=" p-2 bg-green-500 rounded">FAZ</span>
-            <span className=" p-2 w-44 bg-background-secondary rounded center"><Plus width={20} className="mx-auto"/></span>
-          </div>
-          <button className="w-44 bg-background-secondary rounded p-3"><Plus width={20} className="mx-auto"/></button>
-        </div>
-
-     
-      </div>
-  )
+      {/* Conteúdo dinâmico */}
+      <div>{renderContent()}</div>
+    </div>
+  );
 }
