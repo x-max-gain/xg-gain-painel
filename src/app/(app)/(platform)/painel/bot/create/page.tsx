@@ -5,7 +5,7 @@ import Plans from "../../plans/page";
 import CreateBotInformations from "./modules/informations";
 
 export default function Account() {
-  const [activeTab, setActiveTab] = useState("Perfil");
+  const [activeTab, setActiveTab] = useState("Informações");
 
   const renderContent = () => {
 
