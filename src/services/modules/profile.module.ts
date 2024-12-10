@@ -1,4 +1,4 @@
-import { addCaching, getCaching } from "../cache/cache";
+import { addCaching, getCaching, removeCaching } from "../cache/cache";
 import { PROFILE_NAME_CACHING } from "../cache/consts";
 import { API } from "../http/api"
 import { getProfileInformationsType, updateProfileInformationsType } from "../types/profile";
@@ -17,5 +17,7 @@ export const getDataProfile = async (): Promise<getProfileInformationsType> => {
 
 export const updateProfileInformations = async (data: updateProfileInformationsType) => {
     console.log(data);
-    // return await API.put('/users', data);
+    const res = await API.put('/users', data);
+    if(res) removeCaching(PROFILE_NAME_CACHING);
+    return res;
 }
