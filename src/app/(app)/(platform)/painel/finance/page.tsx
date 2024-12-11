@@ -1,50 +1,73 @@
+"use client";
+import { SlidersHorizontal } from 'lucide-react';
+import { useState } from 'react';
+
 export default function Finnance() {
+  const [openFilter, setOpenFilter] = useState<boolean>(false);
   return (
     <div className="w-full min-h-screen">
       {/* Cabeçalho */}
-      <header className="bg-background-primary text-gray-700 p-6 shadow-md">
-        <h1 className="text-2xl font-bold">Relatório Financeiro</h1>
-        <p className="text-sm">Resumo dos resultados financeiros do período</p>
-      </header>
-
-      {/* Filtros */}
-      <section className="p-6 bg-background-primary shadow-md">
-        <h2 className="text-lg font-bold text-gray-500 mb-4">Filtros</h2>
-        <div className="flex gap-1 md:gap-4 justify-center md:justify-start">
-          <select className="border text-xs md:text-base bg-background-primary text-gray-500 border-green-500 rounded px-2 py-2 appearance-none">
-            <option>Selecionar período</option>
-            <option>Última semana</option>
-            <option>Último mês</option>
-            <option>Último ano</option>
-          </select>
-          <select className="border text-xs md:text-base bg-background-primary text-gray-500 border-green-500 rounded px-2 py-2 appearance-none">
-            <option>Tipo de Bot</option>
-            <option>Fibonacci</option>
-            <option>Laurício-Bitcoin</option>
-          </select>
-          <button className="bg-green-500 text-xs md:text-base text-gray px-4 py-2 rounded hover:bg-green-600">
-            Aplicar
-          </button>
+      <header className="bg-background-primary text-gray-700 p-6 shadow-md flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl font-bold">Relatório Financeiro</h1>
+          <p className="text-sm">Resumo dos resultados financeiros do período</p>
         </div>
-      </section>
+        <div>
+          <div onClick={() => setOpenFilter(!openFilter)} className='flex justify-between px-4 py-2 bg-background-deep font-bold rounded text-text-primary cursor-pointer hover:bg-background-secondary'>
+            Filtrar <SlidersHorizontal className='ml-8' />
+          </div>
+          {
+            openFilter && (
+              <div>
+                <h3>Filtrar período</h3>
+                <p>Selecione o período</p>
+                <ul>
+                  <li>
+                    Todos
+                  </li>
+                  <li>
+                    Hoje
+                  </li>
+                  <li>
+                    Ontem
+                  </li>
+                  <li>
+                    Última semana
+                  </li>
+                  <li>
+                    Último mês
+                  </li>
+                  <li>
+                    Personalizado
+                  </li>
+                </ul>
+                <div>map</div>
+                <div className='w-full'>
+                  <button className='px-2 sm:px-4 py-2 bg-green-500 font-bold rounded text-white'>Aplicar filtro</button>
+                </div>
+              </div>
+            )
+          }
+        </div>
+      </header>
 
       {/* Resumo do Relatório */}
       <section className="p-6 bg-background-primary shadow-md mt-4">
         <h2 className="text-lg font-bold text-gray-500 mb-4">Resumo do Período</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="p-4 bg-background-secondary rounded shadow">
+          <div className="p-4 bg-background-deep rounded shadow">
             <p className="text-sm text-gray-500">Total de Lucro</p>
             <p className="text-green-600 text-2xl font-bold">R$ 1.530,00</p>
           </div>
-          <div className="p-4 bg-background-secondary rounded shadow">
+          <div className="p-4 bg-background-deep rounded shadow">
             <p className="text-sm text-gray-500">Lucro Diário Médio</p>
             <p className="text-green-600 text-2xl font-bold">R$ 200,00</p>
           </div>
-          <div className="p-4 bg-background-secondary rounded shadow">
+          <div className="p-4 bg-background-deep rounded shadow">
             <p className="text-sm text-gray-500">Transações</p>
             <p className="text-green-500 text-2xl font-bold">25</p>
           </div>
-          <div className="p-4 bg-background-secondary rounded shadow">
+          <div className="p-4 bg-background-deep rounded shadow">
             <p className="text-sm text-gray-500">Bots Ativos</p>
             <p className="text-green-500 text-2xl font-bold">4</p>
           </div>
