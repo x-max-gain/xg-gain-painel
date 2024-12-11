@@ -14,8 +14,8 @@ export default function AccountProfile() {
     }, [])
 
     return (
-        <div className="grid grid-cols-2 gap-4 p-6">
-            <div className="bg-background-deep border border-gray-200  rounded-md p-4 shadow">
+        <div className="grid grid-cols-2 gap-4 pt-4">
+            <div className="bg-background-primary border border-gray-200  rounded-md p-4 shadow">
                 <h2 className="text-lg font-bold mb-4 text-gray-500">Informações Pessoais</h2>
                 <div className="grid grid-cols-1 gap-4">
                 <div>
@@ -49,7 +49,7 @@ export default function AccountProfile() {
                 </div>
             </div>
 
-            <div className="bg-background-deep border border-gray-200 rounded-md p-4 shadow">
+            <div className="bg-background-primary border border-gray-200 rounded-md p-4 shadow">
                 <h2 className="text-lg font-bold mb-4 text-gray-500">Conta</h2>
                 <div className="grid grid-cols-1 gap-4">
                 <div>

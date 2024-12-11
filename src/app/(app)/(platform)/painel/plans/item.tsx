@@ -6,7 +6,7 @@ import { PlanType } from "./types";
 export default function PlansItem({ plan }: { plan: PlanType }) {
   return (
     <div
-        className={`rounded-lg p-6 border shadow ${
+        className={`bg-background-primary rounded-lg p-6 border shadow ${
         plan.recommendation ? " border-green-500" : "border-gray-200"
         }`}
     >

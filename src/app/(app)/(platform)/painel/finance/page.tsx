@@ -1,5 +1,3 @@
-import { Link } from "lucide-react";
-
 export default function Finnance() {
   return (
     <div className="w-full min-h-screen">

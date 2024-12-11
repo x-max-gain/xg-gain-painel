@@ -10,7 +10,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
         <Navbar />
 
-        <div className="pt-4 flex flex-grow flex-col px-4 pb-6 @container md:px-5 lg:px-6 lg:pb-8 3xl:px-8 4xl:px-10 4xl:pb-9">
+        <div className="pt-4 flex flex-grow flex-col px-4 pb-6 @container md:px-5 lg:px-4 lg:pb-8 3xl:px-8 4xl:px-10 4xl:pb-9">
           {children}
         </div>
       </div>
