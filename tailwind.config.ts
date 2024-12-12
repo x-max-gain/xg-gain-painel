@@ -16,7 +16,7 @@ const config: Config = {
           primary: "#fff",
           secondary: "#eee",
           green: "#08DD7E",
-          deep: "#f5f5f5"
+          deep: "#f5f5f5",
         },
         text: {
           primary: "#000", 

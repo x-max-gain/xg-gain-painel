@@ -1,0 +1,6 @@
+.canva {
+  width: 3000px;
+  height: 600px;
+  overflow: auto;
+  background-image: linear-gradient(to bottom, #ee4035, #911129);
+}
