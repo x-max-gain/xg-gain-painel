@@ -9,41 +9,32 @@ import CreateBotAlgorithmSelect from "./components/select";
 import { execute } from "./data";
 
 export default function CreateBotAlgorithm() {
-    const [conditions, setConditions] = useState<typeof execute>([]);
-
-    const optionsStart = execute.map(item => ({ label: item.name, value: item.type }));
+    const [conditions, setConditions] = useState<Array<any>>([]);
 
     const setElementSelect = (element: any) => {
+        console.log(element);
         setConditions([
             ...conditions,
-            element
+            {
+                ...element,
+                options: [],
+            }
         ])
     }
     return (
         <div className="w-full mt-4">
-            <div className="flex w-full">
-                <div className="canva">
+            <div className="canva-box flex w-full rounded-md">
+                <div className="canva py-2 px-4">
                     {
                         conditions.map((item: any, index) => (
-                            <div key={index} className="flex p-4">
-                                <CreateBotAlgorithmModel1 
-                                    options={item.signais}
-                                    style={{
-                                        backgroundColor: item.type === "logic" ? 'blueviolet' : "#ff00d4",
-                                        color: '#fff'
-                                    }}
-                                    children={{
-                                        left: <CreateBotAlgorithmSelect setElementSelect={setElementSelect} options={optionsStart} />,
-                                        right: <CreateBotAlgorithmSelect setElementSelect={setElementSelect} options={optionsStart} />
-                                    }}
-                                    continueExec={<CreateBotAlgorithmSelect setElementSelect={setElementSelect} options={optionsStart} />}
-                                />
+                            <div key={index} className="flex py-2">
+                                <CreateBotAlgorithmModel1 data={item} />
                             </div>
                         ))
                     }
 
-                    <div className="flex p-4">
-                        <CreateBotAlgorithmSelect setElementSelect={setElementSelect} options={optionsStart} />
+                    <div className="flex py-2">
+                        <CreateBotAlgorithmSelect title="Adicionar condição" setElementSelect={setElementSelect} options={execute} />
                     </div>
                 </div>
             </div>

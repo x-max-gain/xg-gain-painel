@@ -58,7 +58,7 @@ export default function Account() {
       {/* Navegação */}
       <nav className="bg-background-primary shadow-sm p-4 border-b border-gray-200 flex justify-center items-center">
         <div className="flex gap-4">
-          {["Informações", "Algorítmo"].map((tab) => (
+          {["Informações", "Algorítmo", "Simulações"].map((tab) => (
             <button
               key={tab}
               className={`px-2 sm:px-4 py-2 ${

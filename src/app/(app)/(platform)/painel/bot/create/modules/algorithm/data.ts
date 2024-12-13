@@ -81,8 +81,12 @@ const FunctionsOptions = [
 
 const DataFunction = (continueOption: boolean) => {
     return {
-        name: 'Adicionar dados',
+        name: 'Chamar um função',
         type: 'data',
+        style: {
+            backgroundColor: "#fea304",
+            color: "#FFF"
+        },
         signais: [
             {
                 signal: 'Funções',
@@ -96,7 +100,11 @@ const DataFunction = (continueOption: boolean) => {
 const DataValue = {
     name: 'Adicionar dados',
     type: 'data',
-    signais: [
+    style: {
+        backgroundColor: "#909320",
+        color: "#FFF"
+    },
+    signals: [
         {
             signal: 'Porcentagem',
             name: 'percent'
@@ -119,35 +127,43 @@ const DataValue = {
 const MathOptions = {
     name: 'Criar conta matemática',
     type: 'math',
-    signais: [
+    style: {
+        backgroundColor: "#125a44",
+        color: "#FFF"
+    },
+    signals: [
         {
-            signal: 'Soma',
-            name: '+'
+            signal: '+',
+            name: 'Multiplica'
         },
         {
-            signal: 'Subtrair',
-            name: '-'
+            signal: '-',
+            name: 'Subtrai'
         },
         {
-            signal: 'Multiplicar',
-            name: '*'
+            signal: '*',
+            name: 'Multiplica'
         },
         {
-            signal: 'Dividir',
-            name: '/'
+            signal: '/',
+            name: 'Divide'
         },
         {
-            signal: 'Restante da divisão',
-            name: '%'
+            signal: '%',
+            name: 'Resto da divisão'
         }
     ],
     params: [{...DataValue, ...DataFunction(false)}]
 }
 
 const Comparison = {
+    style: {
+        backgroundColor: "#37192c",
+        color: "#FFF"
+    },
     name: 'Criar comparação',
     type: 'comparison',
-    signais: [
+    signals: [
         {
             signal: '===',
             name: 'Igual'
@@ -177,9 +193,13 @@ const Comparison = {
 }
 
 const Logic = {
+    style: {
+        backgroundColor: "#220315",
+        color: "#FFF"
+    },
     name: 'Criar lógica',
     type: 'logic',
-    sinals: [
+    signals: [
         {
             signal: '&&',
             name: 'E'
@@ -196,11 +216,11 @@ const continueFunc = () => {
     const CoparisonC = { ...Comparison, continue: continueFunc }
     return [logicC, CoparisonC, DataFunction(true)]
 }
-const continueCoparison = {
+export const continueCoparison = {
     ...Logic,
     continue: continueFunc
 }
-const continueLogic = {
+export const continueLogic = {
     ...Comparison,
     continue: continueFunc
 }
