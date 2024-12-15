@@ -17,13 +17,15 @@ export default function CreateBotAlgorithmModelFunc(
     const [open, setOpen] = useState<boolean>(false);
     const [opensCategories, setOpensCategories] = useState<Array<string>>([]);
 
-    const clickCategory = (_id: string) => {
-        const exist = opensCategories.includes(_id);
+    const clickCategory = (event: any, _id: string) => {
+        if (event.target === event.currentTarget) {
+            const exist = opensCategories.includes(_id);
 
-        if(exist) {
-            setOpensCategories(opensCategories.filter(item => item !== _id))
-        } else {
-            setOpensCategories([...opensCategories, _id])
+            if(exist) {
+                setOpensCategories(opensCategories.filter(item => item !== _id))
+            } else {
+                setOpensCategories([...opensCategories, _id])
+            }
         }
     }
 
@@ -47,13 +49,12 @@ export default function CreateBotAlgorithmModelFunc(
                                         className="bg-background-secondary hover:bg-background-deep border border-gray-200 text-text-primary px-4 py-2 cursor-pointer rounded-md"
                                     >{item.name}</li>
                                 ) : (
-                                    <li 
-                                        key={index}
-                                        onClick={() => clickCategory(item._id)}
-                                    >
-                                        <div className="flex justify-between items-center bg-background-secondaryDark hover:bg-background-secondaryDarkBig border border-gray-200 text-text-primary px-4 py-2 cursor-pointer rounded-md">
+                                    <li key={index}>
+                                        <div 
+                                            onClick={(event) => clickCategory(event, item._id)}
+                                            className="flex justify-between items-center bg-background-secondaryDark hover:bg-background-secondaryDarkBig border border-gray-200 text-text-primary px-4 py-2 cursor-pointer rounded-md">
                                             <p>{item.name}</p>
-                                            <ChevronDown className="size-6 text-text-primary2" />
+                                            <ChevronDown onClick={(event) => clickCategory(event, item._id)} className="size-6 text-text-primary2" />
                                         </div>
                                         {
                                             opensCategories.includes(item._id) && <ul>
