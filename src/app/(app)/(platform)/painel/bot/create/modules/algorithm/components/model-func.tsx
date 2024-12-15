@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./select.css";
 
 // ICONS
@@ -15,6 +15,17 @@ export default function CreateBotAlgorithmModelFunc(
 ) {
     const [selectInfo, setSelectInfo] = useState("");
     const [open, setOpen] = useState<boolean>(false);
+    const [opensCategories, setOpensCategories] = useState<Array<string>>([]);
+
+    const clickCategory = (_id: string) => {
+        const exist = opensCategories.includes(_id);
+
+        if(exist) {
+            setOpensCategories(opensCategories.filter(item => item !== _id))
+        } else {
+            setOpensCategories([...opensCategories, _id])
+        }
+    }
 
     return <div className="select-bot">
         <div onClick={() => setOpen(!open)} className="min-w-80 bg-background-secondary text-text-primary px-4 py-2 rounded-md flex items-center cursor-pointer">
@@ -23,7 +34,7 @@ export default function CreateBotAlgorithmModelFunc(
         </div>
         
         {
-            open && <div className="select-bot-list bg-background-primary border border-gray-500 w-full rounded-md">
+            open && <div className="max-h-96 overflow-y-auto select-bot-list bg-background-primary border border-gray-500 w-full rounded-md">
             <ul>
                 {
                     data.map((item, index) => (
@@ -38,13 +49,14 @@ export default function CreateBotAlgorithmModelFunc(
                                 ) : (
                                     <li 
                                         key={index}
-                                        onClick={() => {}}
+                                        onClick={() => clickCategory(item._id)}
                                     >
                                         <div className="flex justify-between items-center bg-background-secondaryDark hover:bg-background-secondaryDarkBig border border-gray-200 text-text-primary px-4 py-2 cursor-pointer rounded-md">
                                             <p>{item.name}</p>
                                             <ChevronDown className="size-6 text-text-primary2" />
                                         </div>
-                                        <ul>
+                                        {
+                                            opensCategories.includes(item._id) && <ul>
                                             {
                                                 item.functions.map((func: any, index2: number) => (
                                                     <li 
@@ -62,16 +74,13 @@ export default function CreateBotAlgorithmModelFunc(
                                                             className="relative border border-background-secondaryDark px-2 py-2 hover:bg-background-secondary"
                                                         >
                                                             <Info className="size-6 text-text-secondary" />
-                                                            {
-                                                                selectInfo === `${index}${index2}` && (
-                                                                    <BotInfo info={func.info}  />
-                                                                )
-                                                            }
+                                                            <BotInfo setOpen={setSelectInfo} info={func.info} open={selectInfo === `${index}${index2}`}  />
                                                         </div>
                                                     </li>
                                                 ))
                                             }
                                         </ul>
+                                        }
                                     </li>
                                 )
                             }
