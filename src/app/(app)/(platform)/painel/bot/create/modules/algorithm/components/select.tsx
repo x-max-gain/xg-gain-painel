@@ -14,26 +14,28 @@ export default function CreateBotAlgorithmSelect({ title, options, setElementSel
     const [open, setOpen] = useState<boolean>(false);
 
     return <div className="select-bot">
-        <div onClick={() => setOpen(!open)} className="min-w-64 bg-background-secondary text-text-primary px-4 py-2 rounded-md flex items-center cursor-pointer">
+        <div onClick={() => setOpen(!open)} className="min-w-72 bg-background-secondary text-text-primary px-4 py-2 rounded-md flex items-center cursor-pointer">
         { !open ? <Plus className="mr-4 size-4" /> : <X className="mr-4 size-4" /> }
             <p>{title}</p>
         </div>
         
         {
-            open && <div className="select-bot-list bg-background-primary border border-gray-500 w-full rounded-md">
+            open && <div className="z-20 select-bot-list bg-background-primary border border-gray-500 w-full rounded-md">
             <ul>
                 {
                     options.map((item, index) => (
                         <li 
                             key={index}
-                            onClick={() => {setElementSelect(item); setOpen(false);}}
-                            className="flex items-center justify-between bg-background-secondary hover:bg-background-deep border border-gray-200 text-text-primary px-4 py-2 cursor-pointer rounded-md"
+                            className="flex items-center justify-between border border-gray-200 text-text-primary cursor-pointer rounded-md"
                         >
-                            <div>
+                            <div 
+                                onClick={() => {setElementSelect(item); setOpen(false);}} 
+                                className="w-full flex items-center px-4 py-2 hover:bg-background-deep"
+                            >
                                 <Code className="mr-2 size-4 text-text-primary2" /> {item.name}
                             </div>
-                            <div>
-                                <Info className="mr-2 size-4 text-text-primary2" />
+                            <div className="border border-background-secondaryDark px-2 py-2 hover:bg-background-deep">
+                                <Info className="size-6 text-text-secondary" />
                             </div>
                         </li>
                     ))

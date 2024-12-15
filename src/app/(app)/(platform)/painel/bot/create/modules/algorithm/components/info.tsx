@@ -43,7 +43,7 @@ export default function BotInfo(
         <>
             {
                 open && 
-                <div ref={popupRef} className="absolute w-96 bg-background-primary z-10 border border-background-secondaryDarkBig rounded-md">
+                <div ref={popupRef} className="fixed w-96 bg-background-primary z-30 border border-background-secondaryDarkBig rounded-md">
                     <ul className="grid grid-cols-3">
                         <li className={`rounded-md border-b border-background-secondaryDarkBig font-bold flex items-center justify-center p-2 ${select === 'description' && 'bg-background-decoration text-text-ligth' }`} onClick={() => setSelect('description')}>
                             <p>Descrição</p>

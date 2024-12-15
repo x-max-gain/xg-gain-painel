@@ -4,7 +4,7 @@
 }
 .canva {
   width: 3000px;
-  height: 600px;
+  height: 700px;
   overflow: auto;
   background-image: linear-gradient(to bottom, #ee4035, #911129);
 
@@ -17,10 +17,9 @@
     border-radius: 4px;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #FFF;
+    background-color: #fff;
     border-radius: 4px;
     border: none;
     cursor: pointer;
   }
-  
 }

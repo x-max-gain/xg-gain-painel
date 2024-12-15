@@ -36,7 +36,7 @@ export default function CreateBotAlgorithmModelFunc(
         </div>
         
         {
-            open && <div className="max-h-96 overflow-y-auto select-bot-list bg-background-primary border border-gray-500 w-full rounded-md">
+            open && <div className="z-20 max-h-96 overflow-y-auto overflow-visible select-bot-list bg-background-primary border border-gray-500 w-full rounded-md">
             <ul>
                 {
                     data.map((item, index) => (
@@ -72,7 +72,7 @@ export default function CreateBotAlgorithmModelFunc(
                                                         </div>
                                                         <div 
                                                             onClick={() => setSelectInfo(`${index}${index2}`)}
-                                                            className="relative border border-background-secondaryDark px-2 py-2 hover:bg-background-secondary"
+                                                            className="border border-background-secondaryDark px-2 py-2 hover:bg-background-secondary"
                                                         >
                                                             <Info className="size-6 text-text-secondary" />
                                                             <BotInfo setOpen={setSelectInfo} info={func.info} open={selectInfo === `${index}${index2}`}  />
