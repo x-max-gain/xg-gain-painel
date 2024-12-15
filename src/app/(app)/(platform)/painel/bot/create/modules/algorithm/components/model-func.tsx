@@ -53,7 +53,7 @@ export default function CreateBotAlgorithmModelFunc(
                                         <div 
                                             onClick={(event) => clickCategory(event, item._id)}
                                             className="flex justify-between items-center bg-background-secondaryDark hover:bg-background-secondaryDarkBig border border-gray-200 text-text-primary px-4 py-2 cursor-pointer rounded-md">
-                                            <p>{item.name}</p>
+                                            <p onClick={(event) => clickCategory(event, item._id)}>{item.name}</p>
                                             <ChevronDown onClick={(event) => clickCategory(event, item._id)} className="size-6 text-text-primary2" />
                                         </div>
                                         {
