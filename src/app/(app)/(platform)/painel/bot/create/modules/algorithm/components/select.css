@@ -9,9 +9,6 @@
   top: 100%;
   z-index: 1;
 }
-.select-bot .select-bot-list ul li {
-  margin-bottom: 5px;
-}
 .select-bot .select-bot-list ul li:last-child {
   margin-bottom: 0px;
 }

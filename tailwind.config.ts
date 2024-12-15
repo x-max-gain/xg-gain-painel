@@ -15,11 +15,15 @@ const config: Config = {
         background: {
           primary: "#fff",
           secondary: "#eee",
+          secondaryDark: "#ddd",
+          secondaryDarkBig: "#ccc",
           green: "#08DD7E",
+          decoration: "#243bed",
           deep: "#f5f5f5",
         },
         text: {
           primary: "#000", 
+          primary2: "#666666", 
           secondary: "#A1A1AA", 
           alternatve:"#000",
           ligth:"#fff"

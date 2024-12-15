@@ -11,6 +11,7 @@ export default function CreateBotAlgorithmModel1(
 ) {
     const [selectLeft, setSelectLeft] = useState<any>(null);
     const [selectRight, setSelectRight] = useState<any>(null);
+    const [selectContinue, setSelectContinue] = useState<any>(null);
     const continueObj = data?.continue ? data.continue() : null;
 
     const selectOptionLeft = (select: any) => {
@@ -18,6 +19,9 @@ export default function CreateBotAlgorithmModel1(
     }
     const selectOptionRight = (select: any) => {
         setSelectRight(select)
+    }
+    const selectOptionContinue = (select: any) => {
+        setSelectContinue(select)
     }
 
     return <div 
@@ -68,7 +72,13 @@ export default function CreateBotAlgorithmModel1(
                     className="w-10 col-span-1 font-bold flex items-center"
                 >Faz</div>
                 <div className="col-span-10 w-full">
-                    <CreateBotAlgorithmSelect title="Selecione um opção" options={continueObj} setElementSelect={() => {}} />
+                    {
+                        selectContinue ? (
+                            <CreateBotAlgorithmModel1 data={selectContinue} />
+                        ) : (
+                            <CreateBotAlgorithmSelect title="Selecione um opção" options={continueObj} setElementSelect={selectOptionContinue} />
+                        )
+                    }
                 </div>
             </div>
         }

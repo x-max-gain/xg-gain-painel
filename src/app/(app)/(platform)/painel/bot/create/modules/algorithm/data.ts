@@ -1,6 +1,7 @@
 const createOperation = {
     signal: 'createOperation',
     name: 'Abrir operação',
+    type: 'function',
     params: [
         {
             index: 0,
@@ -33,13 +34,25 @@ const createOperation = {
     ]
 }
 
-const FunctionsOptions = [
+export const FunctionsOptions = [
     {
         name: 'Indicadores',
+        type: 'category',
         functions: [
             {
                 signal: 'valueFibonnaci',
                 name: 'Valor do fibonacci',
+                type: 'function',
+                info: {
+                    description: "Busca em qual posição do fibonacci o valor atual do ativo está",
+                    code: {
+                        body: `function valueFibonnaci(candles: number){
+    return candles * 2;
+}`,
+                        language: "JavaScript",
+                    },
+                    technical: "O indicador é criado a partir da soma de tal"
+                },
                 params: [
                     {
                         index: 0,
@@ -55,15 +68,34 @@ const FunctionsOptions = [
     },
     {
         name: 'Buscar dados',
+        type: 'category',
         functions: [
             {
                 signal: 'valueCurrent',
                 name: 'Valor atual',
+                type: 'function',
+                info: {
+                    description: "Busca em qual posição do fibonacci o valor atual do ativo está",
+                    code: {
+                        body: "(candles: number) => {return candles * 2}",
+                        language: "JavaScript",
+                    },
+                    technical: "O indicador é criado a partir da soma de tal"
+                },
                 params: []
             },
             {
                 signal: 'averagesDays',
                 name: 'Média dos últimos dias',
+                type: 'function',
+                info: {
+                    description: "Busca em qual posição do fibonacci o valor atual do ativo está",
+                    code: {
+                        body: "(candles: number) => {return candles * 2}",
+                        language: "JavaScript",
+                    },
+                    technical: "O indicador é criado a partir da soma de tal"
+                },
                 params: [
                     {
                         index: 0,
