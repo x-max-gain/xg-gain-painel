@@ -7,14 +7,15 @@ import { Plus, X, ChevronDown, Code, Info } from "lucide-react";
 import BotInfo from "./info";
 type CreateBotAlgorithmModelFuncType = {
     data: Array<any>;
-    setElementSelect: (element: any) => void
+    setElementSelect: (element: any) => void,
+    startOpen?: boolean
 }
 
 export default function CreateBotAlgorithmModelFunc(
-    { data, setElementSelect }: CreateBotAlgorithmModelFuncType
+    { data, setElementSelect, startOpen = false }: CreateBotAlgorithmModelFuncType,
 ) {
     const [selectInfo, setSelectInfo] = useState("");
-    const [open, setOpen] = useState<boolean>(false);
+    const [open, setOpen] = useState<boolean>(startOpen);
     const [opensCategories, setOpensCategories] = useState<Array<string>>([]);
 
     const clickCategory = (event: any, _id: string) => {
@@ -32,7 +33,7 @@ export default function CreateBotAlgorithmModelFunc(
     return <div className="select-bot">
         <div onClick={() => setOpen(!open)} className="min-w-80 bg-background-secondary text-text-primary px-4 py-2 rounded-md flex items-center cursor-pointer">
             { !open ? <Plus className="mr-4 size-4" /> : <X className="mr-4 size-4" /> }
-            <p>Selecione uma função</p>
+            <p>Selecione o dado</p>
         </div>
         
         {

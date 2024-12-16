@@ -276,8 +276,8 @@ export const FunctionsOptions = [
 
 const DataFunction = (continueOption: boolean) => {
     return {
-        name: 'Chamar um função',
-        type: 'data',
+        name: 'Buscar dados',
+        type: 'func',
         style: {
             backgroundColor: "#fea304",
             color: "#FFF"
@@ -301,20 +301,16 @@ const DataValue = {
     },
     signals: [
         {
-            signal: 'Porcentagem',
-            name: 'percent'
+            signal: 'percent',
+            name: 'Porcentagem'
         },
         {
-            signal: 'Número',
-            name: 'number'
+            signal: 'number',
+            name: 'Número'
         },
         {
-            signal: 'Verdadeiro/Falso',
-            name: 'boolean'
-        },
-        {
-            signal: 'Número quebrado',
-            name: 'float'
+            signal: 'float',
+            name: 'Decimal'
         }
     ]
 }
@@ -384,7 +380,7 @@ const Comparison = {
             name: 'Menor ou igual'
         }
     ],
-    params: [MathOptions, {...DataValue, ...DataFunction(false)}]
+    params: [MathOptions, DataValue, DataFunction(false)]
 }
 
 const Logic = {
@@ -404,7 +400,7 @@ const Logic = {
             name: 'Ou'
         }
     ],
-    params: [MathOptions, Comparison, {...DataValue, ...DataFunction(false)}]
+    params: [MathOptions, Comparison, DataValue, DataFunction(false)]
 }
 const continueFunc = () => {
     const logicC = { ...Logic, continue: continueFunc };
