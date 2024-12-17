@@ -1,19 +1,20 @@
 "use client";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import "./select.css";
 
 // ICONS
 import { Plus, X, ChevronDown, Code, Info } from "lucide-react";
 import BotInfo from "./info";
+import { ModelFunctionSelectEndType, ModelFunctionSelectType } from "./types";
 type CreateBotAlgorithmModelFuncType = {
     data: Array<any>;
-    setElementSelect: (element: any) => void,
     startOpen?: boolean
 }
 
 export default function CreateBotAlgorithmModelFunc(
-    { data, setElementSelect, startOpen = false }: CreateBotAlgorithmModelFuncType,
+    { data, startOpen = false }: CreateBotAlgorithmModelFuncType,
 ) {
+    const [selectOption, setSelecteOption] = useState<ModelFunctionSelectEndType>()
     const [selectInfo, setSelectInfo] = useState("");
     const [open, setOpen] = useState<boolean>(startOpen);
     const [opensCategories, setOpensCategories] = useState<Array<string>>([]);
@@ -28,6 +29,14 @@ export default function CreateBotAlgorithmModelFunc(
                 setOpensCategories([...opensCategories, _id])
             }
         }
+    }
+
+    const selectOptionFunction = (item: ModelFunctionSelectType) => {
+        console.log(item);
+        setSelecteOption({
+            signal: item.signal,
+            params: []
+        })
     }
 
     return <div className="select-bot">
@@ -46,7 +55,7 @@ export default function CreateBotAlgorithmModelFunc(
                                 item.type == "function" ? (
                                     <li 
                                         key={index}
-                                        onClick={() => {setElementSelect(item); setOpen(false);}}
+                                        onClick={() => {selectOptionFunction(item); setOpen(false);}}
                                         className="bg-background-secondary hover:bg-background-deep border border-gray-200 text-text-primary px-4 py-2 cursor-pointer rounded-md"
                                     >{item.name}</li>
                                 ) : (
@@ -66,7 +75,7 @@ export default function CreateBotAlgorithmModelFunc(
                                                         className="flex items-center justify-between border border-gray-200 text-text-primary cursor-pointer rounded-md"
                                                     >
                                                         <div 
-                                                            onClick={() => {setElementSelect(item); setOpen(false);}} 
+                                                            onClick={() => {selectOptionFunction(item.functions[index2]); setOpen(false);}} 
                                                             className="w-full flex items-center px-4 py-2 hover:bg-background-secondary"
                                                         >
                                                             <Code className="mr-2 size-4 text-text-primary2" />{func.name}

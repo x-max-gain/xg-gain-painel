@@ -58,6 +58,7 @@ export const FunctionsOptions = [
                     {
                         index: 0,
                         name: 'Quantidades de velas',
+                        description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
                         type: 'number',
                         validations: {
                             required: true
@@ -274,7 +275,7 @@ export const FunctionsOptions = [
     }
 ]
 
-const DataFunction = (continueOption: boolean) => {
+export const DataFunction = (continueOption: boolean) => {
     return {
         name: 'Buscar dados',
         type: 'func',
