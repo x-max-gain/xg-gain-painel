@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState } from 'react';
 import Image from "next/image";
-import GoogleLogo from "../../../../../public/social/goolge-logo.png";
+import GoogleLogo from "../../../public/social/goolge-logo.png";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({

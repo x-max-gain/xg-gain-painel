@@ -42,7 +42,7 @@ export default function CreateBotAlgorithmModelMain(
             <div className="col-span-4 flex">
                 {
                     selectLeft && selectLeft.type === "func" && (
-                        <CreateBotAlgorithmModelFunc startOpen={true} data={selectLeft.params} setElementSelect={() => {}} />
+                        <CreateBotAlgorithmModelFunc startOpen={true} data={selectLeft.params} />
                     )
                 }
                 {
@@ -73,7 +73,7 @@ export default function CreateBotAlgorithmModelMain(
             <div className="col-span-4 flex">
                 {
                     selectRight && selectRight.type === "func" && (
-                        <CreateBotAlgorithmModelFunc data={selectRight} setElementSelect={() => {}} />
+                        <CreateBotAlgorithmModelFunc data={selectRight} />
                     )
                 }
                 {
