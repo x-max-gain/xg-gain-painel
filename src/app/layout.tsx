@@ -8,7 +8,7 @@ import NextTopLoader from 'nextjs-toploader';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "X MAX GAIN",
+  title: "VastyBoy",
   description: "Sua fonte completa para dados de mercado em um só lugar",
 };
 

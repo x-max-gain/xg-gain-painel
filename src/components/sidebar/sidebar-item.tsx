@@ -23,7 +23,7 @@ function Item({ item }: { item: ISidebarItem }) {
   const pathname = usePathname()
 
   const isActive = (path: string) => {
-    return pathname === path ? "bg-background-deep rounded-lg !text-icons-active !font-medium" : "";
+    return pathname === path ? "bg-background-deep rounded-lg !text-text-primary !font-medium" : "";
   };
 
   return (
@@ -31,7 +31,7 @@ function Item({ item }: { item: ISidebarItem }) {
       <li className={`flex gap-3 items-center px-4 py-2 hover:text-text-secondary hover:font-medium text-icons-primary 
         ${isActive(item.url)}`}>
 
-        <div className={`h-9 w-9 flex items-center justify-center rounded-lg bg-background-primary shadow`}>
+        <div className={`h-9 w-9 flex items-center justify-center rounded-lg bg-background-main shadow text-text-ligth`}>
           {item.icon}
         </div>
         {item.name}
