@@ -63,7 +63,7 @@ export default function Account() {
               key={tab}
               className={`px-2 sm:px-4 py-2 ${
                 activeTab === tab
-                  ? "bg-green-500 font-bold rounded text-white"
+                  ? "bg-background-main font-bold rounded text-white"
                   : "text-gray-500"
               }`}
               onClick={() => setActiveTab(tab)}

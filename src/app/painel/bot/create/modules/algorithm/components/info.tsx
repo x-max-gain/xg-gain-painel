@@ -48,24 +48,29 @@ export default function BotInfo(
                         <li className={`rounded-md border-b border-background-secondaryDarkBig font-bold flex items-center justify-center p-2 ${select === 'description' && 'bg-background-decoration text-text-ligth' }`} onClick={() => setSelect('description')}>
                             <p>Descrição</p>
                         </li>
-                        <li className={`rounded-md border-b border-background-secondaryDarkBig font-bold flex items-center justify-center p-2 ${select === 'code' && 'bg-background-decoration text-text-ligth' }`} onClick={() => setSelect('code')}>
-                            <p>Código</p>
-                        </li>
-                        <li className={`rounded-md border-b border-background-secondaryDarkBig font-bold flex items-center justify-center p-2 ${select === 'technical' && 'bg-background-decoration text-text-ligth' }`} onClick={() => setSelect('technical')}>
-                            <p>Inf. Técnicas</p>
-                        </li>
+                        {
+                            code && <li className={`rounded-md border-b border-background-secondaryDarkBig font-bold flex items-center justify-center p-2 ${select === 'code' && 'bg-background-decoration text-text-ligth' }`} onClick={() => setSelect('code')}>
+                                <p>Código</p>
+                            </li>
+                        }
+                        
+                        {
+                            technical && <li className={`rounded-md border-b border-background-secondaryDarkBig font-bold flex items-center justify-center p-2 ${select === 'technical' && 'bg-background-decoration text-text-ligth' }`} onClick={() => setSelect('technical')}>
+                                <p>Inf. Técnicas</p>
+                            </li>
+                        }
                     </ul>
                     <div className="p-2 overflow-y-auto h-80">
                         {
                             select === "description" && <p>{description}</p>
                         }
                         {
-                            select === "code" && <SyntaxHighlighter language="javascript" style={dracula} className="bg-gray-800 text-gray-100 p-4 rounded-lg overflow-auto">
+                            select === "code" && code && <SyntaxHighlighter language="javascript" style={dracula} className="bg-gray-800 text-gray-100 p-4 rounded-lg overflow-auto">
                                 {code.body}
                             </SyntaxHighlighter>
                         }
                         {
-                            select === "technical" && <p>{technical}</p>
+                            select === "technical" && technical && <p>{technical}</p>
                         }
                     </div>
                 </div>

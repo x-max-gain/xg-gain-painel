@@ -1,3 +1,5 @@
+import { FunctionsOptionsType } from "./components/types"
+
 const createOperation = {
     signal: 'createOperation',
     name: 'Abrir operação',
@@ -34,7 +36,7 @@ const createOperation = {
     ]
 }
 
-export const FunctionsOptions = [
+export const FunctionsOptions: Array<FunctionsOptionsType> = [
     {
         _id: 'd1d121dd1111',
         name: 'Indicadores',
@@ -58,7 +60,9 @@ export const FunctionsOptions = [
                     {
                         index: 0,
                         name: 'Quantidades de velas',
-                        description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
+                        info: {
+                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
+                        },
                         type: 'number',
                         validations: {
                             required: true
@@ -104,6 +108,9 @@ export const FunctionsOptions = [
                         index: 0,
                         name: 'Quantidades de dias',
                         type: 'number',
+                        info: {
+                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
+                        },
                         validations: {
                             required: true
                         }
@@ -127,6 +134,9 @@ export const FunctionsOptions = [
                         index: 0,
                         name: 'Quantidades de dias',
                         type: 'number',
+                        info: {
+                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
+                        },
                         validations: {
                             required: true
                         }
@@ -150,6 +160,9 @@ export const FunctionsOptions = [
                         index: 0,
                         name: 'Quantidades de dias',
                         type: 'number',
+                        info: {
+                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
+                        },
                         validations: {
                             required: true
                         }
@@ -173,6 +186,9 @@ export const FunctionsOptions = [
                         index: 0,
                         name: 'Quantidades de dias',
                         type: 'number',
+                        info: {
+                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
+                        },
                         validations: {
                             required: true
                         }
@@ -196,6 +212,9 @@ export const FunctionsOptions = [
                         index: 0,
                         name: 'Quantidades de dias',
                         type: 'number',
+                        info: {
+                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
+                        },
                         validations: {
                             required: true
                         }
@@ -219,6 +238,9 @@ export const FunctionsOptions = [
                         index: 0,
                         name: 'Quantidades de dias',
                         type: 'number',
+                        info: {
+                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
+                        },
                         validations: {
                             required: true
                         }
@@ -242,6 +264,9 @@ export const FunctionsOptions = [
                         index: 0,
                         name: 'Quantidades de dias',
                         type: 'number',
+                        info: {
+                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
+                        },
                         validations: {
                             required: true
                         }
@@ -265,6 +290,9 @@ export const FunctionsOptions = [
                         index: 0,
                         name: 'Quantidades de dias',
                         type: 'number',
+                        info: {
+                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
+                        },
                         validations: {
                             required: true
                         }

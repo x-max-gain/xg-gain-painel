@@ -1,7 +1,13 @@
+export type FunctionsOptionsType = {
+    _id: string;
+    name: string;
+    type: 'category';
+    functions: Array<ModelFunctionSelectType>
+}
 export type ModelFunctionSelectType = {
     signal: string;
     name: string;
-    type: string;
+    type: 'function';
     info: {
         description: string;
         code: {
@@ -14,7 +20,9 @@ export type ModelFunctionSelectType = {
         index: number;
         name: string;
         type: string;
-        description: string;
+        info: {
+            description: string;
+        };
         validations: {
             required: boolean;
         }

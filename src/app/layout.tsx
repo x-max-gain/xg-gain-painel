@@ -19,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+      </head>
       <body className={inter.className}>
         <NextTopLoader
           color="#08DD7E"

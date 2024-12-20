@@ -1,8 +1,8 @@
 export type DataInfoType = {
     description: string;
-    code: {
+    code?: {
         body: string;
         language: string;
     },
-    technical: string;
+    technical?: string;
 }

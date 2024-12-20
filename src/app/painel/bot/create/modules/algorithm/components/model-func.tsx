@@ -5,16 +5,16 @@ import "./select.css";
 // ICONS
 import { Plus, X, ChevronDown, Code, Info } from "lucide-react";
 import BotInfo from "./info";
-import { ModelFunctionSelectEndType, ModelFunctionSelectType } from "./types";
+import { FunctionsOptionsType, ModelFunctionSelectType } from "./types";
 type CreateBotAlgorithmModelFuncType = {
-    data: Array<any>;
+    data: Array<FunctionsOptionsType | ModelFunctionSelectType>;
     startOpen?: boolean
 }
 
 export default function CreateBotAlgorithmModelFunc(
     { data, startOpen = false }: CreateBotAlgorithmModelFuncType,
 ) {
-    const [selectOption, setSelecteOption] = useState<ModelFunctionSelectEndType>()
+    const [selectOption, setSelecteOption] = useState<ModelFunctionSelectType>()
     const [selectInfo, setSelectInfo] = useState("");
     const [open, setOpen] = useState<boolean>(startOpen);
     const [opensCategories, setOpensCategories] = useState<Array<string>>([]);
@@ -32,19 +32,45 @@ export default function CreateBotAlgorithmModelFunc(
     }
 
     const selectOptionFunction = (item: ModelFunctionSelectType) => {
-        console.log(item);
-        setSelecteOption({
-            signal: item.signal,
-            params: []
-        })
+        setSelecteOption(item)
     }
 
     return <div className="select-bot">
-        <div onClick={() => setOpen(!open)} className="min-w-80 bg-background-secondary text-text-primary px-4 py-2 rounded-md flex items-center cursor-pointer">
-            { !open ? <Plus className="mr-4 size-4" /> : <X className="mr-4 size-4" /> }
-            <p>Selecione o dado</p>
-        </div>
-        
+        {
+            !selectOption && (
+                <div onClick={() => setOpen(!open)} className="min-w-80 bg-background-secondary text-text-primary px-4 py-2 rounded-md flex items-center cursor-pointer">
+                    { !open ? <Plus className="mr-4 size-4" /> : <X className="mr-4 size-4" /> }
+                    <p>Selecione o dado</p>
+                </div>
+            )
+        }
+        {
+            selectOption && (
+                <div className="min-w-80 bg-background-secondary text-text-primary px-4 py-2 rounded-md flex flex-col cursor-pointer">
+                    <h2 className="font-bold">{selectOption.name}</h2>
+                    <ul>
+                        {
+                            selectOption.params.map((param, index) => (
+                                <li key={index} className="flex items-center">
+                                    <p>{param.name}: </p>
+                                    <input 
+                                        type="text" 
+                                        className="ml-2 p-2 bg-background-primary rounded focus:outline-gray-200"
+                                    />
+                                    <div 
+                                        onClick={() => setSelectInfo(`${index}`)}
+                                        className="border border-background-secondaryDark px-2 py-2 hover:bg-background-secondary"
+                                    >
+                                        <Info className="size-6 text-text-secondary" />
+                                        <BotInfo setOpen={setSelectInfo} info={param.info} open={selectInfo === `${index}`}  />
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            )
+        }
         {
             open && <div className="z-20 max-h-96 overflow-y-auto overflow-visible select-bot-list bg-background-primary border border-gray-500 w-full rounded-md">
             <ul>
@@ -99,7 +125,7 @@ export default function CreateBotAlgorithmModelFunc(
                     ))
                 }
             </ul>
-        </div>
+            </div>
         }
     </div>
 }

@@ -13,13 +13,13 @@ const config: Config = {
       },
       colors: {
         background: {
-          main: "#243bed",
+          main: "#4182e0",
           primary: "#fff",
           secondary: "#eee",
           secondaryDark: "#ddd",
           secondaryDarkBig: "#ccc",
           green: "#08DD7E",
-          decoration: "#243bed",
+          decoration: "#4182e0", // #243bed
           deep: "#f5f5f5",
         },
         text: {
@@ -28,7 +28,7 @@ const config: Config = {
           secondary: "#A1A1AA", 
           alternatve:"#000",
           ligth:"#fff",
-          main: "#243bed",
+          main: "#4182e0",
         },
         icons: {
           primary: "#929292",
