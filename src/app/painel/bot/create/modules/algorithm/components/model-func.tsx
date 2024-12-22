@@ -1,11 +1,11 @@
 "use client";
-import { ChangeEvent, ChangeEventHandler, FormEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import "./select.css";
 
 // ICONS
 import { Plus, X, ChevronDown, Code, Info } from "lucide-react";
 import BotInfo from "./info";
-import { FunctionsOptionsType, ModelFunctionSelectInput, ModelFunctionSelectType } from "./types";
+import { FunctionsOptionsType, ModelFunctionSelectType } from "./types";
 type CreateBotAlgorithmModelFuncType = {
     data: Array<FunctionsOptionsType | ModelFunctionSelectType>;
     startOpen?: boolean

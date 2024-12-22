@@ -3,6 +3,7 @@
 import { useState } from "react";
 import CreateBotAlgorithmSelect from "./select";
 import CreateBotAlgorithmModelFunc from "./model-func";
+import CreateBotAlgorithmModelData from "./model-data";
 
 type CreateBotAlgorithmModelMainType = {
     data: any
@@ -47,7 +48,7 @@ export default function CreateBotAlgorithmModelMain(
                 }
                 {
                     selectLeft && selectLeft.type === "data" && (
-                        <CreateBotAlgorithmModelFunc data={selectLeft} />
+                        <CreateBotAlgorithmModelData data={selectLeft} startOpen={true} />
                     )
                 }
                 {
@@ -78,7 +79,7 @@ export default function CreateBotAlgorithmModelMain(
                 }
                 {
                     selectRight && selectRight.type === "data" && (
-                        <CreateBotAlgorithmModelFunc data={selectRight} />
+                        <CreateBotAlgorithmModelData data={selectRight} startOpen={true} />
                     )
                 }
                 {
