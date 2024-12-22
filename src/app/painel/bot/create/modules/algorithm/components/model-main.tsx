@@ -30,7 +30,7 @@ export default function CreateBotAlgorithmModelMain(
         style={{ backgroundColor: data.style.backgroundColor || 'white'}}
         className={`text-text-primary p-4 rounded-md cursor-pointer`}
     >
-        <div className={`flex items-center mb-4`}>
+        <div className="flex items-start mb-4">
             {
                 continueObj && <div className="col-span-1 flex items-center">
                     <p 
@@ -47,7 +47,7 @@ export default function CreateBotAlgorithmModelMain(
                 }
                 {
                     selectLeft && selectLeft.type === "data" && (
-                        <CreateBotAlgorithmSelect startOpen={true} title="Selecione um opção" options={selectLeft.params} setElementSelect={selectOptionLeft} />
+                        <CreateBotAlgorithmModelFunc data={selectLeft} />
                     )
                 }
                 {
@@ -73,11 +73,16 @@ export default function CreateBotAlgorithmModelMain(
             <div className="col-span-4 flex">
                 {
                     selectRight && selectRight.type === "func" && (
+                        <CreateBotAlgorithmModelFunc data={selectRight.params} startOpen={true}  />
+                    )
+                }
+                {
+                    selectRight && selectRight.type === "data" && (
                         <CreateBotAlgorithmModelFunc data={selectRight} />
                     )
                 }
                 {
-                   selectRight && selectRight.type !!== "func" && (
+                   selectRight && selectRight.type !!== "func" && selectRight.type !== "data" &&  (
                         <CreateBotAlgorithmModelMain data={selectRight} />
                     ) 
                 }

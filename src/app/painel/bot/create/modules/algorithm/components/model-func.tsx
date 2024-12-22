@@ -110,15 +110,17 @@ export default function CreateBotAlgorithmModelFunc(
                                         className="border border-background-secondaryDark px-2 py-2 hover:bg-background-secondary"
                                     >
                                         <Info className="size-6 text-text-secondary" />
-                                        <BotInfo setOpen={setSelectInfo} info={selectOption.info} open={selectInfo === `${index}`}  />
+                                        <BotInfo setOpen={setSelectInfo} info={param.info} open={selectInfo === `${index}`}  />
                                     </div>
                                 </li>
                             ))
                         }
                     </ul>
-                    <div className="flex justify-end mt-2">
-                        <button className="bg-background-main font-bold rounded text-white py-2 w-full">Salvar</button>
-                    </div>
+                    {
+                        selectOption.params.length > 0 && <div className="flex justify-end mt-2">
+                            <button className="bg-background-main font-bold rounded text-white py-2 w-full">Salvar</button>
+                        </div>
+                    }
                 </div>
             )
         }

@@ -37,10 +37,6 @@ export default function CreateBotAlgorithm() {
                     <div className="flex py-2">
                         <CreateBotAlgorithmSelect title="Adicionar condição" setElementSelect={setElementSelect} options={execute} />
                     </div>
-
-                    <div className="flex py-2">
-                        <CreateBotAlgorithmModelFunc data={FunctionsOptions} />
-                    </div>
                 </div>
             </div>
         </div>

@@ -116,7 +116,7 @@ export const FunctionsOptions: Array<FunctionsOptionsType> = [
             {
                 signal: 'valueCurrent',
                 type: 'function',
-                title: "Valor atual",
+                title: "Valor atual do ativo",
                 info: {
                     description: "Busca em qual posição do fibonacci o valor atual do ativo está",
                     code: {
@@ -132,7 +132,7 @@ export const FunctionsOptions: Array<FunctionsOptionsType> = [
                 title: 'Média dos últimos dias',
                 type: 'function',
                 info: {
-                    description: "Busca em qual posição do fibonacci o valor atual do ativo está",
+                    description: "Busca a média do ativo nos últimos tantos dias",
                     code: {
                         body: "(candles: number) => {return candles * 2}",
                         language: "JavaScript",
