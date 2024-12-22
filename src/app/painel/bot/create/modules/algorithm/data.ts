@@ -39,15 +39,15 @@ const createOperation = {
 export const FunctionsOptions: Array<FunctionsOptionsType> = [
     {
         _id: 'd1d121dd1111',
-        name: 'Indicadores',
+        title: 'Indicadores',
         type: 'category',
         functions: [
             {
-                signal: 'valueFibonnaci',
-                name: 'Valor do fibonacci',
+                signal: 'movingAverages',
+                title: 'Médias móveis',
                 type: 'function',
                 info: {
-                    description: "Busca em qual posição do fibonacci o valor atual do ativo está",
+                    description: "As médias móveis são ferramentas amplamente utilizadas na análise técnica de mercados financeiros e em outras áreas da estatística e da previsão. Elas ajudam a suavizar os dados, eliminando as flutuações de curto prazo e destacando tendências mais longas.",
                     code: {
                         body: `function valueFibonnaci(candles: number){
     return candles * 2;
@@ -59,11 +59,47 @@ export const FunctionsOptions: Array<FunctionsOptionsType> = [
                 params: [
                     {
                         index: 0,
-                        name: 'Quantidades de velas',
+                        name: 'periods',
+                        title: 'Períodos',
                         info: {
                             description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
                         },
-                        type: 'number',
+                        input: {
+                            type: 'number',
+                        },
+                        validations: {
+                            required: true
+                        }
+                    },
+                    {
+                        index: 0,
+                        name: 'typeCalc',
+                        title: 'Tipo',
+                        info: {
+                            description: 'Tipo de cálculo usado para calcular os períodos',
+                        },
+                        input: {
+                            type: 'select',
+                            options: [
+                                {name: 'Exponencial', value: 'exponentions', type: 'string'},
+                                {name: 'Ponderada', value: 'ponderada', type: 'string'},
+                                {name: 'Adaptativa', value: 'adaptativa', type: 'string'}
+                            ]
+                        },
+                        validations: {
+                            required: true
+                        }
+                    },
+                    {
+                        index: 0,
+                        title: 'Deslocamento',
+                        name: 'displacement',
+                        input: {
+                            type: 'number',
+                        },
+                        info: {
+                            description: 'Deslocamento depois do última registro',
+                        },
                         validations: {
                             required: true
                         }
@@ -74,13 +110,13 @@ export const FunctionsOptions: Array<FunctionsOptionsType> = [
     },
     {
         _id: 'd1d121dd1123',
-        name: 'Buscar dados',
+        title: 'Buscar dados',
         type: 'category',
         functions: [
             {
                 signal: 'valueCurrent',
-                name: 'Valor atual',
                 type: 'function',
+                title: "Valor atual",
                 info: {
                     description: "Busca em qual posição do fibonacci o valor atual do ativo está",
                     code: {
@@ -93,7 +129,7 @@ export const FunctionsOptions: Array<FunctionsOptionsType> = [
             },
             {
                 signal: 'averagesDays',
-                name: 'Média dos últimos dias',
+                title: 'Média dos últimos dias',
                 type: 'function',
                 info: {
                     description: "Busca em qual posição do fibonacci o valor atual do ativo está",
@@ -106,190 +142,11 @@ export const FunctionsOptions: Array<FunctionsOptionsType> = [
                 params: [
                     {
                         index: 0,
-                        name: 'Quantidades de dias',
-                        type: 'number',
-                        info: {
-                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
+                        name: 'quantDay',
+                        title: 'Quantidades de dias',
+                        input: {
+                            type: 'number',
                         },
-                        validations: {
-                            required: true
-                        }
-                    }
-                ]
-            },
-            {
-                signal: 'averagesDays',
-                name: 'Média dos últimos dias',
-                type: 'function',
-                info: {
-                    description: "Busca em qual posição do fibonacci o valor atual do ativo está",
-                    code: {
-                        body: "(candles: number) => {return candles * 2}",
-                        language: "JavaScript",
-                    },
-                    technical: "O indicador é criado a partir da soma de tal"
-                },
-                params: [
-                    {
-                        index: 0,
-                        name: 'Quantidades de dias',
-                        type: 'number',
-                        info: {
-                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
-                        },
-                        validations: {
-                            required: true
-                        }
-                    }
-                ]
-            },
-            {
-                signal: 'averagesDays',
-                name: 'Média dos últimos dias',
-                type: 'function',
-                info: {
-                    description: "Busca em qual posição do fibonacci o valor atual do ativo está",
-                    code: {
-                        body: "(candles: number) => {return candles * 2}",
-                        language: "JavaScript",
-                    },
-                    technical: "O indicador é criado a partir da soma de tal"
-                },
-                params: [
-                    {
-                        index: 0,
-                        name: 'Quantidades de dias',
-                        type: 'number',
-                        info: {
-                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
-                        },
-                        validations: {
-                            required: true
-                        }
-                    }
-                ]
-            },
-            {
-                signal: 'averagesDays',
-                name: 'Média dos últimos dias',
-                type: 'function',
-                info: {
-                    description: "Busca em qual posição do fibonacci o valor atual do ativo está",
-                    code: {
-                        body: "(candles: number) => {return candles * 2}",
-                        language: "JavaScript",
-                    },
-                    technical: "O indicador é criado a partir da soma de tal"
-                },
-                params: [
-                    {
-                        index: 0,
-                        name: 'Quantidades de dias',
-                        type: 'number',
-                        info: {
-                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
-                        },
-                        validations: {
-                            required: true
-                        }
-                    }
-                ]
-            },
-            {
-                signal: 'averagesDays',
-                name: 'Média dos últimos dias',
-                type: 'function',
-                info: {
-                    description: "Busca em qual posição do fibonacci o valor atual do ativo está",
-                    code: {
-                        body: "(candles: number) => {return candles * 2}",
-                        language: "JavaScript",
-                    },
-                    technical: "O indicador é criado a partir da soma de tal"
-                },
-                params: [
-                    {
-                        index: 0,
-                        name: 'Quantidades de dias',
-                        type: 'number',
-                        info: {
-                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
-                        },
-                        validations: {
-                            required: true
-                        }
-                    }
-                ]
-            },
-            {
-                signal: 'averagesDays',
-                name: 'Média dos últimos dias',
-                type: 'function',
-                info: {
-                    description: "Busca em qual posição do fibonacci o valor atual do ativo está",
-                    code: {
-                        body: "(candles: number) => {return candles * 2}",
-                        language: "JavaScript",
-                    },
-                    technical: "O indicador é criado a partir da soma de tal"
-                },
-                params: [
-                    {
-                        index: 0,
-                        name: 'Quantidades de dias',
-                        type: 'number',
-                        info: {
-                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
-                        },
-                        validations: {
-                            required: true
-                        }
-                    }
-                ]
-            },
-            {
-                signal: 'averagesDays',
-                name: 'Média dos últimos dias',
-                type: 'function',
-                info: {
-                    description: "Busca em qual posição do fibonacci o valor atual do ativo está",
-                    code: {
-                        body: "(candles: number) => {return candles * 2}",
-                        language: "JavaScript",
-                    },
-                    technical: "O indicador é criado a partir da soma de tal"
-                },
-                params: [
-                    {
-                        index: 0,
-                        name: 'Quantidades de dias',
-                        type: 'number',
-                        info: {
-                            description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
-                        },
-                        validations: {
-                            required: true
-                        }
-                    }
-                ]
-            },
-            {
-                signal: 'averagesDays',
-                name: 'Média dos últimos dias',
-                type: 'function',
-                info: {
-                    description: "Busca em qual posição do fibonacci o valor atual do ativo está",
-                    code: {
-                        body: "(candles: number) => {return candles * 2}",
-                        language: "JavaScript",
-                    },
-                    technical: "O indicador é criado a partir da soma de tal"
-                },
-                params: [
-                    {
-                        index: 0,
-                        name: 'Quantidades de dias',
-                        type: 'number',
                         info: {
                             description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
                         },

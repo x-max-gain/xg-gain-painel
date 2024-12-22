@@ -1,12 +1,24 @@
 export type FunctionsOptionsType = {
     _id: string;
-    name: string;
+    title: string;
     type: 'category';
     functions: Array<ModelFunctionSelectType>
 }
+type ModelFunctionSelectInputNumber = {
+    type: 'number',
+}
+type ModelFunctionSelectInputSelect = {
+    type: 'select',
+    options: Array<{
+        name: string,
+        type: 'string' | 'boolean' | 'number'
+        value: any
+    }>
+}
+export type ModelFunctionSelectInput = ModelFunctionSelectInputNumber | ModelFunctionSelectInputSelect;
 export type ModelFunctionSelectType = {
     signal: string;
-    name: string;
+    title: string;
     type: 'function';
     info: {
         description: string;
@@ -19,7 +31,8 @@ export type ModelFunctionSelectType = {
     params: Array<{
         index: number;
         name: string;
-        type: string;
+        title: string;
+        input: ModelFunctionSelectInput;
         info: {
             description: string;
         };
