@@ -6,8 +6,7 @@ import CreateBotAlgorithmModelMain from "./components/model-main";
 
 // MODULES
 import CreateBotAlgorithmSelect from "./components/select";
-import { execute, FunctionsOptions } from "./data";
-import CreateBotAlgorithmModelFunc from "./components/model-func";
+import { execute } from "./data";
 
 export default function CreateBotAlgorithm() {
     const [conditions, setConditions] = useState<Array<any>>([]);

@@ -36,8 +36,9 @@ export default function CreateBotAlgorithmModelFunc(
         setSelecteOption(item)
     }
 
-    const maskNumber = (name: string, value: string) => {
-        return value;
+    const maskNumber = (value: string) => {
+        const newValue = parseInt(value.replace(/\D/g, ""));
+        return newValue;
     }
 
     const mask = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>, type: string) => {
@@ -45,7 +46,7 @@ export default function CreateBotAlgorithmModelFunc(
         const value = event.target.value;
 
         if(type === "number"){
-            const response = maskNumber(name, value);
+            const response = maskNumber(value);
             console.log(response)
             setDataFunction({
                 ...dataFunction,
