@@ -26,7 +26,7 @@ export default function CreateBotAlgorithmModelFunc(
         if (event.target === event.currentTarget) {
             const exist = opensCategories.includes(_id);
 
-            if(exist) {
+            if (exist) {
                 setOpensCategories(opensCategories.filter(item => item !== _id))
             } else {
                 setOpensCategories([...opensCategories, _id])
@@ -76,19 +76,19 @@ export default function CreateBotAlgorithmModelFunc(
         const name = event.target.name;
         const value = event.target.value;
 
-        if(type === "number"){
+        if (type === "number" || type === "percent") {
             const response = maskNumber(value);
             setDataFunction({ ...dataFunction, [name]: response })
         }
-        if(type === "price"){
+        if (type === "price") {
             const response = maskPrice(value);
             setDataFunction({ ...dataFunction, [name]: response })
         }
-        if(type === "boolean" && 'checked' in event.target){
+        if (type === "boolean" && 'checked' in event.target) {
             console.log(event.target.checked)
             setDataFunction({ ...dataFunction, [name]: event.target.checked ? true : false })
         }
-        if(type === "select"){
+        if (type === "select") {
             setDataFunction({ ...dataFunction, [name]: value })
         }
     }
@@ -97,7 +97,7 @@ export default function CreateBotAlgorithmModelFunc(
         {
             !selectOption && (
                 <div onClick={() => setOpen(!open)} className="min-w-80 bg-background-secondary text-text-primary px-4 py-2 rounded-md flex items-center cursor-pointer">
-                    { !open ? <Plus className="mr-4 size-4" /> : <X className="mr-4 size-4" /> }
+                    {!open ? <Plus className="mr-4 size-4" /> : <X className="mr-4 size-4" />}
                     <p>Selecione o dado</p>
                 </div>
             )
@@ -114,11 +114,12 @@ export default function CreateBotAlgorithmModelFunc(
                                     <div className="flex w-full ml-2 mb-1">
                                         {
                                             param.input.type === "number" && (
-                                                <input 
+                                                <input
+                                                    inputMode="numeric"
                                                     name={param.name}
                                                     onChange={(event: ChangeEvent<HTMLInputElement>) => mask(event, param.input.type)}
                                                     value={dataFunction[param.name]}
-                                                    type="text" 
+                                                    type="text"
                                                     placeholder={param.input.placeholder}
                                                     className="w-full px-2 h-10 bg-background-primary rounded focus:outline-gray-200"
                                                 />
@@ -128,14 +129,31 @@ export default function CreateBotAlgorithmModelFunc(
                                             param.input.type === "price" && (
                                                 <div className="flex items-center bg-background-primary h-10 px-2">
                                                     <p className="mr-2">{informationsActiveSelected.selectedActive.coin.signal}</p>
-                                                    <input 
+                                                    <input
+                                                        inputMode="numeric"
                                                         name={param.name}
                                                         onChange={(event: ChangeEvent<HTMLInputElement>) => mask(event, param.input.type)}
                                                         value={dataFunction[param.name]}
-                                                        type="text" 
+                                                        type="text"
                                                         placeholder={param.input.placeholder}
                                                         className="w-full px-2 h-8 bg-gray-50 rounded focus:outline-none"
                                                     />
+                                                </div>
+                                            )
+                                        }
+                                        {
+                                            param.input.type === "percent" && (
+                                                <div className="flex items-center bg-background-primary h-10 px-2">
+                                                    <input
+                                                        inputMode="numeric"
+                                                        name={param.name}
+                                                        onChange={(event: ChangeEvent<HTMLInputElement>) => mask(event, param.input.type)}
+                                                        value={dataFunction[param.name]}
+                                                        type="text"
+                                                        placeholder={param.input.placeholder}
+                                                        className="w-full px-2 h-8 bg-gray-50 rounded focus:outline-none text-end"
+                                                    />
+                                                    <p className="mr-2">%</p>
                                                 </div>
                                             )
                                         }
@@ -144,26 +162,26 @@ export default function CreateBotAlgorithmModelFunc(
                                                 <div className="w-full bg-background-primary rounded flex h-10 items-center">
                                                     <label htmlFor={`check-input-${param.name}`} className={`bg-background-secondary rounded h-1/4 flex w-2/12 mx-2 relative items-center ${dataFunction[param.name] ? 'justify-end' : 'justify-start'}`}>
                                                         <div className={`w-5 ${dataFunction[param.name] ? 'bg-green-500' : 'bg-gray-400'} h-[200%] absolute rounded-full`}></div>
-                                                        <input 
-                                                            type="checkbox" 
-                                                            onChange={(event: ChangeEvent<HTMLInputElement>) => mask(event, param.input.type)} 
-                                                            name={param.name} 
-                                                            id={`check-input-${param.name}`} 
-                                                            value="y" 
+                                                        <input
+                                                            type="checkbox"
+                                                            onChange={(event: ChangeEvent<HTMLInputElement>) => mask(event, param.input.type)}
+                                                            name={param.name}
+                                                            id={`check-input-${param.name}`}
+                                                            value="y"
                                                             className="hidden"
                                                         />
                                                     </label>
-                                                    
+
                                                     <div className="bg-background-primary rounded w-full h-full flex justify-start items-center">
                                                         {dataFunction[param.name] ? param.input.text?.yes : param.input.text?.not}
                                                     </div>
                                                 </div>
                                             )
                                         }
-                                        {
+                                        `{
                                             param.input.type === "select" && (
-                                                <select 
-                                                    name={param.name} 
+                                                <select
+                                                    name={param.name}
                                                     onChange={(event: ChangeEvent<HTMLSelectElement>) => mask(event, param.input.type)}
                                                     value={dataFunction[param.name]}
                                                     className="w-full px-2 h-10 bg-background-primary rounded focus:outline-gray-200">
@@ -176,12 +194,12 @@ export default function CreateBotAlgorithmModelFunc(
                                             )
                                         }
                                     </div>
-                                    <div 
+                                    <div
                                         onClick={() => setSelectInfo(`${index}`)}
                                         className="border border-background-secondaryDark px-2 py-2 hover:bg-background-secondary"
                                     >
                                         <Info className="size-6 text-text-secondary" />
-                                        <BotInfo setOpen={setSelectInfo} info={param.info} open={selectInfo === `${index}`}  />
+                                        <BotInfo setOpen={setSelectInfo} info={param.info} open={selectInfo === `${index}`} />
                                     </div>
                                 </li>
                             ))
@@ -197,58 +215,58 @@ export default function CreateBotAlgorithmModelFunc(
         }
         {
             open && <div className="z-20 max-h-96 overflow-y-auto overflow-visible select-bot-list bg-background-primary border border-gray-500 w-full rounded-md">
-            <ul>
-                {
-                    data.map((item, index) => (
-                        <>
-                            {
-                                item.type == "function" ? (
-                                    <li 
-                                        key={index}
-                                        onClick={() => {selectOptionFunction(item); setOpen(false);}}
-                                        className="bg-background-secondary hover:bg-background-deep border border-gray-200 text-text-primary px-4 py-2 cursor-pointer rounded-md"
-                                    >{item.title}</li>
-                                ) : (
-                                    <li key={index}>
-                                        <div 
-                                            onClick={(event) => clickCategory(event, item._id)}
-                                            className="flex justify-between items-center bg-background-secondaryDark hover:bg-background-secondaryDarkBig border border-gray-200 text-text-primary px-4 py-2 cursor-pointer rounded-md">
-                                            <p onClick={(event) => clickCategory(event, item._id)}>{item.title}</p>
-                                            <ChevronDown onClick={(event) => clickCategory(event, item._id)} className="size-6 text-text-primary2" />
-                                        </div>
-                                        {
-                                            opensCategories.includes(item._id) && <ul>
+                <ul>
+                    {
+                        data.map((item, index) => (
+                            <>
+                                {
+                                    item.type == "function" ? (
+                                        <li
+                                            key={index}
+                                            onClick={() => { selectOptionFunction(item); setOpen(false); }}
+                                            className="bg-background-secondary hover:bg-background-deep border border-gray-200 text-text-primary px-4 py-2 cursor-pointer rounded-md"
+                                        >{item.title}</li>
+                                    ) : (
+                                        <li key={index}>
+                                            <div
+                                                onClick={(event) => clickCategory(event, item._id)}
+                                                className="flex justify-between items-center bg-background-secondaryDark hover:bg-background-secondaryDarkBig border border-gray-200 text-text-primary px-4 py-2 cursor-pointer rounded-md">
+                                                <p onClick={(event) => clickCategory(event, item._id)}>{item.title}</p>
+                                                <ChevronDown onClick={(event) => clickCategory(event, item._id)} className="size-6 text-text-primary2" />
+                                            </div>
                                             {
-                                                item.functions.map((func: any, index2: number) => (
-                                                    <li 
-                                                        key={`${index}${index2}`}
-                                                        className="flex items-center justify-between border border-gray-200 text-text-primary cursor-pointer rounded-md"
-                                                    >
-                                                        <div 
-                                                            onClick={() => {selectOptionFunction(item.functions[index2]); setOpen(false);}} 
-                                                            className="w-full flex items-center px-4 py-2 hover:bg-background-secondary"
-                                                        >
-                                                            <Code className="mr-2 size-4 text-text-primary2" />{func.title}
-                                                        </div>
-                                                        <div 
-                                                            onClick={() => setSelectInfo(`${index}${index2}`)}
-                                                            className="border border-background-secondaryDark px-2 py-2 hover:bg-background-secondary"
-                                                        >
-                                                            <Info className="size-6 text-text-secondary" />
-                                                            <BotInfo setOpen={setSelectInfo} info={func.info} open={selectInfo === `${index}${index2}`}  />
-                                                        </div>
-                                                    </li>
-                                                ))
+                                                opensCategories.includes(item._id) && <ul>
+                                                    {
+                                                        item.functions.map((func: any, index2: number) => (
+                                                            <li
+                                                                key={`${index}${index2}`}
+                                                                className="flex items-center justify-between border border-gray-200 text-text-primary cursor-pointer rounded-md"
+                                                            >
+                                                                <div
+                                                                    onClick={() => { selectOptionFunction(item.functions[index2]); setOpen(false); }}
+                                                                    className="w-full flex items-center px-4 py-2 hover:bg-background-secondary"
+                                                                >
+                                                                    <Code className="mr-2 size-4 text-text-primary2" />{func.title}
+                                                                </div>
+                                                                <div
+                                                                    onClick={() => setSelectInfo(`${index}${index2}`)}
+                                                                    className="border border-background-secondaryDark px-2 py-2 hover:bg-background-secondary"
+                                                                >
+                                                                    <Info className="size-6 text-text-secondary" />
+                                                                    <BotInfo setOpen={setSelectInfo} info={func.info} open={selectInfo === `${index}${index2}`} />
+                                                                </div>
+                                                            </li>
+                                                        ))
+                                                    }
+                                                </ul>
                                             }
-                                        </ul>
-                                        }
-                                    </li>
-                                )
-                            }
-                        </>
-                    ))
-                }
-            </ul>
+                                        </li>
+                                    )
+                                }
+                            </>
+                        ))
+                    }
+                </ul>
             </div>
         }
     </div>

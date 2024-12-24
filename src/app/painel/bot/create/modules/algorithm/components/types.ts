@@ -14,6 +14,11 @@ type ModelFunctionSelectInputPrice = {
     type: 'price';
     placeholder?: string;
 }
+type ModelFunctionSelectInputPercent = {
+    default?: number;
+    type: 'percent';
+    placeholder?: string;
+}
 type ModelFunctionSelectInputBoolean = {
     type: 'boolean';
     default?: boolean;
@@ -21,7 +26,7 @@ type ModelFunctionSelectInputBoolean = {
     text?: {
         yes?: string;
         not?: string;
-    } 
+    }
 }
 type ModelFunctionSelectInputSelect = {
     type: 'select';
@@ -33,10 +38,11 @@ type ModelFunctionSelectInputSelect = {
         value: any;
     }>
 }
-export type ModelFunctionSelectInput = 
-    ModelFunctionSelectInputNumber | 
-    ModelFunctionSelectInputSelect | 
-    ModelFunctionSelectInputBoolean | 
+export type ModelFunctionSelectInput =
+    ModelFunctionSelectInputNumber |
+    ModelFunctionSelectInputSelect |
+    ModelFunctionSelectInputBoolean |
+    ModelFunctionSelectInputPercent |
     ModelFunctionSelectInputPrice;
 export type ModelFunctionSelectType = {
     signal: string;
@@ -73,7 +79,7 @@ export type ModelFunctionSelectEndType = {
 // CREATE
 export const SignalObjectLogicType: Array<SignalLogicType> = ['&&', '||'];
 export type SignalLogicType = '&&' | '||';
-export type LogicParamType = Array<MathType | ComparisonType | DataType >;
+export type LogicParamType = Array<MathType | ComparisonType | DataType>;
 export type LogicType = {
     type: 'logic',
     signal: SignalLogicType,
@@ -95,7 +101,7 @@ export type ComparisonType = {
 
 export type ComparisonContinue = Array<DataFunctionType | LogicMainType | ComparisonMainType>;
 export interface ComparisonMainType extends ComparisonType {
-    continue:  ComparisonContinue
+    continue: ComparisonContinue
 }
 
 export const SignalObjectMathType = ['+', '-', '*', '/', '%'];
@@ -107,7 +113,7 @@ export type MathType = {
 }
 
 export interface MathMainType extends MathType {
-    continue: Array<DataFunctionType | LogicType | ComparisonType> 
+    continue: Array<DataFunctionType | LogicType | ComparisonType>
 }
 
 export type DataType = DataFunctionType | DataValuesType;
@@ -129,9 +135,9 @@ export type DataFunctionType = {
 }
 export type DataMainType = DataValuesMainType | DataFunctionMianType;
 export interface DataValuesMainType extends DataValuesType {
-    continue: Array<DataFunctionType | LogicType | ComparisonType> 
+    continue: Array<DataFunctionType | LogicType | ComparisonType>
 }
 export interface DataFunctionMianType extends DataValuesType {
-    continue: Array<DataFunctionType | LogicType | ComparisonType> 
+    continue: Array<DataFunctionType | LogicType | ComparisonType>
 }
 export type BotType = LogicMainType | ComparisonMainType;

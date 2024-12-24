@@ -83,9 +83,9 @@ export const FunctionsOptions: Array<FunctionsOptionsType> = [
                             type: 'select',
                             default: 'ponderada',
                             options: [
-                                {name: 'Exponencial', value: 'exponentions', type: 'string'},
-                                {name: 'Ponderada', value: 'ponderada', type: 'string'},
-                                {name: 'Adaptativa', value: 'adaptativa', type: 'string'}
+                                { name: 'Exponencial', value: 'exponentions', type: 'string' },
+                                { name: 'Ponderada', value: 'ponderada', type: 'string' },
+                                { name: 'Adaptativa', value: 'adaptativa', type: 'string' }
                             ]
                         },
                         validations: {
@@ -119,6 +119,20 @@ export const FunctionsOptions: Array<FunctionsOptionsType> = [
                                 not: 'Desativado',
                                 yes: 'Ativado'
                             }
+                        },
+                        info: {
+                            description: 'Deslocamento depois do última registro',
+                        },
+                        validations: {
+                            required: true
+                        }
+                    },
+                    {
+                        index: 0,
+                        title: 'Nivel da banca',
+                        name: 'levelBank',
+                        input: {
+                            type: 'percent',
                         },
                         info: {
                             description: 'Deslocamento depois do última registro',
@@ -253,7 +267,7 @@ const MathOptions = {
             name: 'Resto da divisão'
         }
     ],
-    params: [{...DataValue, ...DataFunction(false)}]
+    params: [{ ...DataValue, ...DataFunction(false) }]
 }
 
 const Comparison = {
