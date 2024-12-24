@@ -88,46 +88,48 @@ export default function CreateBotAlgorithmModelFunc(
                         {
                             selectOption.params.map((param, index) => (
                                 <li key={index} className="flex items-center">
-                                    <p className="w-full">{param.title}: </p>
-                                    {
-                                        param.input.type === "number" && (
-                                            <input 
-                                                name={param.name}
-                                                onChange={(event: ChangeEvent<HTMLInputElement>) => mask(event, param.input.type)}
-                                                value={dataFunction[param.name]}
-                                                type="text" 
-                                                className="ml-2 p-2 bg-background-primary rounded focus:outline-gray-200"
-                                            />
-                                        )
-                                    }
-                                    {
-                                        param.input.type === "boolean" && (
-                                            <div className="w-full bg-background-primary rounded h-full flex">
-                                                <div className="bg-background-primary rounded w-10/12 py-4 flex justify-center">
-                                                    {param.input.text?.yes}
+                                    <p className="w-52">{param.title}: </p>
+                                    <div className="flex w-full ml-2 mb-1">
+                                        {
+                                            param.input.type === "number" && (
+                                                <input 
+                                                    name={param.name}
+                                                    onChange={(event: ChangeEvent<HTMLInputElement>) => mask(event, param.input.type)}
+                                                    value={dataFunction[param.name]}
+                                                    type="text" 
+                                                    className="w-full px-2 h-10 bg-background-primary rounded focus:outline-gray-200"
+                                                />
+                                            )
+                                        }
+                                        {
+                                            param.input.type === "boolean" && (
+                                                <div className="w-full bg-background-primary rounded flex h-10 items-center">
+                                                    <div className="bg-background-secondaryDarkBig rounded h-1/4 flex w-3/12 mx-2">
+                                                        
+                                                    </div>
+                                                    
+                                                    <div className="bg-background-primary rounded w-full h-full flex justify-start items-center">
+                                                        {param.input.text?.not}
+                                                    </div>
                                                 </div>
-                                                <div className="bg-background-secondaryDarkBig rounded w-2/12 py-4"></div>
-                                                <div className="bg-background-primary rounded w-10/12 py-4 flex justify-center">
-                                                    {param.input.text?.not}
-                                                </div>
-                                            </div>
-                                        )
-                                    }
-                                    {
-                                        param.input.type === "select" && (
-                                            <select 
-                                                name={param.name} 
-                                                onChange={(event: ChangeEvent<HTMLSelectElement>) => mask(event, param.input.type)}
-                                                value={dataFunction[param.name]}
-                                                className="ml-2 p-2 bg-background-primary rounded focus:outline-gray-200">
-                                                {
-                                                    param.input.options.map(item => (
-                                                        <option value={item.value}>{item.name}</option>
-                                                    ))
-                                                }
-                                            </select>
-                                        )
-                                    }
+                                            )
+                                        }
+                                        {
+                                            param.input.type === "select" && (
+                                                <select 
+                                                    name={param.name} 
+                                                    onChange={(event: ChangeEvent<HTMLSelectElement>) => mask(event, param.input.type)}
+                                                    value={dataFunction[param.name]}
+                                                    className="w-full px-2 h-10 bg-background-primary rounded focus:outline-gray-200">
+                                                    {
+                                                        param.input.options.map(item => (
+                                                            <option value={item.value}>{item.name}</option>
+                                                        ))
+                                                    }
+                                                </select>
+                                            )
+                                        }
+                                    </div>
                                     <div 
                                         onClick={() => setSelectInfo(`${index}`)}
                                         className="border border-background-secondaryDark px-2 py-2 hover:bg-background-secondary"

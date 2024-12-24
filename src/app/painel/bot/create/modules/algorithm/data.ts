@@ -80,6 +80,7 @@ export const FunctionsOptions: Array<FunctionsOptionsType> = [
                         },
                         input: {
                             type: 'select',
+                            default: 'ponderada',
                             options: [
                                 {name: 'Exponencial', value: 'exponentions', type: 'string'},
                                 {name: 'Ponderada', value: 'ponderada', type: 'string'},

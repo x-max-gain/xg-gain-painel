@@ -84,8 +84,7 @@ export default function CreateBotAlgorithmModelData(
                                 <li key={index} className="flex items-center">
                                     <p className="w-full">{param.title}: </p>
                                     {
-                                        param.input.type === "number" ||
-                                        param.input.type === "float" && 
+                                        param.input.type === "number" && 
                                         (
                                             <input 
                                                 name={param.name}

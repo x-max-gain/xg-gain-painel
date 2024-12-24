@@ -17,6 +17,7 @@ type ModelFunctionSelectInputBoolean = {
 }
 type ModelFunctionSelectInputSelect = {
     type: 'select',
+    default?: string;
     options: Array<{
         name: string,
         type: 'string' | 'boolean' | 'number'
