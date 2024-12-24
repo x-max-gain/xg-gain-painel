@@ -103,6 +103,25 @@ export const FunctionsOptions: Array<FunctionsOptionsType> = [
                         validations: {
                             required: true
                         }
+                    },
+                    {
+                        index: 0,
+                        title: 'Força bruta',
+                        name: 'forceBrut',
+                        input: {
+                            type: 'boolean',
+                            default: true,
+                            text: {
+                                not: 'Desativo',
+                                yes: 'Ativado'
+                            }
+                        },
+                        info: {
+                            description: 'Deslocamento depois do última registro',
+                        },
+                        validations: {
+                            required: true
+                        }
                     }
                 ]
             },

@@ -41,22 +41,26 @@ export default function CreateBotAlgorithmModelData(
         return newValue;
     }
 
+    const maskFloat = (value: string) => {
+        if(!value){return value};
+        const newValue = parseFloat(value.replace(/[^0-9.]/g, "").replace(/\.(?=.*\.)/g, ""));
+        return newValue;
+    }
+
     const mask = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>, type: string) => {
         const name = event.target.name;
         const value = event.target.value;
 
         if(type === "number"){
             const response = maskNumber(value);
-            setDataFunction({
-                ...dataFunction,
-                [name]: response
-            })
+            setDataFunction({ ...dataFunction, [name]: response })
         }
         if(type === "select"){
-            setDataFunction({
-                ...dataFunction,
-                [name]: value
-            })
+            setDataFunction({ ...dataFunction, [name]: value })
+        }
+        if(type === "float"){
+            const response = maskFloat(value);
+            setDataFunction({ ...dataFunction, [name]: response })
         }
         console.log(dataFunction)
     }
@@ -80,7 +84,9 @@ export default function CreateBotAlgorithmModelData(
                                 <li key={index} className="flex items-center">
                                     <p className="w-full">{param.title}: </p>
                                     {
-                                        param.input.type === "number" && (
+                                        param.input.type === "number" ||
+                                        param.input.type === "float" && 
+                                        (
                                             <input 
                                                 name={param.name}
                                                 onChange={(event: ChangeEvent<HTMLInputElement>) => mask(event, param.input.type)}

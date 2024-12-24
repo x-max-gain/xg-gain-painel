@@ -37,8 +37,20 @@ export default function CreateBotAlgorithmModelFunc(
     }
 
     const maskNumber = (value: string) => {
-        const newValue = parseInt(value.replace(/\D/g, ""));
-        return newValue;
+        let input = value.replace(/[^0-9.]/g, '');
+
+        // Remove pontos extras, mantendo apenas o primeiro
+        const parts = input.split('.');
+        if (parts.length > 2) {
+            input = parts[0] + '.' + parts.slice(1).join('');
+        }
+
+        // Remove zeros à esquerda, mas mantém "0." válido
+        if (input.startsWith('0') && input[1] !== '.' && input.length > 1) {
+            input = parseFloat(input).toString();
+        }
+
+        return input;
     }
 
     const mask = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>, type: string) => {
@@ -47,17 +59,14 @@ export default function CreateBotAlgorithmModelFunc(
 
         if(type === "number"){
             const response = maskNumber(value);
-            console.log(response)
-            setDataFunction({
-                ...dataFunction,
-                [name]: response
-            })
+            setDataFunction({ ...dataFunction, [name]: response })
+        }
+        if(type === "boolean"){
+            const response = maskNumber(value);
+            setDataFunction({ ...dataFunction, [name]: value === "y" ? true : false })
         }
         if(type === "select"){
-            setDataFunction({
-                ...dataFunction,
-                [name]: value
-            })
+            setDataFunction({ ...dataFunction, [name]: value })
         }
         console.log(dataFunction)
     }
@@ -89,6 +98,19 @@ export default function CreateBotAlgorithmModelFunc(
                                                 type="text" 
                                                 className="ml-2 p-2 bg-background-primary rounded focus:outline-gray-200"
                                             />
+                                        )
+                                    }
+                                    {
+                                        param.input.type === "boolean" && (
+                                            <div className="w-full bg-background-primary rounded h-full flex">
+                                                <div className="bg-background-primary rounded w-10/12 py-4 flex justify-center">
+                                                    {param.input.text?.yes}
+                                                </div>
+                                                <div className="bg-background-secondaryDarkBig rounded w-2/12 py-4"></div>
+                                                <div className="bg-background-primary rounded w-10/12 py-4 flex justify-center">
+                                                    {param.input.text?.not}
+                                                </div>
+                                            </div>
                                         )
                                     }
                                     {

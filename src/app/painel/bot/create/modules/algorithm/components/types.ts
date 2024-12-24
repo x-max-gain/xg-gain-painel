@@ -7,6 +7,14 @@ export type FunctionsOptionsType = {
 type ModelFunctionSelectInputNumber = {
     type: 'number',
 }
+type ModelFunctionSelectInputBoolean = {
+    type: 'boolean',
+    default?: boolean,
+    text?: {
+        yes?: string,
+        not?: string
+    } 
+}
 type ModelFunctionSelectInputSelect = {
     type: 'select',
     options: Array<{
@@ -15,7 +23,7 @@ type ModelFunctionSelectInputSelect = {
         value: any
     }>
 }
-export type ModelFunctionSelectInput = ModelFunctionSelectInputNumber | ModelFunctionSelectInputSelect;
+export type ModelFunctionSelectInput = ModelFunctionSelectInputNumber | ModelFunctionSelectInputSelect | ModelFunctionSelectInputBoolean;
 export type ModelFunctionSelectType = {
     signal: string;
     title: string;
