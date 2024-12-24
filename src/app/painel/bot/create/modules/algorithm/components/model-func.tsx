@@ -186,8 +186,8 @@ export default function CreateBotAlgorithmModelFunc(
                                                     value={dataFunction[param.name]}
                                                     className="w-full px-2 h-10 bg-background-primary rounded focus:outline-gray-200">
                                                     {
-                                                        param.input.options.map(item => (
-                                                            <option value={item.value}>{item.name}</option>
+                                                        param.input.options.map((item, i) => (
+                                                            <option key={i} value={item.value}>{item.name}</option>
                                                         ))
                                                     }
                                                 </select>
