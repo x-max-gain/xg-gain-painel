@@ -1,18 +1,20 @@
 "use client";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, ChangeEventHandler, useState } from "react";
 import "./select.css";
 
 // ICONS
 import { Plus, X, ChevronDown, Code, Info } from "lucide-react";
 import BotInfo from "./info";
 import { FunctionsOptionsType, ModelFunctionSelectType } from "./types";
+import { InformationsSelectedActiveType } from "../type";
 type CreateBotAlgorithmModelFuncType = {
     data: Array<FunctionsOptionsType | ModelFunctionSelectType>;
-    startOpen?: boolean
+    startOpen?: boolean,
+    informationsActiveSelected: InformationsSelectedActiveType
 }
 
 export default function CreateBotAlgorithmModelFunc(
-    { data, startOpen = false }: CreateBotAlgorithmModelFuncType,
+    { data, informationsActiveSelected, startOpen = false }: CreateBotAlgorithmModelFuncType,
 ) {
     const [dataFunction, setDataFunction] = useState<any>({})
     const [selectOption, setSelecteOption] = useState<ModelFunctionSelectType>()
@@ -52,6 +54,23 @@ export default function CreateBotAlgorithmModelFunc(
 
         return input;
     }
+    const maskPrice = (value: string) => {
+        let input = value;
+
+        // Remove todos os caracteres que não são números
+        input = input.replace(/\D/g, '');
+
+        // Converte para número e divide por 100 para obter os centavos
+        input = (parseFloat(input) / 100).toFixed(2);
+
+        // Formata como moeda no padrão brasileiro
+        input = input.replace('.', ',');
+
+        // Adiciona separadores de milhar
+        input = input.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+        return input;
+    }
 
     const mask = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>, type: string) => {
         const name = event.target.name;
@@ -61,14 +80,17 @@ export default function CreateBotAlgorithmModelFunc(
             const response = maskNumber(value);
             setDataFunction({ ...dataFunction, [name]: response })
         }
-        if(type === "boolean"){
-            const response = maskNumber(value);
-            setDataFunction({ ...dataFunction, [name]: value === "y" ? true : false })
+        if(type === "price"){
+            const response = maskPrice(value);
+            setDataFunction({ ...dataFunction, [name]: response })
+        }
+        if(type === "boolean" && 'checked' in event.target){
+            console.log(event.target.checked)
+            setDataFunction({ ...dataFunction, [name]: event.target.checked ? true : false })
         }
         if(type === "select"){
             setDataFunction({ ...dataFunction, [name]: value })
         }
-        console.log(dataFunction)
     }
 
     return <div className="select-bot">
@@ -97,19 +119,43 @@ export default function CreateBotAlgorithmModelFunc(
                                                     onChange={(event: ChangeEvent<HTMLInputElement>) => mask(event, param.input.type)}
                                                     value={dataFunction[param.name]}
                                                     type="text" 
+                                                    placeholder={param.input.placeholder}
                                                     className="w-full px-2 h-10 bg-background-primary rounded focus:outline-gray-200"
                                                 />
                                             )
                                         }
                                         {
+                                            param.input.type === "price" && (
+                                                <div className="flex items-center bg-background-primary h-10 px-2">
+                                                    <p className="mr-2">{informationsActiveSelected.selectedActive.coin.signal}</p>
+                                                    <input 
+                                                        name={param.name}
+                                                        onChange={(event: ChangeEvent<HTMLInputElement>) => mask(event, param.input.type)}
+                                                        value={dataFunction[param.name]}
+                                                        type="text" 
+                                                        placeholder={param.input.placeholder}
+                                                        className="w-full px-2 h-8 bg-gray-50 rounded focus:outline-none"
+                                                    />
+                                                </div>
+                                            )
+                                        }
+                                        {
                                             param.input.type === "boolean" && (
                                                 <div className="w-full bg-background-primary rounded flex h-10 items-center">
-                                                    <div className="bg-background-secondaryDarkBig rounded h-1/4 flex w-3/12 mx-2">
-                                                        
-                                                    </div>
+                                                    <label htmlFor={`check-input-${param.name}`} className={`bg-background-secondary rounded h-1/4 flex w-2/12 mx-2 relative items-center ${dataFunction[param.name] ? 'justify-end' : 'justify-start'}`}>
+                                                        <div className={`w-5 ${dataFunction[param.name] ? 'bg-green-500' : 'bg-gray-400'} h-[200%] absolute rounded-full`}></div>
+                                                        <input 
+                                                            type="checkbox" 
+                                                            onChange={(event: ChangeEvent<HTMLInputElement>) => mask(event, param.input.type)} 
+                                                            name={param.name} 
+                                                            id={`check-input-${param.name}`} 
+                                                            value="y" 
+                                                            className="hidden"
+                                                        />
+                                                    </label>
                                                     
                                                     <div className="bg-background-primary rounded w-full h-full flex justify-start items-center">
-                                                        {param.input.text?.not}
+                                                        {dataFunction[param.name] ? param.input.text?.yes : param.input.text?.not}
                                                     </div>
                                                 </div>
                                             )

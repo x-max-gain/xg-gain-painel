@@ -65,6 +65,7 @@ export const FunctionsOptions: Array<FunctionsOptionsType> = [
                             description: 'Aqui você diz a quantidade de velas que você quer buscar a informação',
                         },
                         input: {
+                            placeholder: '0.00',
                             type: 'number',
                         },
                         validations: {
@@ -96,7 +97,9 @@ export const FunctionsOptions: Array<FunctionsOptionsType> = [
                         title: 'Deslocamento',
                         name: 'displacement',
                         input: {
-                            type: 'number',
+                            default: 0,
+                            type: 'price',
+                            placeholder: '0,00'
                         },
                         info: {
                             description: 'Deslocamento depois do última registro',
@@ -113,7 +116,7 @@ export const FunctionsOptions: Array<FunctionsOptionsType> = [
                             type: 'boolean',
                             default: true,
                             text: {
-                                not: 'Desativo',
+                                not: 'Desativado',
                                 yes: 'Ativado'
                             }
                         },

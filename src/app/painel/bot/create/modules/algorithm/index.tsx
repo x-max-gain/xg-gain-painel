@@ -7,8 +7,17 @@ import CreateBotAlgorithmModelMain from "./components/model-main";
 // MODULES
 import CreateBotAlgorithmSelect from "./components/select";
 import { execute } from "./data";
+import { InformationsSelectedActiveType } from "./type";
 
 export default function CreateBotAlgorithm() {
+    const [informationsActiveSelected] = useState<InformationsSelectedActiveType>({
+        selectedActive: {
+            coin: {
+                location: 'pt-br',
+                signal: 'R$'
+            }
+        }
+    })
     const [conditions, setConditions] = useState<Array<any>>([]);
 
     const setElementSelect = (element: any) => {
@@ -28,7 +37,7 @@ export default function CreateBotAlgorithm() {
                     {
                         conditions.map((item: any, index) => (
                             <div key={index} className="flex py-2">
-                                <CreateBotAlgorithmModelMain data={item} />
+                                <CreateBotAlgorithmModelMain informationsActiveSelected={informationsActiveSelected} data={item} />
                             </div>
                         ))
                     }
