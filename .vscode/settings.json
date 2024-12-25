@@ -6,7 +6,9 @@
     "**/.DS_Store": false,
     "**/Thumbs.db": false,
     "**/.env*": false,
-    "**/.next": false
+    "**/.next": false,
+    "**/.npmrc": false,
+    "**/.nvmrc": false
   },
   "editor.insertSpaces": true, // Usa espaços em vez de tabulações.
   "editor.tabSize": 4, // Define o tamanho do recuo (2 espaços).

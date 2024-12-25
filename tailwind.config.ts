@@ -21,13 +21,16 @@ const config: Config = {
           green: "#08DD7E",
           decoration: "#4182e0", // #243bed
           deep: "#f5f5f5",
+          danger: 'red',
+          success: '#08DD7E',
+          warnning: "yellow"
         },
         text: {
-          primary: "#000", 
-          primary2: "#666666", 
-          secondary: "#A1A1AA", 
-          alternatve:"#000",
-          ligth:"#fff",
+          primary: "#000",
+          primary2: "#666666",
+          secondary: "#A1A1AA",
+          alternatve: "#000",
+          ligth: "#fff",
           main: "#4182e0",
         },
         icons: {

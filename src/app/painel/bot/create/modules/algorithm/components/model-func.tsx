@@ -1,9 +1,9 @@
 "use client";
-import { ChangeEvent, ChangeEventHandler, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import "./select.css";
 
 // ICONS
-import { Plus, X, ChevronDown, Code, Info } from "lucide-react";
+import { Plus, X, ChevronDown, Code, Info, Minimize, Maximize } from "lucide-react";
 import BotInfo from "./info";
 import { FunctionsOptionsType, ModelFunctionSelectType } from "./types";
 import { InformationsSelectedActiveType } from "../type";
@@ -16,6 +16,7 @@ type CreateBotAlgorithmModelFuncType = {
 export default function CreateBotAlgorithmModelFunc(
     { data, informationsActiveSelected, startOpen = false }: CreateBotAlgorithmModelFuncType,
 ) {
+    const [minimize, setMinimize] = useState<boolean>(false);
     const [dataFunction, setDataFunction] = useState<any>({})
     const [selectOption, setSelecteOption] = useState<ModelFunctionSelectType>()
     const [selectInfo, setSelectInfo] = useState("");
@@ -104,9 +105,17 @@ export default function CreateBotAlgorithmModelFunc(
         }
         {
             selectOption && (
-                <div className="min-w-80 bg-background-secondary text-text-primary px-4 py-2 rounded-md flex flex-col cursor-pointer">
-                    <h2 className="font-bold">{selectOption.title}</h2>
-                    <ul>
+                <div className="min-w-80 bg-background-secondary text-text-primary px-4 py-2 rounded-md flex flex-col">
+                    <div className="flex justify-between py-2 mb-2 border-b border-gray-300">
+                        <h2 className="font-bold">{selectOption.title}</h2>
+                        <div className="flex items-center">
+                            <div onClick={() => setMinimize(!minimize)} className="p-1 bg-background-warnning rounded-full cursor-pointer">
+                                {!minimize ? <Minimize size={14} /> : <Maximize size={14} />}
+                            </div>
+                            <div className="ml-2 p-1 bg-background-danger rounded-full text-text-ligth cursor-pointer"><X size={12} /></div>
+                        </div>
+                    </div>
+                    <ul className={`overflow-hidden ${minimize && 'h-0'}`}>
                         {
                             selectOption.params.map((param, index) => (
                                 <li key={index} className="flex items-center">
@@ -127,7 +136,7 @@ export default function CreateBotAlgorithmModelFunc(
                                         }
                                         {
                                             param.input.type === "price" && (
-                                                <div className="flex items-center bg-background-primary h-10 px-2">
+                                                <div className="w-full flex items-center bg-background-primary h-10 px-2">
                                                     <p className="mr-2">{informationsActiveSelected.selectedActive.coin.signal}</p>
                                                     <input
                                                         inputMode="numeric"
@@ -143,7 +152,7 @@ export default function CreateBotAlgorithmModelFunc(
                                         }
                                         {
                                             param.input.type === "percent" && (
-                                                <div className="flex items-center bg-background-primary h-10 px-2">
+                                                <div className="w-full flex items-center bg-background-primary h-10 px-2">
                                                     <input
                                                         inputMode="numeric"
                                                         name={param.name}
@@ -178,7 +187,7 @@ export default function CreateBotAlgorithmModelFunc(
                                                 </div>
                                             )
                                         }
-                                        `{
+                                        {
                                             param.input.type === "select" && (
                                                 <select
                                                     name={param.name}
@@ -205,8 +214,10 @@ export default function CreateBotAlgorithmModelFunc(
                             ))
                         }
                     </ul>
+
+
                     {
-                        selectOption.params.length > 0 && <div className="flex justify-end mt-2">
+                        !minimize && selectOption.params.length > 0 && <div className="flex justify-end mt-2">
                             <button className="bg-background-main font-bold rounded text-white py-2 w-full">Salvar</button>
                         </div>
                     }

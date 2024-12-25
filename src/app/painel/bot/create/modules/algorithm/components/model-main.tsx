@@ -29,15 +29,15 @@ export default function CreateBotAlgorithmModelMain(
         setSelectContinue(select)
     }
 
-    return <div 
-        style={{ backgroundColor: data.style.backgroundColor || 'white'}}
-        className={`text-text-primary p-4 rounded-md cursor-pointer`}
+    return <div
+        style={{ backgroundColor: data.style.backgroundColor || 'white' }}
+        className={`text-text-primary p-4 rounded-md`}
     >
         <div className="flex items-start mb-4">
             {
                 continueObj && <div className="col-span-1 flex items-center">
-                    <p 
-                        style={{ color: data.style.color || 'white'}}
+                    <p
+                        style={{ color: data.style.color || 'white' }}
                         className="font-bold w-10"
                     >Se</p>
                 </div>
@@ -76,7 +76,7 @@ export default function CreateBotAlgorithmModelMain(
             <div className="col-span-4 flex">
                 {
                     selectRight && selectRight.type === "func" && (
-                        <CreateBotAlgorithmModelFunc informationsActiveSelected={informationsActiveSelected} data={selectRight.params} startOpen={true}  />
+                        <CreateBotAlgorithmModelFunc informationsActiveSelected={informationsActiveSelected} data={selectRight.params} startOpen={true} />
                     )
                 }
                 {
@@ -85,9 +85,9 @@ export default function CreateBotAlgorithmModelMain(
                     )
                 }
                 {
-                   selectRight && selectRight.type !!== "func" && selectRight.type !== "data" &&  (
+                    selectRight && selectRight.type! !== "func" && selectRight.type !== "data" && (
                         <CreateBotAlgorithmModelMain informationsActiveSelected={informationsActiveSelected} data={selectRight} />
-                    ) 
+                    )
                 }
                 {
                     !selectRight && (
@@ -98,8 +98,8 @@ export default function CreateBotAlgorithmModelMain(
         </div>
         {
             continueObj && <div className="flex">
-                <div 
-                    style={{ color: data.style.color}} 
+                <div
+                    style={{ color: data.style.color }}
                     className="w-10 col-span-1 font-bold flex items-center"
                 >Faz</div>
                 <div className="col-span-10 w-full">

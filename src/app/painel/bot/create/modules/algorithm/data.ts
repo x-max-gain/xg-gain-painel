@@ -1,34 +1,29 @@
-import { FunctionsOptionsType } from "./components/types"
+import { FunctionsOptionsType, ModelFunctionSelectType } from "./components/types"
 
-const createOperation = {
+const createOperation: ModelFunctionSelectType = {
     signal: 'createOperation',
-    name: 'Abrir operação',
+    title: 'Abrir operação',
     type: 'function',
+    info: {
+        description: "Criar um operação",
+        code: {
+            body: "",
+            language: "javascript"
+        },
+        technical: ""
+    },
     params: [
         {
             index: 0,
-            type: 'select',
-            name: 'Tipo de pagamento',
-            options: [
-                {
-                    text: 'Contrato',
-                    value: 'contract',
-                    type: 'number'
-                },
-                {
-                    text: 'Valor fixo',
-                    value: 'value',
-                    type: 'price'
-                }
-            ],
-            validations: {
-                required: true
-            }
-        },
-        {
-            index: 1,
-            relation: 0,
-            type: 'option',
+            title: "Tipo de pagamento",
+            name: 'typePayment',
+            info: {
+                description: "Tipo de pagamento para criar operação"
+            },
+            input: {
+                type: "price",
+                placeholder: "0,00",
+            },
             validations: {
                 required: true
             }
