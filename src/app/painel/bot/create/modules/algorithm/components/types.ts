@@ -69,6 +69,18 @@ export type ModelFunctionSelectType = {
         }
     }>
 }
+export type ModelDataSelectType = {
+    name: string;
+    type: 'data';
+    style: {
+        backgroundColor: string;
+        color: string;
+    },
+    signals: Array<{
+        signal: string;
+        name: string;
+    }>
+}
 export type ModelFunctionSelectEndType = {
     signal: string;
     params: Array<any>

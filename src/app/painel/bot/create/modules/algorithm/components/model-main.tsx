@@ -50,7 +50,7 @@ export default function CreateBotAlgorithmModelMain(
                 }
                 {
                     selectLeft && selectLeft.type === "data" && (
-                        <CreateBotAlgorithmModelData data={selectLeft} startOpen={true} />
+                        <CreateBotAlgorithmModelData data={selectLeft} />
                     )
                 }
                 {
@@ -81,7 +81,7 @@ export default function CreateBotAlgorithmModelMain(
                 }
                 {
                     selectRight && selectRight.type === "data" && (
-                        <CreateBotAlgorithmModelData data={selectRight} startOpen={true} />
+                        <CreateBotAlgorithmModelData data={selectRight} />
                     )
                 }
                 {

@@ -1,4 +1,4 @@
-import { FunctionsOptionsType, ModelFunctionSelectType } from "./components/types"
+import { FunctionsOptionsType, ModelDataSelectType, ModelFunctionSelectType } from "./components/types"
 
 const createOperation: ModelFunctionSelectType = {
     signal: 'createOperation',
@@ -211,7 +211,7 @@ export const DataFunction = (continueOption: boolean) => {
     }
 }
 
-const DataValue = {
+const DataValue: ModelDataSelectType = {
     name: 'Adicionar dados',
     type: 'data',
     style: {
