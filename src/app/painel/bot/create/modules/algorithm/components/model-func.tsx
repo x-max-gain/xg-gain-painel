@@ -94,7 +94,7 @@ export default function CreateBotAlgorithmModelFunc(
         }
     }
 
-    return <div className="select-bot">
+    return <div className="select-bot relative">
         {
             !selectOption && (
                 <div onClick={() => setOpen(!open)} className="min-w-80 bg-background-secondary text-text-primary px-4 py-2 rounded-md flex items-center cursor-pointer">
@@ -105,14 +105,18 @@ export default function CreateBotAlgorithmModelFunc(
         }
         {
             selectOption && (
-                <div className="min-w-80 bg-background-secondary text-text-primary px-4 py-2 rounded-md flex flex-col">
+                <div className="min-w-80 bg-background-secondary text-text-primary px-4 py-2 rounded-md flex flex-col relative">
+                    <div
+                        className="top-[-10px] left-[-10px] p-1 bg-background-danger rounded-full text-text-ligth cursor-pointer absolute"
+                    >
+                        <X size={12} />
+                    </div>
                     <div className="flex justify-between py-2 mb-2 border-b border-gray-300">
                         <h2 className="font-bold">{selectOption.title}</h2>
                         <div className="flex items-center">
                             <div onClick={() => setMinimize(!minimize)} className="p-1 bg-background-warnning rounded-full cursor-pointer">
                                 {!minimize ? <Minimize size={14} /> : <Maximize size={14} />}
                             </div>
-                            <div className="ml-2 p-1 bg-background-danger rounded-full text-text-ligth cursor-pointer"><X size={12} /></div>
                         </div>
                     </div>
                     <ul className={`overflow-hidden ${minimize && 'h-0'}`}>

@@ -128,6 +128,7 @@ export const FunctionsOptions: Array<FunctionsOptionsType> = [
                         name: 'levelBank',
                         input: {
                             type: 'percent',
+                            placeholder: '0'
                         },
                         info: {
                             description: 'Deslocamento depois do última registro',
@@ -219,17 +220,21 @@ const DataValue = {
     },
     signals: [
         {
-            signal: 'percent',
-            name: 'Porcentagem'
-        },
-        {
             signal: 'number',
             name: 'Número'
         },
         {
-            signal: 'float',
-            name: 'Decimal'
-        }
+            signal: 'percent',
+            name: 'Porcentagem'
+        },
+        {
+            signal: 'boolean',
+            name: 'Verdade/falso'
+        },
+        {
+            signal: 'text',
+            name: 'Texto'
+        },
     ]
 }
 

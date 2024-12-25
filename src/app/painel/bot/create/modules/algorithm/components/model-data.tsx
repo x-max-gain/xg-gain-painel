@@ -65,7 +65,7 @@ export default function CreateBotAlgorithmModelData(
         console.log(dataFunction)
     }
 
-    return <div className="select-bot">
+    return <div className="select-bot relative">
         {
             !selectOption && (
                 <div onClick={() => setOpen(!open)} className="min-w-80 bg-background-secondary text-text-primary px-4 py-2 rounded-md flex items-center cursor-pointer">
