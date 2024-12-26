@@ -22,20 +22,26 @@ export default function CreateBotAlgorithm() {
     const [conditions, setConditions] = useState<Array<any>>([]);
 
     const setElementSelectMain = (element: any) => {
-        const data = [...conditions, { ...element, id: generateKeyRandom(), options: { left: null, right: null, continue: null } }]
-        console.log(data)
-        setConditions(data)
-    }
-    const setElementSelectParent = (element: any, location: string, parentId: string) => {
-        const data = conditions.map(item => item.id === parentId ? ({
-            ...item,
-            options: {
-                ...item.options,
-                [location]: element
-            }
-        }) : item)
-        console.log(data)
-        setConditions(data)
+        if (element?.id) {
+            const data = conditions.map(item => item.id === element.id ? (element) : item);
+            console.log(data);
+            setConditions(data)
+        } else {
+            const data = [
+                ...conditions,
+                {
+                    ...element,
+                    id: generateKeyRandom(),
+                    options: {
+                        left: null,
+                        right: null,
+                        continue: null
+                    }
+                }
+            ];
+            console.log(data);
+            setConditions(data)
+        }
     }
     return (
         <div className="w-full mt-4">
@@ -44,7 +50,7 @@ export default function CreateBotAlgorithm() {
                     {
                         conditions.map((item: any, index) => (
                             <div key={index} className="flex py-2">
-                                <CreateBotAlgorithmModelMain setElementSelect={setElementSelectParent} informationsActiveSelected={informationsActiveSelected} data={item} />
+                                <CreateBotAlgorithmModelMain setElementSelect={setElementSelectMain} informationsActiveSelected={informationsActiveSelected} data={item} />
                             </div>
                         ))
                     }
