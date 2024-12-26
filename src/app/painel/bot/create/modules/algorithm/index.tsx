@@ -1,6 +1,6 @@
 /* eslint-disable react/no-children-prop */
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./algorithm.css";
 import CreateBotAlgorithmModelMain from "./components/model-main";
 
