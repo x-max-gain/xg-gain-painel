@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import CreateBotAlgorithmSelect from "./select";
 import CreateBotAlgorithmModelFunc from "./model-func";
 import CreateBotAlgorithmModelData from "./model-data";
