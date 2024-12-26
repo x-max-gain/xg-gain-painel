@@ -212,6 +212,7 @@ export const DataFunction = (continueOption: boolean) => {
 }
 
 const DataValue: ModelDataSelectType = {
+    _id: 'add_data001',
     name: 'Adicionar dados',
     type: 'data',
     style: {
@@ -221,11 +222,13 @@ const DataValue: ModelDataSelectType = {
     signals: [
         {
             signal: 'number',
-            name: 'Número'
+            name: 'Número',
+            placeholder: '0.00',
         },
         {
             signal: 'percent',
-            name: 'Porcentagem'
+            name: 'Porcentagem',
+            placeholder: '0.00',
         },
         {
             signal: 'boolean',
@@ -233,7 +236,8 @@ const DataValue: ModelDataSelectType = {
         },
         {
             signal: 'text',
-            name: 'Texto'
+            name: 'Texto',
+            placeholder: 'Digite aqui',
         },
     ]
 }

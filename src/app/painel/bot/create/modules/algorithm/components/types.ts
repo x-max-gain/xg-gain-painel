@@ -70,6 +70,7 @@ export type ModelFunctionSelectType = {
     }>
 }
 export type ModelDataSelectType = {
+    _id: string;
     name: string;
     type: 'data';
     style: {
@@ -79,6 +80,7 @@ export type ModelDataSelectType = {
     signals: Array<{
         signal: string;
         name: string;
+        placeholder?: string
     }>
 }
 export type ModelFunctionSelectEndType = {
