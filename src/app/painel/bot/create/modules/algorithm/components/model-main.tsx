@@ -15,22 +15,16 @@ type CreateBotAlgorithmModelMainType = {
 export default function CreateBotAlgorithmModelMain(
     { data, informationsActiveSelected, setElementSelect }: CreateBotAlgorithmModelMainType,
 ) {
-    const [selectLeft, setSelectLeft] = useState<any>(null);
-    const [selectRight, setSelectRight] = useState<any>(null);
-    const [selectContinue, setSelectContinue] = useState<any>(null);
     const continueObj = data?.continue ? data.continue() : null;
 
     const selectOptionLeft = (select: any) => {
         setElementSelect(select, 'left', data.id);
-        setSelectLeft(select)
     }
     const selectOptionRight = (select: any) => {
         setElementSelect(select, 'right', data.id);
-        setSelectRight(select)
     }
     const selectOptionContinue = (select: any) => {
         setElementSelect(select, 'continue', data.id);
-        setSelectContinue(select)
     }
 
     return <div
@@ -53,22 +47,22 @@ export default function CreateBotAlgorithmModelMain(
             }
             <div className="col-span-4 flex">
                 {
-                    selectLeft && selectLeft.type === "func" && (
-                        <CreateBotAlgorithmModelFunc informationsActiveSelected={informationsActiveSelected} startOpen={true} data={selectLeft.params} />
+                    data?.options?.left && data?.options?.left.type === "func" && (
+                        <CreateBotAlgorithmModelFunc informationsActiveSelected={informationsActiveSelected} startOpen={true} data={data?.options?.left.params} />
                     )
                 }
                 {
-                    selectLeft && selectLeft.type === "data" && (
-                        <CreateBotAlgorithmModelData data={selectLeft} />
+                    data?.options?.left && data?.options?.left.type === "data" && (
+                        <CreateBotAlgorithmModelData data={data?.options?.left} />
                     )
                 }
                 {
-                    selectLeft && selectLeft.type !== "func" && selectLeft.type !== "data" && (
-                        <CreateBotAlgorithmModelMain setElementSelect={setElementSelect} informationsActiveSelected={informationsActiveSelected} data={selectLeft} />
+                    data?.options?.left && data?.options?.left.type !== "func" && data?.options?.left.type !== "data" && (
+                        <CreateBotAlgorithmModelMain setElementSelect={setElementSelect} informationsActiveSelected={informationsActiveSelected} data={data?.options?.left} />
                     )
                 }
                 {
-                    !selectLeft && (
+                    !data?.options?.left && (
                         <CreateBotAlgorithmSelect title="Selecione um opção" options={data.params} setElementSelect={selectOptionLeft} />
                     )
                 }
@@ -84,22 +78,22 @@ export default function CreateBotAlgorithmModelMain(
             </div>
             <div className="col-span-4 flex">
                 {
-                    selectRight && selectRight.type === "func" && (
-                        <CreateBotAlgorithmModelFunc informationsActiveSelected={informationsActiveSelected} data={selectRight.params} startOpen={true} />
+                    data?.options?.right && data?.options?.right.type === "func" && (
+                        <CreateBotAlgorithmModelFunc informationsActiveSelected={informationsActiveSelected} data={data?.options?.right.params} startOpen={true} />
                     )
                 }
                 {
-                    selectRight && selectRight.type === "data" && (
-                        <CreateBotAlgorithmModelData data={selectRight} />
+                    data?.options?.right && data?.options?.right.type === "data" && (
+                        <CreateBotAlgorithmModelData data={data?.options?.right} />
                     )
                 }
                 {
-                    selectRight && selectRight.type! !== "func" && selectRight.type !== "data" && (
-                        <CreateBotAlgorithmModelMain setElementSelect={setElementSelect} informationsActiveSelected={informationsActiveSelected} data={selectRight} />
+                    data?.options?.right && data?.options?.right.type! !== "func" && data?.options?.right.type !== "data" && (
+                        <CreateBotAlgorithmModelMain setElementSelect={setElementSelect} informationsActiveSelected={informationsActiveSelected} data={data?.options?.right} />
                     )
                 }
                 {
-                    !selectRight && (
+                    !data?.options?.right && (
                         <CreateBotAlgorithmSelect title="Selecione um opção" options={data.params} setElementSelect={selectOptionRight} />
                     )
                 }
@@ -113,8 +107,8 @@ export default function CreateBotAlgorithmModelMain(
                 >Faz</div>
                 <div className="col-span-10 w-full">
                     {
-                        selectContinue ? (
-                            <CreateBotAlgorithmModelMain setElementSelect={setElementSelect} informationsActiveSelected={informationsActiveSelected} data={selectContinue} />
+                        data?.options?.continue ? (
+                            <CreateBotAlgorithmModelMain setElementSelect={setElementSelect} informationsActiveSelected={informationsActiveSelected} data={data?.options?.continue} />
                         ) : (
                             <CreateBotAlgorithmSelect title="Selecione um opção" options={continueObj} setElementSelect={selectOptionContinue} />
                         )
