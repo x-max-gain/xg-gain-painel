@@ -271,7 +271,7 @@ const MathOptions = {
             name: 'Resto da divisão'
         }
     ],
-    params: [{ ...DataValue, ...DataFunction(false) }]
+    params: [DataValue, DataFunction(false)]
 }
 
 const Comparison = {

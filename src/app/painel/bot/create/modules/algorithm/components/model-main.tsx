@@ -5,6 +5,7 @@ import CreateBotAlgorithmSelect from "./select";
 import CreateBotAlgorithmModelFunc from "./model-func";
 import CreateBotAlgorithmModelData from "./model-data";
 import { InformationsSelectedActiveType } from "../type";
+import { X } from "lucide-react";
 
 type CreateBotAlgorithmModelMainType = {
     data: any,
@@ -31,8 +32,13 @@ export default function CreateBotAlgorithmModelMain(
 
     return <div
         style={{ backgroundColor: data.style.backgroundColor || 'white' }}
-        className={`text-text-primary p-4 rounded-md`}
+        className="text-text-primary p-4 rounded-md relative"
     >
+        <div
+            className="top-[-10px] left-[-10px] p-1 bg-background-danger rounded-full text-text-ligth cursor-pointer absolute"
+        >
+            <X size={12} />
+        </div>
         <div className="flex items-start mb-4">
             {
                 continueObj && <div className="col-span-1 flex items-center">
