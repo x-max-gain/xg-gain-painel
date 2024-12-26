@@ -10,7 +10,8 @@ import { execute } from "./data";
 import { InformationsSelectedActiveType } from "./type";
 import { generateKeyRandom } from "@/utils/generate";
 
-export default function CreateBotAlgorithm() {
+export default function CreateBotAlgorithm({ setConditionsReturn }: { setConditionsReturn: (value: Array<any>) => void }) {
+    const [conditions, setConditions] = useState<Array<any>>([]);
     const [informationsActiveSelected] = useState<InformationsSelectedActiveType>({
         selectedActive: {
             coin: {
@@ -19,13 +20,12 @@ export default function CreateBotAlgorithm() {
             }
         }
     })
-    const [conditions, setConditions] = useState<Array<any>>([]);
 
     const setElementSelectMain = (element: any) => {
         if (element?.id) {
             const data = conditions.map(item => item.id === element.id ? (element) : item);
-            console.log(data);
             setConditions(data)
+            setConditionsReturn(data)
         } else {
             const data = [
                 ...conditions,
@@ -39,8 +39,8 @@ export default function CreateBotAlgorithm() {
                     }
                 }
             ];
-            console.log(data);
             setConditions(data)
+            setConditionsReturn(data)
         }
     }
     return (
