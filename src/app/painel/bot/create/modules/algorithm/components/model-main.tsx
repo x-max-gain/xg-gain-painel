@@ -9,10 +9,11 @@ import { X } from "lucide-react";
 
 type CreateBotAlgorithmModelMainType = {
     data: any,
-    informationsActiveSelected: InformationsSelectedActiveType
+    informationsActiveSelected: InformationsSelectedActiveType,
+    setElementSelect: (element: any, location: string, parentId: string) => void
 }
 export default function CreateBotAlgorithmModelMain(
-    { data, informationsActiveSelected }: CreateBotAlgorithmModelMainType,
+    { data, informationsActiveSelected, setElementSelect }: CreateBotAlgorithmModelMainType,
 ) {
     const [selectLeft, setSelectLeft] = useState<any>(null);
     const [selectRight, setSelectRight] = useState<any>(null);
@@ -20,13 +21,15 @@ export default function CreateBotAlgorithmModelMain(
     const continueObj = data?.continue ? data.continue() : null;
 
     const selectOptionLeft = (select: any) => {
-        console.log(select);
+        setElementSelect(select, 'left', data.id);
         setSelectLeft(select)
     }
     const selectOptionRight = (select: any) => {
+        setElementSelect(select, 'right', data.id);
         setSelectRight(select)
     }
     const selectOptionContinue = (select: any) => {
+        setElementSelect(select, 'continue', data.id);
         setSelectContinue(select)
     }
 
@@ -61,7 +64,7 @@ export default function CreateBotAlgorithmModelMain(
                 }
                 {
                     selectLeft && selectLeft.type !== "func" && selectLeft.type !== "data" && (
-                        <CreateBotAlgorithmModelMain informationsActiveSelected={informationsActiveSelected} data={selectLeft} />
+                        <CreateBotAlgorithmModelMain setElementSelect={setElementSelect} informationsActiveSelected={informationsActiveSelected} data={selectLeft} />
                     )
                 }
                 {
@@ -92,7 +95,7 @@ export default function CreateBotAlgorithmModelMain(
                 }
                 {
                     selectRight && selectRight.type! !== "func" && selectRight.type !== "data" && (
-                        <CreateBotAlgorithmModelMain informationsActiveSelected={informationsActiveSelected} data={selectRight} />
+                        <CreateBotAlgorithmModelMain setElementSelect={setElementSelect} informationsActiveSelected={informationsActiveSelected} data={selectRight} />
                     )
                 }
                 {
@@ -111,7 +114,7 @@ export default function CreateBotAlgorithmModelMain(
                 <div className="col-span-10 w-full">
                     {
                         selectContinue ? (
-                            <CreateBotAlgorithmModelMain informationsActiveSelected={informationsActiveSelected} data={selectContinue} />
+                            <CreateBotAlgorithmModelMain setElementSelect={setElementSelect} informationsActiveSelected={informationsActiveSelected} data={selectContinue} />
                         ) : (
                             <CreateBotAlgorithmSelect title="Selecione um opção" options={continueObj} setElementSelect={selectOptionContinue} />
                         )
