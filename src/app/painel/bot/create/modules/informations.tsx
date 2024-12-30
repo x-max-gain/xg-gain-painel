@@ -62,10 +62,11 @@ export default function CreateBotInformations() {
                                             type="text"
                                             value={values.name}
                                             name="name"
+                                            placeholder="Nome do robô"
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                             id="large-input"
-                                            className="block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
+                                            className="focus:outline-gray-300 block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
                                         />
                                     </div>
                                     <div className="mb-6 col-span-3">
@@ -78,7 +79,7 @@ export default function CreateBotInformations() {
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                             id="large-input"
-                                            className="block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
+                                            className="focus:outline-gray-300 block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
                                         >
                                             <option value="">Selecione um tipo de ativo</option>
                                         </select>
@@ -93,7 +94,7 @@ export default function CreateBotInformations() {
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                             id="large-input"
-                                            className="block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
+                                            className="focus:outline-gray-300 block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
                                         >
                                             <option value="">Selecione o ativo</option>
                                         </select>
@@ -103,41 +104,175 @@ export default function CreateBotInformations() {
                                 <div className="grid gap-6 mb-6 md:grid-cols-12">
                                     <div className="mb-6 col-span-12 grid gap-6 md:grid-cols-12">
                                         <div className="col-span-3">
-                                            <label
-                                                htmlFor="large-input"
-                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de bot</label>
+                                            <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de robô</p>
                                             <select
                                                 value={values.name}
                                                 name="type-active"
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
                                                 id="large-input"
-                                                className="block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
+                                                className="focus:outline-gray-300 block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
                                             >
                                                 <option value="demo">DEMO</option>
                                                 <option value="real">REAL</option>
                                             </select>
                                         </div>
-                                    </div>
-                                </div>
-                                <h2 className="text-lg font-bold mb-4 text-gray-500">Stop Loss</h2>
-                                <div className="grid gap-6 mb-6 md:grid-cols-12">
-                                    <div className="mb-6 col-span-12 grid gap-6 md:grid-cols-12">
                                         <div className="col-span-3">
-                                            <label
-                                                htmlFor="large-input"
-                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de bot</label>
+                                            <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Fechar operação após 24 horas</p>
                                             <select
                                                 value={values.name}
                                                 name="type-active"
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
                                                 id="large-input"
-                                                className="block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
+                                                className="focus:outline-gray-300 block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
                                             >
-                                                <option value="demo">DEMO</option>
-                                                <option value="real">REAL</option>
+                                                <option value="not">NÃO</option>
+                                                <option value="yes">SIM</option>
                                             </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h2 className="text-lg font-bold mb-4 text-gray-500">Horários de operação</h2>
+                                <div className="flex">
+                                    <div className="col-span-1 mr-4">
+                                        <div className="flex items-center justify-end h-full">
+                                            <input
+                                                type="checkbox"
+                                                value={values.name}
+                                                name="name"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                id="large-input"
+                                                className="focus:outline-gray-300 block w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="w-full mb-6 grid gap-6 md:grid-cols-12">
+                                        <div className="col-span-3">
+                                            <label
+                                                htmlFor="large-input"
+                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Horário de início</label>
+                                            <input
+                                                type="time"
+                                                value={values.name}
+                                                name="name"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                id="large-input"
+                                                className="focus:outline-gray-300 block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
+                                            />
+                                        </div>
+                                        <div className="col-span-3">
+                                            <label
+                                                htmlFor="large-input"
+                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Horário de fim</label>
+                                            <input
+                                                type="time"
+                                                value={values.name}
+                                                name="name"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                id="large-input"
+                                                className="focus:outline-gray-300 block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <h2 className="text-lg font-bold mb-4 text-gray-500">Stop Loss</h2>
+                                <div className="flex">
+                                    <div className="col-span-1 mr-4">
+                                        <div className="flex items-center justify-end h-full">
+                                            <input
+                                                type="checkbox"
+                                                value={values.name}
+                                                name="name"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                id="large-input"
+                                                className="focus:outline-gray-300 block w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="w-full mb-6 grid gap-6 md:grid-cols-12">
+                                        <div className="col-span-3">
+                                            <label
+                                                htmlFor="large-input"
+                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo do stop loss</label>
+                                            <select
+                                                value={values.name}
+                                                name="type-active"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                id="large-input"
+                                                className="focus:outline-gray-300 block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
+                                            >
+                                                <option value="percentage">Porcentagem</option>
+                                                <option value="value">Valor</option>
+                                            </select>
+                                        </div>
+                                        <div className="col-span-3">
+                                            <label
+                                                htmlFor="large-input"
+                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Valor do stop loss</label>
+                                            <input
+                                                type="text"
+                                                value={values.name}
+                                                name="name"
+                                                placeholder="0%"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                id="large-input"
+                                                className="focus:outline-gray-300 block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <h2 className="text-lg font-bold mb-4 text-gray-500">Stop Gain</h2>
+                                <div className="flex">
+                                    <div className="col-span-1 mr-4">
+                                        <div className="flex items-center justify-end h-full">
+                                            <input
+                                                type="checkbox"
+                                                value={values.name}
+                                                name="name"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                id="large-input"
+                                                className="focus:outline-gray-300 block w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="w-full mb-6 grid gap-6 md:grid-cols-12">
+                                        <div className="col-span-3">
+                                            <label
+                                                htmlFor="large-input"
+                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de stop gain</label>
+                                            <select
+                                                value={values.name}
+                                                name="type-active"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                id="large-input"
+                                                className="focus:outline-gray-300 block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
+                                            >
+                                                <option value="percentage">Porcentagem</option>
+                                                <option value="value">Valor</option>
+                                            </select>
+                                        </div>
+                                        <div className="col-span-3">
+                                            <p
+                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Valor do stop gain</p>
+                                            <input
+                                                type="text"
+                                                value={values.name}
+                                                name="name"
+                                                placeholder="0%"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                id="large-input"
+                                                className="focus:outline-gray-300 block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:border-gray-300"
+                                            />
                                         </div>
                                     </div>
                                 </div>
