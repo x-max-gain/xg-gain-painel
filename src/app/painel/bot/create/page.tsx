@@ -4,6 +4,7 @@ import { useState } from "react";
 import CreateBotInformations from "./modules/informations";
 import CreateBotAlgorithm from "./modules/algorithm/index";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import CreateBotSimulations from "./modules/simulations";
 
 export default function BotCreate() {
   const [conditions, setConditions] = useState<Array<any>>([]);
@@ -71,7 +72,7 @@ export default function BotCreate() {
       <div>
         {page === "informations" && <CreateBotInformations />}
         {page === "algorithm" && <CreateBotAlgorithm setConditionsReturn={setConditions} />}
-        {page === "simulations" && <p>Simulações</p>}
+        {page === "simulations" && <CreateBotSimulations />}
       </div>
     </div>
   );
