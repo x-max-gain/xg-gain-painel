@@ -1,7 +1,7 @@
 # Tarefas
 - [ ] Colocar menu único em cada página
 - [ ] Informações do bot
-  - [ ] Colocar em uma tela separa
+  - [X] Colocar em uma tela separa
   - [ ] Fazer validações dos inputs
   - [ ] Colocar mensagens de error
   - [ ] Enviar dados para api
