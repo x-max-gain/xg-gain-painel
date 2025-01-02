@@ -1,5 +1,5 @@
 import { IRoutes } from "@/interfaces/routes-interface";
-import { Banknote, Box, DollarSign, Handshake, Home, Bot, LogOut, User2, HeadphonesIcon, HelpCircle } from "lucide-react";
+import { DollarSign, Home, Bot, User2, HelpCircle, BaggageClaim, Unplug } from "lucide-react";
 
 export const routes: IRoutes[] = [
   {
@@ -23,14 +23,18 @@ export const routes: IRoutes[] = [
     url: "/painel/account/22"
   },
   {
+    icon: <BaggageClaim size={24} />,
+    name: "Planos",
+    url: "/painel/plans"
+  },
+  {
+    icon: <Unplug size={24} />,
+    name: "Integrações",
+    url: "/painel/integrations"
+  },
+  {
     icon: <HelpCircle size={24} />,
     name: "Ajuda",
     url: "/painel/help"
-  },
-  {
-    icon: <LogOut size={24} />,
-    name: "Sair",
-    url: "/logout"
-  },
- 
+  } 
 ]

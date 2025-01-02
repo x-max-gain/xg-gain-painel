@@ -13,14 +13,25 @@ const config: Config = {
       },
       colors: {
         background: {
-          primary: "#09090B",
-          secondary: "#131315",
+          main: "#4182e0",
+          primary: "#fff",
+          secondary: "#eee",
+          secondaryDark: "#ddd",
+          secondaryDarkBig: "#ccc",
           green: "#08DD7E",
-          deep: "#181818"
+          decoration: "#4182e0", // #243bed
+          deep: "#f5f5f5",
+          danger: 'red',
+          success: '#08DD7E',
+          warnning: "yellow"
         },
         text: {
-          primary: "#FFFFFF",
+          primary: "#000",
+          primary2: "#666666",
           secondary: "#A1A1AA",
+          alternatve: "#000",
+          ligth: "#fff",
+          main: "#4182e0",
         },
         icons: {
           primary: "#929292",

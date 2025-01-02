@@ -1,0 +1,15 @@
+.select-bot {
+  min-width: 200px;
+}
+
+.select-bot .select-bot-list {
+  position: absolute;
+  min-width: 200px;
+  left: 0;
+  top: 100%;
+  z-index: 1;
+}
+
+.select-bot .select-bot-list ul li:last-child {
+  margin-bottom: 0px;
+}

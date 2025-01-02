@@ -1,31 +1,15 @@
-                      1_ inserir tela de login e criar conta dentro do layout
-
-                      2_ opções sidebar 
-
-                          1_ pagina inicial
-                          2_ bot
-                          3_ financeiro
-                          4_ sair (cor vermelha)
-   
-   
-3_ tabela de dados adicionar botão ver mais 
-    redireciona para outra pagina contendo
-    perfil especifico seguir modelo (leo)
-    sem titulo
-
-BLOCOS:
-VÍDEOS SOBRE A EMPRESA
-COMENTÁRIOS
-ESTATÍTICAS
-PREVISÕES
-GRÁFICOS
-INFORMAÇÔES
-
-separar em blocos cada tipo de informação
-
-1- fazer carrossel com videos 
-2- text-area para comentarios disponivel apenas para usuario logado
-3- 
-
+# Tarefas
+- [ ] Colocar menu único em cada página
+- [ ] Informações do bot
+  - [ ] Colocar em uma tela separa
+  - [ ] Fazer validações dos inputs
+  - [ ] Colocar mensagens de error
+  - [ ] Enviar dados para api
+  - [ ] Redirecionar para página de editar lógica do bot
+- Criar parte de editar bot
+    - [ ] Criar lógica do bot
+        - [ ] Mudar a navegação para URL
+        - [ ] Criar uma tela parecida com a do SmartBot
+    - [ ] Criar parte de estatísticas do bot
 
 
