@@ -1,7 +1,22 @@
 {
-  "name": "escala-dashboard",
+  "name": "vasty-bot",
   "version": "0.1.0",
   "private": true,
+  "description": "Uma plataforma para criar seus próprios bots financeiros totalmente personalizados",
+  "author": "Leodeymison Alcantara",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x-max-gain/xg-gain-painel"
+  },
+  "bugs": {
+    "url": "https://github.com/x-max-gain/xg-gain-painel/issues"
+  },
+  "homepage": "https://www.vastybot.com/",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "scripts": {
     "dev": "node -e \"if (process.version.split('.')[0] !== 'v20') { console.error('Erro: Node.js precisa estar na versão 20.x'); process.exit(1); }\" && next dev",
     "build": "node -e \"if (process.version.split('.')[0] !== 'v20') { console.error('Erro: Node.js precisa estar na versão 20.x'); process.exit(1); }\" && next build",
@@ -30,6 +45,7 @@
     "@types/react": "18",
     "@types/react-dom": "18",
     "@types/react-syntax-highlighter": "15.5.13",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "8",
     "eslint-config-next": "14.2.4",
     "postcss": "8",
