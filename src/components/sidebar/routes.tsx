@@ -5,36 +5,36 @@ export const routes: IRoutes[] = [
   {
     icon: <Home size={24} />,
     name: "Página Incial",
-    url: "/painel"
+    url: "/"
   },
   {
     icon: <Bot size={24} />,
     name: "Bot",
-    url: "/painel/bot"
+    url: "/bot"
   },
   {
     icon: <DollarSign size={24} />,
     name: "Financeiro",
-    url: "/painel/finance"
+    url: "/finance"
   },
   {
     icon: <User2 size={24} />,
     name: "Conta",
-    url: "/painel/account/22"
+    url: "/account/22"
   },
   {
     icon: <BaggageClaim size={24} />,
     name: "Planos",
-    url: "/painel/plans"
+    url: "/plans"
   },
   {
     icon: <Unplug size={24} />,
     name: "Integrações",
-    url: "/painel/integrations"
+    url: "/integrations"
   },
   {
     icon: <HelpCircle size={24} />,
     name: "Ajuda",
-    url: "/painel/help"
-  } 
+    url: "/help"
+  }
 ]

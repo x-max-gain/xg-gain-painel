@@ -21,7 +21,7 @@ export default function CreateBotInformations() {
 
     const handleSubmitInformations = (values: createBotInformationsType) => {
         console.log('Form Data:', values);
-        router.push("/painel/bot/view/123/algorithm")
+        router.push("/bot/view/123/algorithm")
     };
 
     useEffect(() => {
@@ -45,7 +45,7 @@ export default function CreateBotInformations() {
                         {({ isSubmitting, handleChange, handleBlur, values, handleSubmit }) => (
                             <Form onSubmit={handleSubmit} className="">
                                 <h1 className="flex text-lg font-bold mb-6 text-gray-500 items-center">
-                                    <Link href="/painel/bot"><ChevronLeft className="mr-2 cursor-pointer" /></Link> Criar informações do robô
+                                    <Link href="/bot"><ChevronLeft className="mr-2 cursor-pointer" /></Link> Criar informações do robô
                                 </h1>
                                 <div className="grid gap-6 mb-6 md:grid-cols-12">
                                     <div className="col-span-6">
