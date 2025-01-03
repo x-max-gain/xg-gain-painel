@@ -1,23 +1,25 @@
 "use client";
 
+import { Pagination } from "@/interfaces/paginations";
+import { getMyBots } from "@/services/modules/bot.module";
 import { Pause, Plus } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Bot() {
-  const [bots, setBots] = useState<Array<any>>();
+  const [bots, setBots] = useState<Pagination<Array<any>>>({
+    content: [],
+    cacheable: true,
+    currentPage: 1,
+    totalDocuments: 0,
+    totalPages: 0
+  });
 
   useEffect(() => {
-    setBots([
-      { name: 'Primeiro bot' },
-      { name: 'Primeiro bot' },
-      { name: 'Primeiro bot' },
-      { name: 'Primeiro bot' },
-      { name: 'Primeiro bot' },
-      { name: 'Primeiro bot' },
-      { name: 'Primeiro bot' },
-      { name: 'Primeiro bot' }
-    ])
+    (async () => {
+      const response = await getMyBots();
+      setBots(response);
+    })()
   }, [])
 
   return (
@@ -30,7 +32,7 @@ export default function Bot() {
         </div>
       </nav>
 
-      <div className="flex flex-col p-4">
+      <div className="flex flex-col mt-4">
         <div className="flex justify-end pb-4">
           <Link
             href="/painel/bot/create"
@@ -42,7 +44,7 @@ export default function Bot() {
         </div>
 
         <div className="w-full grid grid-cols-4 gap-4">
-          {bots?.map((item, index) => <div
+          {bots?.content.map((item, index) => <div
             key={index}
             className="bg-background-secondary border border-gray-200 shadow rounded"
           >
