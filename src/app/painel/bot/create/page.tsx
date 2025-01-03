@@ -1,14 +1,15 @@
 "use client";
 
-import { createBotInformations } from "@/services/modules/bot.module";
 import { createBotInformationsType } from "@/services/types/bot";
 import { Formik, Form } from "formik";
 import { useEffect, useState } from "react";
 import * as Yup from 'yup';
 import { ChevronLeft, Plus } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function CreateBotInformations() {
+    const router = useRouter();
     const [loading, setLoading] = useState(true);
     const [initialValuesInformations, setInitialValuesInformations] = useState<createBotInformationsType>({
         name: '',
@@ -19,19 +20,8 @@ export default function CreateBotInformations() {
     });
 
     const handleSubmitInformations = (values: createBotInformationsType) => {
-        createBotInformations(values);
-    };
-
-    // ? PASSWORD
-    const initialValuesPassword = {
-        name: ''
-    };
-    const validationSchemaPassword = Yup.object({
-        name: Yup.string().required('Nome é obrigatório'),
-    });
-
-    const handleSubmitPassword = (values: { name: string }) => {
         console.log('Form Data:', values);
+        router.push("/painel/bot/view/123/algorithm")
     };
 
     useEffect(() => {
@@ -52,8 +42,8 @@ export default function CreateBotInformations() {
                         validationSchema={validationSchemaInformations}
                         onSubmit={handleSubmitInformations}
                     >
-                        {({ isSubmitting, handleChange, handleBlur, values }) => (
-                            <Form className="">
+                        {({ isSubmitting, handleChange, handleBlur, values, handleSubmit }) => (
+                            <Form onSubmit={handleSubmit} className="">
                                 <h1 className="flex text-lg font-bold mb-6 text-gray-500 items-center">
                                     <Link href="/painel/bot"><ChevronLeft className="mr-2 cursor-pointer" /></Link> Criar informações do robô
                                 </h1>

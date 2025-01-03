@@ -21,8 +21,8 @@ export default function Bot() {
   }, [])
 
   return (
-    <div className="w-full min-h-screen bg-background-primary">
-      <nav className="shadow p-4 flex justify-center items-center">
+    <div className="w-full min-h-screen">
+      <nav className="shadow p-4 flex justify-center items-center bg-background-primary">
         <div className="flex gap-4 text-gray-500">
           <button className="px-1 sm:px-4 py-2">Execultando</button>
           <button className="px-1 sm:px-4 py-2">Parados</button>
@@ -47,7 +47,7 @@ export default function Bot() {
             className="bg-background-secondary border border-gray-200 shadow rounded"
           >
             <Link href="/painel/bot/22">
-              <div className="p-4">
+              <div className="p-4 bg-background-primary">
                 <div className="flex justify-between items-center">
                   <h2 className="text-green-500 font-bold">#3945605</h2>
                   <p className="text-gray-500">Pessimista</p>

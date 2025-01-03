@@ -2,7 +2,7 @@
 
 export default function HomeDashboard() {
   return (
-    <div className="flex flex-col gap-4 mt-4 bg-background-primary pt-4 pr-4 pl-4 pb-4 min-h-screen">
+    <div className="flex flex-col gap-4 bg-background-primary pt-4 pr-4 pl-4 pb-4 min-h-screen">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-background-deep p-4 rounded shadow">
           <h2 className="text-md font-bold text-gray-700">Histórico do dia</h2>
@@ -64,7 +64,7 @@ export default function HomeDashboard() {
               </div>
               <div className="text-green-500 font-bold">138,2%</div>
             </div>
-           
+
             <div className="flex items-center justify-between bg-background-primary rounded p-3 shadow">
               <div>
                 <p className="font-bold text-gray-700">Deuteronômio</p>
