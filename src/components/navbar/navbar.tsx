@@ -30,8 +30,8 @@ export function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <>
-      <header className="sticky top-0 z-50 flex items-center px-4 py-4 lg:backdrop-blur-xl md:px-5 lg:px-10 2xl:py-5 3xl:px-8 4xl:px-10">
+    <div className="w-full">
+      <header className="rounded-lg m-4 bg-background-primary sticky top-0 z-50 flex items-center px-4 py-4 lg:backdrop-blur-xl md:px-5 lg:px-10 2xl:py-5 3xl:px-8 4xl:px-10">
         <div className="flex w-full max-w-2xl items-center">
 
           {<button
@@ -53,6 +53,6 @@ export function Navbar() {
       </header>
 
       <NavbarMobile isOpen={isMenuOpen} toggleMenu={toggleMenu} />
-    </>
+    </div>
   )
 }

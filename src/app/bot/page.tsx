@@ -55,7 +55,7 @@ export default function Bot() {
                 className="flex bg-background-main text-white px-4 py-2 rounded hover:bg-background-main"
               >
                 <Plus className="mr-3" />
-                <p>Criar menu robô</p>
+                <p>Criar meu robô</p>
               </Link>
             </div>
           )
@@ -65,24 +65,25 @@ export default function Bot() {
           {
             myBots?.content.length === 0 && (
               <div className="w-full flex justify-start mb-4">
-                <h2 className="text-text-main text-xl font-bold">Encontre um robô</h2>
+                <h2 className="text-text-main text-xl font-bold">Seus robôs</h2>
               </div>
             )
           }
           <div className="w-full grid grid-cols-4 gap-4 mb-8">
             {
               myBots?.content.length === 0 && (
-                <div className="bg-background-primary h-[248px]">
+                <div className="rounded-lg cursor-pointer hover:bg-background-hoverPrimary bg-background-primary h-[248px] flex justify-center items-center flex-col">
+                  <Plus className="text-text-main mb-4" size={40} />
                   <p className="text-text-main">Crie seu primeiro bot</p>
                 </div>
               )
             }
             {myBots?.content.map((item, index) => <div
               key={index}
-              className="bg-background-secondary border border-gray-200 shadow rounded"
+              className="bg-background-secondary border border-gray-200 shadow rounded-lg"
             >
               <Link href="/bot/22">
-                <div className="p-4 bg-background-primary">
+                <div className="p-4 bg-background-primary rounded-lg">
                   <div className="flex justify-between items-center">
                     <h2 className="text-green-500 font-bold">#3945605</h2>
                     <p className="text-gray-500">Pessimista</p>
@@ -141,10 +142,10 @@ export default function Bot() {
           <div className="w-full grid grid-cols-4 gap-4">
             {bots?.content.map((item, index) => <div
               key={index}
-              className="bg-background-secondary border border-gray-200 shadow rounded"
+              className="bg-background-secondary border border-gray-200 shadow rounded-lg"
             >
               <Link href="/bot/22">
-                <div className="p-4 bg-background-primary">
+                <div className="p-4 bg-background-primary rounded-lg">
                   <div className="flex justify-between items-center">
                     <h2 className="text-green-500 font-bold">#3945605</h2>
                     <p className="text-gray-500">Pessimista</p>
