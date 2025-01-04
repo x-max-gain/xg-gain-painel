@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon2.png" type="image/x-icon" />
       </head>
       <body className={inter.className}>
         <NextTopLoader
